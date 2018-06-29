@@ -1,0 +1,275 @@
+﻿  ocr_test.cpp
+ocr_test.cpp(207): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+ocr_test.cpp(208): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+ocr_test.cpp(229): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+ocr_test.cpp(310): warning C4267: “参数”: 从“size_t”转换到“unsigned char”，可能丢失数据
+ocr_test.cpp(315): warning C4267: “参数”: 从“size_t”转换到“unsigned char”，可能丢失数据
+ocr_test.cpp(324): warning C4267: “参数”: 从“size_t”转换到“unsigned char”，可能丢失数据
+ocr_test.cpp(376): warning C4267: “参数”: 从“size_t”转换到“unsigned char”，可能丢失数据
+ocr_test.cpp(385): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+ocr_test.cpp(370): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“std::size_t”
+  ocr_test.cpp(370): note: 请考虑在格式字符串中使用“%zd”
+ocr_test.cpp(370): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 2 拥有了类型“unsigned __int64”
+  ocr_test.cpp(370): note: 请考虑在格式字符串中使用“%zd”
+ocr_test.cpp(477): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“std::size_t”
+  ocr_test.cpp(477): note: 请考虑在格式字符串中使用“%zd”
+ocr_test.cpp(477): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 2 拥有了类型“unsigned __int64”
+  ocr_test.cpp(477): note: 请考虑在格式字符串中使用“%zd”
+  Unknown compiler version - please run the configure tests and report the results
+D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\include\caffe/util/io.hpp(49): warning C4244: “参数”: 从“uint64_t”转换到“int”，可能丢失数据
+D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\caffe-gpu.h(68): warning C4251: “MTCNN::PNet_”: class“boost::shared_ptr<caffe::Net<float>>”需要有 dll 接口由 class“MTCNN”的客户端使用
+  D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\caffe-gpu.h(58): note: 参见“boost::shared_ptr<caffe::Net<float>>”的声明
+D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\caffe-gpu.h(69): warning C4251: “MTCNN::RNet_”: class“boost::shared_ptr<caffe::Net<float>>”需要有 dll 接口由 class“MTCNN”的客户端使用
+  D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\caffe-gpu.h(58): note: 参见“boost::shared_ptr<caffe::Net<float>>”的声明
+D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\caffe-gpu.h(70): warning C4251: “MTCNN::ONet_”: class“boost::shared_ptr<caffe::Net<float>>”需要有 dll 接口由 class“MTCNN”的客户端使用
+  D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\caffe-gpu.h(58): note: 参见“boost::shared_ptr<caffe::Net<float>>”的声明
+D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\caffe-gpu.h(73): warning C4251: “MTCNN::condidate_rects_”: class“std::vector<FaceInfo,std::allocator<_Ty>>”需要有 dll 接口由 class“MTCNN”的客户端使用
+          with
+          [
+              _Ty=FaceInfo
+          ]
+  D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\caffe-gpu.h(46): note: 参见“std::vector<FaceInfo,std::allocator<_Ty>>”的声明
+          with
+          [
+              _Ty=FaceInfo
+          ]
+D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\caffe-gpu.h(74): warning C4251: “MTCNN::total_boxes_”: class“std::vector<FaceInfo,std::allocator<_Ty>>”需要有 dll 接口由 class“MTCNN”的客户端使用
+          with
+          [
+              _Ty=FaceInfo
+          ]
+  D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\caffe-gpu.h(46): note: 参见“std::vector<FaceInfo,std::allocator<_Ty>>”的声明
+          with
+          [
+              _Ty=FaceInfo
+          ]
+D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\caffe-gpu.h(75): warning C4251: “MTCNN::regressed_rects_”: class“std::vector<FaceInfo,std::allocator<_Ty>>”需要有 dll 接口由 class“MTCNN”的客户端使用
+          with
+          [
+              _Ty=FaceInfo
+          ]
+  D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\caffe-gpu.h(46): note: 参见“std::vector<FaceInfo,std::allocator<_Ty>>”的声明
+          with
+          [
+              _Ty=FaceInfo
+          ]
+D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\caffe-gpu.h(76): warning C4251: “MTCNN::regressed_pading_”: class“std::vector<FaceInfo,std::allocator<_Ty>>”需要有 dll 接口由 class“MTCNN”的客户端使用
+          with
+          [
+              _Ty=FaceInfo
+          ]
+  D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\caffe-gpu.h(46): note: 参见“std::vector<FaceInfo,std::allocator<_Ty>>”的声明
+          with
+          [
+              _Ty=FaceInfo
+          ]
+D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\caffe-gpu.h(78): warning C4251: “MTCNN::crop_img_”: class“std::vector<cv::Mat,std::allocator<_Ty>>”需要有 dll 接口由 class“MTCNN”的客户端使用
+          with
+          [
+              _Ty=cv::Mat
+          ]
+  D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\opensource\opencv\include\opencv2/core/mat.hpp(183): note: 参见“std::vector<cv::Mat,std::allocator<_Ty>>”的声明
+          with
+          [
+              _Ty=cv::Mat
+          ]
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(3): warning C4005: “_CRT_SECURE_NO_WARNINGS”: 宏重定义
+  d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(3): note: 命令行参数: 参见前面的“_CRT_SECURE_NO_WARNINGS”定义
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(228): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(232): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(261): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(272): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(273): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(293): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(303): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(304): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(367): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(385): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(387): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(405): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(406): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(424): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(440): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(441): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(461): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(481): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(482): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(500): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(512): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(513): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(561): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(595): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(596): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(604): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(607): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(680): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(714): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(746): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(752): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(772): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(835): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(841): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(854): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(869): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(882): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(1106): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(1748): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(1749): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+d:\ocr\plate_card_blstm\caffe_ocr-master_cudn7_cuda9.2_vs2014_wm_platecard\caffe-vsproj\ocr_test\common.h(1769): warning C4244: “return”: 从“__int64”转换到“double”，可能丢失数据
+D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\classifierCaffe.h(41): warning C4251: “Classifier::input_geometry_”: class“cv::Size_<int>”需要有 dll 接口由 class“Classifier”的客户端使用
+  D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\opensource\opencv\include\opencv2/core/types.hpp(337): note: 参见“cv::Size_<int>”的声明
+D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\classifierCaffe.h(53): warning C4251: “Classifier::net_”: class“std::shared_ptr<caffe::Net<float>>”需要有 dll 接口由 class“Classifier”的客户端使用
+  D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\classifierCaffe.h(53): note: 参见“std::shared_ptr<caffe::Net<float>>”的声明
+D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\classifierCaffe.h(56): warning C4251: “Classifier::mean_”: class“cv::Mat”需要有 dll 接口由 class“Classifier”的客户端使用
+  D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\include\caffe/common.hpp(73): note: 参见“cv::Mat”的声明
+D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\classifierCaffe.h(57): warning C4251: “Classifier::labels_”: class“std::vector<std::vector<std::string,std::allocator<_Ty>>,std::allocator<std::vector<_Ty,std::allocator<_Ty>>>>”需要有 dll 接口由 class“Classifier”的客户端使用
+          with
+          [
+              _Ty=std::string
+          ]
+  D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\libClassification\classifierCaffe.h(57): note: 参见“std::vector<std::vector<std::string,std::allocator<_Ty>>,std::allocator<std::vector<_Ty,std::allocator<_Ty>>>>”的声明
+          with
+          [
+              _Ty=std::string
+          ]
+ocr_test.cpp(704): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+ocr_test.cpp(814): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+ocr_test.cpp(843): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+ocr_test.cpp(844): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+ocr_test.cpp(845): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+ocr_test.cpp(846): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+ocr_test.cpp(910): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+ocr_test.cpp(913): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+ocr_test.cpp(995): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+ocr_test.cpp(1126): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+ocr_test.cpp(1155): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+ocr_test.cpp(1156): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+ocr_test.cpp(1157): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+ocr_test.cpp(1158): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+ocr_test.cpp(1251): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+ocr_test.cpp(1254): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+ocr_test.cpp(1395): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+ocr_test.cpp(1528): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+ocr_test.cpp(1557): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+ocr_test.cpp(1558): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+ocr_test.cpp(1559): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+ocr_test.cpp(1560): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+ocr_test.cpp(1620): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+ocr_test.cpp(1623): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+ocr_test.cpp(1636): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+ocr_test.cpp(2093): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+ocr_test.cpp(1659): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“unsigned __int64”
+  ocr_test.cpp(1659): note: 请考虑在格式字符串中使用“%zd”
+ocr_test.cpp(1699): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“unsigned __int64”
+  ocr_test.cpp(1699): note: 请考虑在格式字符串中使用“%zd”
+ocr_test.cpp(1702): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“unsigned __int64”
+  ocr_test.cpp(1702): note: 请考虑在格式字符串中使用“%zd”
+ocr_test.cpp(1750): warning C4101: “predict6”: 未引用的局部变量
+ocr_test.cpp(1754): warning C4101: “loss6”: 未引用的局部变量
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\utility(200): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xmemory0(737): note: 参见对正在编译的函数 模板 实例化“std::pair<const _Kty,_Ty>::pair<wchar_t,unsigned __int64,void,0>(std::pair<wchar_t,unsigned __int64> &&) noexcept”的引用
+          with
+          [
+              _Kty=wchar_t,
+              _Ty=int
+          ]
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xmemory0(737): note: 参见对正在编译的函数 模板 实例化“std::pair<const _Kty,_Ty>::pair<wchar_t,unsigned __int64,void,0>(std::pair<wchar_t,unsigned __int64> &&) noexcept”的引用
+          with
+          [
+              _Kty=wchar_t,
+              _Ty=int
+          ]
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xmemory0(857): note: 参见对正在编译的函数 模板 实例化“void std::allocator<_Other>::construct<_Objty,_Ty>(_Objty *,_Ty &&)”的引用
+          with
+          [
+              _Other=std::_Tree_node<std::pair<const wchar_t,int>,void *>,
+              _Objty=std::pair<const wchar_t,int>,
+              _Ty=std::pair<wchar_t,unsigned __int64>
+          ]
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xmemory0(857): note: 参见对正在编译的函数 模板 实例化“void std::allocator<_Other>::construct<_Objty,_Ty>(_Objty *,_Ty &&)”的引用
+          with
+          [
+              _Other=std::_Tree_node<std::pair<const wchar_t,int>,void *>,
+              _Objty=std::pair<const wchar_t,int>,
+              _Ty=std::pair<wchar_t,unsigned __int64>
+          ]
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xmemory0(996): note: 参见对正在编译的函数 模板 实例化“void std::allocator_traits<_Alloc>::construct<_Ty,std::pair<wchar_t,unsigned __int64>>(std::allocator<_Other> &,_Objty *,std::pair<wchar_t,unsigned __int64> &&)”的引用
+          with
+          [
+              _Alloc=std::allocator<std::_Tree_node<std::pair<const wchar_t,int>,void *>>,
+              _Ty=std::pair<const wchar_t,int>,
+              _Other=std::_Tree_node<std::pair<const wchar_t,int>,void *>,
+              _Objty=std::pair<const wchar_t,int>
+          ]
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xmemory0(995): note: 参见对正在编译的函数 模板 实例化“void std::allocator_traits<_Alloc>::construct<_Ty,std::pair<wchar_t,unsigned __int64>>(std::allocator<_Other> &,_Objty *,std::pair<wchar_t,unsigned __int64> &&)”的引用
+          with
+          [
+              _Alloc=std::allocator<std::_Tree_node<std::pair<const wchar_t,int>,void *>>,
+              _Ty=std::pair<const wchar_t,int>,
+              _Other=std::_Tree_node<std::pair<const wchar_t,int>,void *>,
+              _Objty=std::pair<const wchar_t,int>
+          ]
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xtree(889): note: 参见对正在编译的函数 模板 实例化“void std::_Wrap_alloc<std::allocator<_Other>>::construct<_Ty,std::pair<wchar_t,unsigned __int64>>(_Ty *,std::pair<wchar_t,unsigned __int64> &&)”的引用
+          with
+          [
+              _Other=std::_Tree_node<std::pair<const wchar_t,int>,void *>,
+              _Ty=std::pair<const wchar_t,int>
+          ]
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xtree(887): note: 参见对正在编译的函数 模板 实例化“void std::_Wrap_alloc<std::allocator<_Other>>::construct<_Ty,std::pair<wchar_t,unsigned __int64>>(_Ty *,std::pair<wchar_t,unsigned __int64> &&)”的引用
+          with
+          [
+              _Other=std::_Tree_node<std::pair<const wchar_t,int>,void *>,
+              _Ty=std::pair<const wchar_t,int>
+          ]
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xtree(1076): note: 参见对正在编译的函数 模板 实例化“std::_Tree_node<std::pair<const _Kty,_Ty>,void *> *std::_Tree_comp_alloc<_Traits>::_Buynode<std::pair<wchar_t,unsigned __int64>>(std::pair<wchar_t,unsigned __int64> &&)”的引用
+          with
+          [
+              _Kty=wchar_t,
+              _Ty=int,
+              _Traits=std::_Tmap_traits<wchar_t,int,std::less<wchar_t>,std::allocator<std::pair<const wchar_t,int>>,false>
+          ]
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xtree(1076): note: 参见对正在编译的函数 模板 实例化“std::_Tree_node<std::pair<const _Kty,_Ty>,void *> *std::_Tree_comp_alloc<_Traits>::_Buynode<std::pair<wchar_t,unsigned __int64>>(std::pair<wchar_t,unsigned __int64> &&)”的引用
+          with
+          [
+              _Kty=wchar_t,
+              _Ty=int,
+              _Traits=std::_Tmap_traits<wchar_t,int,std::less<wchar_t>,std::allocator<std::pair<const wchar_t,int>>,false>
+          ]
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\map(194): note: 参见对正在编译的函数 模板 实例化“std::pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>,bool> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::emplace<std::pair<wchar_t,unsigned __int64>>(std::pair<wchar_t,unsigned __int64> &&)”的引用
+          with
+          [
+              _Kty=wchar_t,
+              _Ty=int,
+              _Pr=std::less<wchar_t>,
+              _Alloc=std::allocator<std::pair<const wchar_t,int>>
+          ]
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\map(194): note: 参见对正在编译的函数 模板 实例化“std::pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>,bool> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::emplace<std::pair<wchar_t,unsigned __int64>>(std::pair<wchar_t,unsigned __int64> &&)”的引用
+          with
+          [
+              _Kty=wchar_t,
+              _Ty=int,
+              _Pr=std::less<wchar_t>,
+              _Alloc=std::allocator<std::pair<const wchar_t,int>>
+          ]
+  ocr_test.cpp(292): note: 参见对正在编译的函数 模板 实例化“std::pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>,bool> std::map<_Kty,_Ty,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>::insert<std::pair<wchar_t,unsigned __int64>,void>(_Valty &&)”的引用
+          with
+          [
+              _Kty=wchar_t,
+              _Ty=int,
+              _Valty=std::pair<wchar_t,unsigned __int64>
+          ]
+  ocr_test.cpp(292): note: 参见对正在编译的函数 模板 实例化“std::pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>>,bool> std::map<_Kty,_Ty,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>::insert<std::pair<wchar_t,unsigned __int64>,void>(_Valty &&)”的引用
+          with
+          [
+              _Kty=wchar_t,
+              _Ty=int,
+              _Valty=std::pair<wchar_t,unsigned __int64>
+          ]
+    正在创建库 ..\..\tools_bin\ocr_test.lib 和对象 ..\..\tools_bin\ocr_test.exp
+  正在生成代码
+  8 of 1358 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    74 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  ocr_test.vcxproj -> D:\ocr\plate_card_BLSTM\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\ocr_test\..\..\tools_bin\ocr_test.exe
+  ocr_test.vcxproj -> ..\..\tools_bin\ocr_test.pdb (Full PDB)
