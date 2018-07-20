@@ -33,6 +33,15 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 
 三、单个车牌字符分割是基于haar+cascade加上逻辑筛选，
 --------
+1、**图像识别中最核心最难搞的模块之一：目标检测定位分割**
+做识别应用最难的部分就是分割了，图像分割好了，后端做识别才更简单。
+
+检测前需不需要做图像预处理：建议可以根据实际情况简单处理下，常用的比如cvNorm，但是仅在备份图像上做处理，原图尽量不动，原图留做识别抠图。
+训练一个分类器进行目标检测，以haar+adaboost为例，详细参考字符检测的正负样本得取（利用鼠标画框抠图）和准备样本等。 
+  
+     ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/20171121204748663.png)
+     
+2.**往往分类器仅仅只能得到以上一个初步的效果，这时候需要根据项目实际图像固有的特征规律进行一些调整。 **
 
 
 
@@ -60,7 +69,7 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 
 (2)**单个字符识别：**
    识别样本丰富性处理：很多应用你取不到特别多的样本，覆盖不了所有的情况，并且样本之间的均衡性也很难平衡。常见的情况肯定是出现最多的，样本是最多的，还有可能某类样本数是最多的，另一类别下的样本数也是比较少的。实际项目其实时间花的最多的就是在那20%-30%的情况下做边界处理占了项目90%的时间。我们需要尽可能的保证样本的均衡性，采样时候各种情况尽可能包含，每类别下的样本数量尽量均衡。某类样本数量不够可以采集图像处理增加样本量，常用的有分割的时候上下左右平移，图像拉伸，滤波等。 
-   ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/20171121204748663.png)
+
 
 
 五、部分结果展示
