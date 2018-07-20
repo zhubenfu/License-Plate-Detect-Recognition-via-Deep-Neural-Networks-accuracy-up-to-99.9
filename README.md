@@ -17,7 +17,8 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 一、整个大车牌检测基于haar+cascade的检测或者mtcnn的检测，
 --------------------------------
 [车牌识别技术详解六--基于Adaboost+haar训练的车牌检测](https://blog.csdn.net/zhubenfulovepoem/article/details/42474239  "悬停显示")
-大牌检测采用车牌比例为90:36的比例，训练基于haar特征的adaboost检测。
+  
+  大牌检测采用车牌比例为90:36的比例，训练基于haar特征的adaboost检测。
 
 二、mtcnn检测到车牌之后，通过回归得到四个角点，做透视变换对齐得到水平车牌，实测可以处理角度非常偏的车牌，
 -------
@@ -39,9 +40,14 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 | ------------- | ------------- |
 | 由于单个字符样本较多，所以识别率在正面车牌情况下，非常高  | 切割出单个字符通过cnn识别 |
 | 全图识别，可以处理角度，污迹等等  | lstm+ctc  |
-| 带定位，但是依赖数据过多 | fcn全卷机网络带单个字符定位 |
+| 带定位，但是依赖数据过多 | fcn全卷机网络带单个字符定位 |  
 
+（1）FCN Multilabel Caffe方法综述[FCN的车牌图像识别，end-to-end 目标定位、图像识别](https://blog.csdn.net/zhubenfulovepoem/article/details/78902747   "悬停显示")  
 
+![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/20171121203935599.png)
+
+![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/20171121203946021.png)
+  
 ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/result_plateCard/QQ%E5%9B%BE%E7%89%8720180529195903.png)
 
 ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/result_plateCard/QQ%E5%9B%BE%E7%89%8720180529195834.png)  
