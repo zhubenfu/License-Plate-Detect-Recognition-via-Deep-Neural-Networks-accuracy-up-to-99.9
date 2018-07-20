@@ -11,7 +11,7 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 
 mtcnn检测到车牌之后，通过回归得到四个角点，做透视变换对齐得到水平车牌，实测可以处理角度非常偏的车牌，
 -------
-
+![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180720093811.png)
 单个车牌字符分割是基于haar+cascade加上逻辑筛选，
 --------
 
