@@ -88,3 +88,6 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 
 欢迎交流：加QQ群 图像处理分析机器视觉 109128646
 ========
+
+**武汉周边的朋友可以加我，周末一起约起，多交流相互学习！**
+![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/result_plateCard/%E5%BE%AE%E4%BF%A1%E5%8F%B7%EF%BC%8C%E6%AC%A2%E8%BF%8E%E5%8A%A0%E6%88%91%E4%BA%A4%E6%B5%81.jpg) 
