@@ -9,7 +9,8 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 --------------------------------
 [车牌识别技术详解六--基于Adaboost+haar训练的车牌检测](https://blog.csdn.net/zhubenfulovepoem/article/details/42474239  "悬停显示")
 
-
+mtcnn检测到车牌之后，通过回归得到四个角点，做透视变换对齐得到水平车牌，实测可以处理角度非常偏的车牌，
+-------
 
 单个车牌字符分割是基于haar+cascade加上逻辑筛选，
 --------
