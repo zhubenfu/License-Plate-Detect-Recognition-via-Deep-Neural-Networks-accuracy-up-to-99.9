@@ -20,10 +20,10 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
   
   大牌检测采用车牌比例为90:36的比例，训练基于haar特征的adaboost检测。  
 
-（1）准备样本：
-正样本：样本处理和选择非常有技巧，我的标准是框住整个车牌留出边框，这样既保留了车牌原有的字符特征，字符组特征还有车牌的边框特征。其中双行车牌我只取底下面的一行。并且检测样本最好不要预处理，输入源给出什么图形就用什么图形。具体的抠图方式可以参考我其他博客车牌识别技术详解三--字符检测的正负样本得取（利用鼠标画框抠图）。
+（1）**准备样本：**
+**正样本**：样本处理和选择非常有技巧，我的标准是框住整个车牌留出边框，这样既保留了车牌原有的字符特征，字符组特征还有车牌的边框特征。其中双行车牌我只取底下面的一行。并且检测样本最好不要预处理，输入源给出什么图形就用什么图形。*具体的抠图方式可以参考我其他博客车牌识别技术详解三--字符检测的正负样本得取（利用鼠标画框抠图）。*
 
-负样本：负样本选择同样非常有技巧性。尽量采集车牌使用环境下的背景图片，并且需要包含一部分车牌字符但是非正样本的取在车牌周围的负样本。
+**负样本**：负样本选择同样非常有技巧性。尽量采集车牌使用环境下的背景图片，并且需要包含一部分车牌字符但是非正样本的取在车牌周围的负样本。
 
 
 
@@ -33,6 +33,9 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 
 三、单个车牌字符分割是基于haar+cascade加上逻辑筛选，
 --------
+
+
+
 [车牌识别技术详解三--字符检测的正负样本得取（利用鼠标画框抠图）](https://blog.csdn.net/zhubenfulovepoem/article/details/12344639   "悬停显示") 
 
 单个字符的分割可以基于haar或者采用fcn！
@@ -54,6 +57,10 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/20171121203935599.png)
 
 ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/20171121203946021.png)
+
+(2)单个字符识别：
+   识别样本丰富性处理：很多应用你取不到特别多的样本，覆盖不了所有的情况，并且样本之间的均衡性也很难平衡。常见的情况肯定是出现最多的，样本是最多的，还有可能某类样本数是最多的，另一类别下的样本数也是比较少的。实际项目其实时间花的最多的就是在那20%-30%的情况下做边界处理占了项目90%的时间。我们需要尽可能的保证样本的均衡性，采样时候各种情况尽可能包含，每类别下的样本数量尽量均衡。某类样本数量不够可以采集图像处理增加样本量，常用的有分割的时候上下左右平移，图像拉伸，滤波等。 
+   ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/20171121204748663.png)
 
 
 五、部分结果展示
