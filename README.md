@@ -6,7 +6,7 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 ===========================================
 本项目采用了多种方式识别车牌，每一种方式各有优缺点，现在统一更新出来！  
 
-| 检测大牌  | 分割单个字符 | 分割单个字符 |
+| 检测大牌  | 分割单个字符 | 识别车牌 |
 | ------------- | ------------- | ------------- |
 | haar+cascade  | haar+cascade  | 切割出单个字符通过cnn识别 |
 | mtcnn  | 图像处理  | lstm+ctc  |
@@ -14,21 +14,22 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 
 
 
-整个大车牌检测基于haar+cascade的检测或者mtcnn的检测，
+一、整个大车牌检测基于haar+cascade的检测或者mtcnn的检测，
 --------------------------------
 [车牌识别技术详解六--基于Adaboost+haar训练的车牌检测](https://blog.csdn.net/zhubenfulovepoem/article/details/42474239  "悬停显示")
 
-mtcnn检测到车牌之后，通过回归得到四个角点，做透视变换对齐得到水平车牌，实测可以处理角度非常偏的车牌，
+二、mtcnn检测到车牌之后，通过回归得到四个角点，做透视变换对齐得到水平车牌，实测可以处理角度非常偏的车牌，
 -------
-![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180720093811.png)
-单个车牌字符分割是基于haar+cascade加上逻辑筛选，
+![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180720093811.png)  
+
+三、单个车牌字符分割是基于haar+cascade加上逻辑筛选，
 --------
+[车牌识别技术详解三--字符检测的正负样本得取（利用鼠标画框抠图）](https://blog.csdn.net/zhubenfulovepoem/article/details/12344639   "悬停显示")
+[车牌识别技术详解四--二值化找轮廓做分割得样本（车牌分割，验证码分割）](https://blog.csdn.net/zhubenfulovepoem/article/details/12345539   "悬停显示")
 
-https://blog.csdn.net/zhubenfulovepoem/article/details/12344639 车牌识别技术详解三--字符检测的正负样本得取（利用鼠标画框抠图）
-https://blog.csdn.net/zhubenfulovepoem/article/details/12345539 车牌识别技术详解四--二值化找轮廓做分割得样本（车牌分割，验证码分割）
 
 
-识别支持全图识别和单个字符分割识别：全图识别是基于lstm+ctc。
+四、识别支持全图识别和单个字符分割识别：全图识别是基于lstm+ctc。
 -------
 
 
