@@ -4,6 +4,12 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
   
 正在整理文档 后面全部开放出来文档和全部资料。
 ===========================================
+本项目采用了多种方式识别车牌，每一种方式各有优缺点，现在统一更新出来！
+|检测大牌|分割单个字符|识别车牌字符|
+|---|---|---|
+|haar+cascade|haar+cascade|切割出单个字符通过cnn识别|
+|mtcnn|图像处理|lstm+ctc|
+|图像处理| |fcn|
 
 整个大车牌检测基于haar+cascade的检测或者mtcnn的检测，
 --------------------------------
@@ -23,9 +29,10 @@ https://blog.csdn.net/zhubenfulovepoem/article/details/12345539 车牌识别技�
 -------
 
 
+![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/result_plateCard/QQ%E5%9B%BE%E7%89%8720180529195903.png)
 
+![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/result_plateCard/QQ%E5%9B%BE%E7%89%8720180529195834.png)  
 
-![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/result_plateCard/QQ%E5%9B%BE%E7%89%8720180529195834.png)
 ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/result_plateCard/QQ%E5%9B%BE%E7%89%8720180529195858.png)
   
 
@@ -33,4 +40,6 @@ https://blog.csdn.net/zhubenfulovepoem/article/details/12345539 车牌识别技�
 
 
 ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/result_plateCard/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20180530112203.png) 
+
 欢迎交流：加QQ群 图像处理分析机器视觉 109128646
+========
