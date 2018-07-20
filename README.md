@@ -7,9 +7,16 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 
 整个大车牌检测基于haar+cascade的检测或者mtcnn的检测，
 --------------------------------
+[车牌识别技术详解六--基于Adaboost+haar训练的车牌检测](https://blog.csdn.net/zhubenfulovepoem/article/details/42474239  "悬停显示")
+
+
 
 单个车牌字符分割是基于haar+cascade加上逻辑筛选，
 --------
+
+https://blog.csdn.net/zhubenfulovepoem/article/details/12344639 车牌识别技术详解三--字符检测的正负样本得取（利用鼠标画框抠图）
+https://blog.csdn.net/zhubenfulovepoem/article/details/12345539 车牌识别技术详解四--二值化找轮廓做分割得样本（车牌分割，验证码分割）
+
 
 识别支持全图识别和单个字符分割识别：全图识别是基于lstm+ctc。
 -------
