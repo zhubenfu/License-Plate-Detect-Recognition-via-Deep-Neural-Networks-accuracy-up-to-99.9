@@ -10,7 +10,7 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 | ------------- | ------------- | ------------- |
 | haar+cascade  | haar+cascade  | 切割出单个字符通过cnn识别 |
 | mtcnn  | 图像处理  | lstm+ctc  |
-| 图像处理：跳变点  |    | fcn全卷机网络带单个字符定位 |
+| 图像处理：跳变点  |    | fcn全卷积网络带单个字符定位 |
 | YOLO  |    |   |
 
 
