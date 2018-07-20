@@ -39,7 +39,7 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 检测前需不需要做图像预处理：建议可以根据实际情况简单处理下，常用的比如cvNorm，但是仅在备份图像上做处理，原图尽量不动，原图留做识别抠图。
 训练一个分类器进行目标检测，以haar+adaboost为例，详细参考字符检测的正负样本得取（利用鼠标画框抠图）和准备样本等。 
   
-     ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/20171121204748663.png)
+![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/20171121204748663.png)
      
 2.**往往分类器仅仅只能得到以上一个初步的效果，这时候需要根据项目实际图像固有的特征规律进行一些调整。 **
 
