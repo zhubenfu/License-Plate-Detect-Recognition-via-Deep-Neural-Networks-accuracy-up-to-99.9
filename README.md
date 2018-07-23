@@ -2,7 +2,7 @@
 works in real-time with detection and recognition accuracy up to 99.8% for Chinese license plates: 100 ms/plate！
   
   
-正在整理文档 后面全部开放出来文档和全部资料。
+准商业项目：正在整理文档 后面全部开放出来文档和全部资料。
 ===========================================
 本项目采用了多种方式识别车牌，每一种方式各有优缺点，现在统一更新出来！  
 
@@ -86,7 +86,8 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 
 ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/result_plateCard/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20180530112203.png) 
 
-**主要是促进交流，将准商业的产品开源，欢迎交流，各抒己见，逐步完善成一个通用的目标检测分割识别的OCR开源项目  **
+主要是促进交流，将准商业的产品开源，欢迎交流，各抒己见，逐步完善成一个通用的目标检测分割识别的OCR开源项目
+---
 交流加群：加QQ群 图像处理分析机器视觉 109128646
 ========
 
