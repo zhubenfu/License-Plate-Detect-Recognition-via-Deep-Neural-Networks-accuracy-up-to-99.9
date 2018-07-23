@@ -3,6 +3,8 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
   
   进来看一定要加star！右上角！
   -----
+  github 里面会有一个列表，专门收集了你所有 star 过的项目，点击 github 个人头像，可以看到 your stars 的条目，点击就可以查看你 star 过的所有项目了。
+
 准商业项目：正在整理文档 后面全部开放出来文档和全部资料。
 ===========================================
 本项目采用了多种方式识别车牌，每一种方式各有优缺点，现在统一更新出来！  
