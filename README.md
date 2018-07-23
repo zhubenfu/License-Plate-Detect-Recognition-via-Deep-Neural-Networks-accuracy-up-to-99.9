@@ -86,7 +86,8 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 
 ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/result_plateCard/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20180530112203.png) 
 
-欢迎交流：加QQ群 图像处理分析机器视觉 109128646
+**主要是促进交流，将准商业的产品开源，欢迎交流，各抒己见，逐步完善成一个通用的目标检测分割识别的OCR开源项目  **
+交流加群：加QQ群 图像处理分析机器视觉 109128646
 ========
 
 **武汉周边的朋友可以加我，周末一起约起，多交流相互学习！**
