@@ -1,7 +1,8 @@
 # License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9
 works in real-time with detection and recognition accuracy up to 99.8% for Chinese license plates: 100 ms/plate！
   
-  
+  进来看一定要加star！
+  -----
 准商业项目：正在整理文档 后面全部开放出来文档和全部资料。
 ===========================================
 本项目采用了多种方式识别车牌，每一种方式各有优缺点，现在统一更新出来！  
