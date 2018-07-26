@@ -1,0 +1,2 @@
+#TargetFrameworkVersion=v4.0:PlatformToolSet=v140:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=8.1
+Release|x64|D:\ocr\wm_plate_card_BLSTM\github_License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9\caffe_ocr-master_CUDN7_CUDA9.2_vs2014_WM_plateCard\caffe-vsproj\|
