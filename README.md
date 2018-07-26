@@ -11,8 +11,8 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 
 | 检测大牌  | 分割单个字符 | 识别车牌 |项目支持 |
 | ------------- | ------------- | ------------- |------------- |
-| haar+cascade  | haar+cascade  | 切割出单个字符通过cnn识别 |[x] |
-| mtcnn  | 图像处理  | lstm+ctc  |[x] |
+| haar+cascade  | haar+cascade  | 切割出单个字符通过cnn识别 |[Y] |
+| mtcnn  | 图像处理  | lstm+ctc  |[Y] |
 | 图像处理：跳变点  |    | fcn全卷积网络带单个字符定位 |[ ] |
 | YOLO  |    |   |[ ] |
 
@@ -60,7 +60,7 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 ##四、识别支持blstm+ctc全图识别、单个字符分割识别和FCN全卷积识别。
 -------
 | 算法 | 识别车牌的方法 |优缺点 |
-| ------------- | ------------- |
+| ------------- | ------------- |------------- |
 | haar+cascade  | 切割出单个字符通过cnn识别 |由于单个字符样本较多，所以识别率在正面车牌情况下，非常高  |
 |   | lstm+ctc  |全图识别，可以处理角度，污迹等等  | 
 | fcn+反卷积 | fcn全卷机网络带单个字符定位 |  带定位，但是依赖数据过多 |
