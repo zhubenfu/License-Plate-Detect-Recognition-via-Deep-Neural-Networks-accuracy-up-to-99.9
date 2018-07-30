@@ -20,7 +20,7 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 需用用到的第三方库下载[3rdparty 20180726 百度云](https://pan.baidu.com/s/1kZDZ98-EZr90hQt_NU-jjA  "悬停显示")
 
 注意说明：
-项目采用vs2015 x64 cuda9.2编译
+项目采用vs2015 x64 release cuda9.2编译
 --------
 
 ##一、整个大车牌检测基于haar+cascade的检测或者mtcnn的检测，
