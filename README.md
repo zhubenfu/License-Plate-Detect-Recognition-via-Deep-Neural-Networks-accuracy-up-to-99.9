@@ -108,7 +108,7 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 1: 安装CUDA 9.2， cuda9.2版已经带有显卡驱动，默认安装，保持cuda和显卡驱动一致，否则会报cuda runtime is inefficient 35号错误。  
 
 2：确认各项目的include、lib和第三方库路径的配置，本人在项目中除CUDA使用绝对路径外，其余的include、lib路径均使用相对路径
-'''
+```
     caffe项目：
 	   C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\include
 ..\..\opensource\boost_1_57_0
@@ -164,7 +164,7 @@ C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64
 ..\..\opensource\opencv\lib
 ..\..\opensource\boost_1_57_0\lib
 ..\..\tools_bin
-'''	
+```	
 	
 3：生成时要选择Release，x64格式  
 
