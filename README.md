@@ -11,12 +11,17 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 
 | 检测大牌  | 分割单个字符 | 识别车牌 |项目支持 |
 | ------------- | ------------- | ------------- |------------- |
-| haar+cascade  | haar+cascade  | 切割出单个字符通过cnn识别 |[x] |
-| mtcnn  | 图像处理  | lstm+ctc  |[x] |
+| haar+cascade  | haar+cascade  | 切割出单个字符通过cnn识别 |[Y] |
+| mtcnn  | 图像处理  | lstm+ctc  |[Y] |
 | 图像处理：跳变点  |    | fcn全卷积网络带单个字符定位 |[ ] |
 | YOLO  |    |   |[ ] |
 
+
 需用用到的第三方库下载[3rdparty 20180726 百度云](https://pan.baidu.com/s/1kZDZ98-EZr90hQt_NU-jjA  "悬停显示")
+
+注意说明：
+项目采用vs2015 x64 release cuda9.2编译
+--------
 
 ##一、整个大车牌检测基于haar+cascade的检测或者mtcnn的检测，
 --------------------------------
@@ -60,7 +65,7 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 ##四、识别支持blstm+ctc全图识别、单个字符分割识别和FCN全卷积识别。
 -------
 | 算法 | 识别车牌的方法 |优缺点 |
-| ------------- | ------------- |
+| ------------- | ------------- |------------- |
 | haar+cascade  | 切割出单个字符通过cnn识别 |由于单个字符样本较多，所以识别率在正面车牌情况下，非常高  |
 |   | lstm+ctc  |全图识别，可以处理角度，污迹等等  | 
 | fcn+反卷积 | fcn全卷机网络带单个字符定位 |  带定位，但是依赖数据过多 |
@@ -98,6 +103,86 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 ---
 （1）交流加群：加QQ群 图像处理分析机器视觉 109128646
 ========
+感谢群友：E-图像处理_仪山湖  贡献的操作说明！和完整的第三方库，下载地址在群共享里面！  
+
+1: 安装CUDA 9.2， cuda9.2版已经带有显卡驱动，默认安装，保持cuda和显卡驱动一致，否则会报cuda runtime is inefficient 35号错误。  
+
+2：确认各项目的include、lib和第三方库路径的配置，本人在项目中除CUDA使用绝对路径外，其余的include、lib路径均使用相对路径
+```
+    caffe项目：
+	   C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\include
+..\..\opensource\boost_1_57_0
+..\..\opensource\opencv\include
+..\..\3rdparty\include
+..\..\include
+..\..\3rdparty\include\lmdb
+..\..\3rdparty\include\hdf5
+..\..\src\
+..\..\3rdparty\include\glog
+..\..\3rdparty\include\cudnn
+..\..\src\caffe\proto
+..\..\3rdparty\include\openblas
+   
+   ..\..\opensource\boost_1_57_0\lib
+..\..\opensource\opencv\lib
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64
+..\..\3rdparty\lib
+..\..\tools_bin
+
+ 
+	libClassfication项目：
+	..\..\3rdparty\include\openblas
+..\..\opensource\opencv\include
+..\..\opensource\boost_1_57_0
+..\..\3rdparty\include
+..\..\include
+..\..\3rdparty\include\lmdb
+..\..\3rdparty\include\hdf5
+..\..\src\
+..\..\3rdparty\include\glog
+..\..\3rdparty\include\cudnn
+..\..\src\caffe\proto
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\include
+
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64
+..\..\opensource\boost_1_57_0\lib
+..\..\opensource\opencv\lib
+..\..\3rdparty\lib
+..\..\tools_bin
+	
+	ocr_test:
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\include
+..\..\opensource\boost_1_57_0
+..\..\opensource\opencv\include
+..\libClassification
+..\..\include
+..\..\3rdparty\include
+..\..\src\
+..\..\3rdparty\include\openblas
+
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2\lib\x64
+..\..\opensource\opencv\lib
+..\..\opensource\boost_1_57_0\lib
+..\..\tools_bin
+```	
+	
+3：生成时要选择Release，x64格式  
+
+4：在项目的cuda生成host代码时，支持一些旧版本的cu伪代码，三个项目都设置成：compute_61,sm_61;compute_52,sm_52;compute_50,sm_50;compute_35,sm_35;compute_30,sm_30，否则会报no kernel image 40号错误  
+
+5：整理的3rdparty请使用群文件的3rdparty-20180730.tar  
+
+6：在visual studio 2015打开caffe.sln方案时（项目根目录下），如果出现无法加载工程的错误，打开项目根目录下的caffe-vsproj\caffe.sln  
+
+7：导入工程后，在ocr_test的项目，右键，选择【生成依赖项】-> 【项目依赖项】，勾选caffe, libClassfication两个项目  
+
+8: 项目代码中对路径没有做规范化处理，导致在运行期间报找不到模型文件的错误，为了调试方便，这里把代码中的路径全部修改成绝对路径，如ocr_test.cpp的962行，
+     string modelfolder = "E:\\License-Plate-Detect-Recognition\\caffe-vsproj\\ocr_test\\plateCard_test";  其他的类似修改
+   但要区分MTCNN模型和ICNNPredict模型的位置	  
+   
+9：启动一个cmd，切换到工程根目录下的tools_bin目录，启动ocr_test.ext     
+
+
 
 （2）**武汉周边的朋友可以加我，周末一起约起，多交流相互学习！**
 ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/result_plateCard/%E5%BE%AE%E4%BF%A1%E5%8F%B7%EF%BC%8C%E6%AC%A2%E8%BF%8E%E5%8A%A0%E6%88%91%E4%BA%A4%E6%B5%81.jpg) 
