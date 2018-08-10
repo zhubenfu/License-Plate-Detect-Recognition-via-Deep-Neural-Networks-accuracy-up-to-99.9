@@ -1,4 +1,0 @@
-Log file created at: 2018/06/14 08:47:21
-Running on machine: ZBF-PC
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-F0614 08:47:21.207999 36536 image_data_layer.cpp:263] Check failed: cv_img.data Could not load 1322553012_33518_8-1-5-3-3-3-7-18-.jpg

@@ -2,7 +2,10 @@
 #include "caffe/util/db_lmdb.hpp"
 
 #include <sys/stat.h>
+#ifdef _WIN32
 #include <direct.h>
+#endif
+
 #include <string>
 
 namespace caffe { namespace db {
@@ -10,7 +13,11 @@ namespace caffe { namespace db {
 void LMDB::Open(const string& source, Mode mode) {
   MDB_CHECK(mdb_env_create(&mdb_env_));
   if (mode == NEW) {
+#ifdef _WIN32
     CHECK_EQ(_mkdir(source.c_str()), 0) << "mkdir " << source << "failed";
+#elif __linux__
+	CHECK_EQ(mkdir(source.c_str(), 0744), 0) << "mkdir " << source << "failed";
+#endif
   }
   int flags = 0;
   if (mode == READ) {
