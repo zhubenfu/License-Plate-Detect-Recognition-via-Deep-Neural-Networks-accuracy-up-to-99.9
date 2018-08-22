@@ -22,6 +22,8 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
 | YOLO  | 归一化  | X |增一层 |
 | mtcnn  | X | 归一化  |增一层 |
 | haar+cascade  | X   | 归一化  | |
+
+
 需用用到的第三方库下载[3rdparty 20180726 百度云](https://pan.baidu.com/s/1kZDZ98-EZr90hQt_NU-jjA  "悬停显示")
 
 注意说明：
