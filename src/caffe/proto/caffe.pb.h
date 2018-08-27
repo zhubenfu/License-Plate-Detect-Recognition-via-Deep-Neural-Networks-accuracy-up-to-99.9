@@ -37,38 +37,29 @@ void protobuf_AddDesc_caffe_2eproto();
 void protobuf_AssignDesc_caffe_2eproto();
 void protobuf_ShutdownFile_caffe_2eproto();
 
-class BlobShape;
-class BlobProto;
-class BlobProtoVector;
-class Datum;
-class FillerParameter;
-class NetParameter;
-class SolverParameter;
-class SolverState;
-class NetState;
-class NetStateRule;
-class ParamSpec;
-class LayerParameter;
-class DenseBlockParameter;
-class TransformationParameter;
-class LossParameter;
 class AccuracyParameter;
 class ArgMaxParameter;
-class ConcatParameter;
 class BatchNormParameter;
 class BiasParameter;
+class BlobProto;
+class BlobProtoVector;
+class BlobShape;
+class CTCDecoderParameter;
+class CTCLossParameter;
+class ConcatParameter;
 class ContrastiveLossParameter;
 class ConvolutionParameter;
 class CropParameter;
-class CTCDecoderParameter;
-class CTCLossParameter;
 class DataParameter;
+class Datum;
+class DenseBlockParameter;
 class DropoutParameter;
 class DummyDataParameter;
-class EltwiseParameter;
 class ELUParameter;
+class EltwiseParameter;
 class EmbedParameter;
 class ExpParameter;
+class FillerParameter;
 class FlattenParameter;
 class HDF5DataParameter;
 class HDF5OutputParameter;
@@ -78,34 +69,43 @@ class InfogainLossParameter;
 class InnerProductParameter;
 class InputParameter;
 class InterpParameter;
-class LogParameter;
 class LRNParameter;
-class MemoryDataParameter;
+class LSTMParameter;
+class LayerParameter;
+class LogParameter;
+class LossParameter;
 class MVNParameter;
+class MemoryDataParameter;
+class NetParameter;
+class NetState;
+class NetStateRule;
+class PReLUParameter;
+class ParamSpec;
 class ParameterParameter;
 class PoolingParameter;
 class PowerParameter;
 class PythonParameter;
-class RecurrentParameter;
-class LSTMParameter;
-class ReductionParameter;
 class ReLUParameter;
+class RecurrentParameter;
+class ReductionParameter;
 class ReshapeParameter;
 class ReverseParameter;
 class ReverseTimeParameter;
+class SPPParameter;
 class ScaleParameter;
 class SigmoidParameter;
 class SliceParameter;
 class SoftmaxParameter;
+class SolverParameter;
+class SolverState;
 class TanHParameter;
-class TileParameter;
 class ThresholdParameter;
-class WindowDataParameter;
-class SPPParameter;
-class V1LayerParameter;
-class V0LayerParameter;
-class PReLUParameter;
+class TileParameter;
+class TransformationParameter;
 class TransposeParameter;
+class V0LayerParameter;
+class V1LayerParameter;
+class WindowDataParameter;
 
 enum FillerParameter_VarianceNorm {
   FillerParameter_VarianceNorm_FAN_IN = 0,
@@ -643,7 +643,7 @@ inline bool Phase_Parse(
 }
 // ===================================================================
 
-class BlobShape : public ::google::protobuf::Message {
+class BlobShape : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.BlobShape) */ {
  public:
   BlobShape();
   virtual ~BlobShape();
@@ -685,7 +685,11 @@ class BlobShape : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -736,7 +740,7 @@ class BlobShape : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class BlobProto : public ::google::protobuf::Message {
+class BlobProto : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.BlobProto) */ {
  public:
   BlobProto();
   virtual ~BlobProto();
@@ -778,7 +782,11 @@ class BlobProto : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -923,7 +931,7 @@ class BlobProto : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class BlobProtoVector : public ::google::protobuf::Message {
+class BlobProtoVector : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.BlobProtoVector) */ {
  public:
   BlobProtoVector();
   virtual ~BlobProtoVector();
@@ -965,7 +973,11 @@ class BlobProtoVector : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -994,10 +1006,10 @@ class BlobProtoVector : public ::google::protobuf::Message {
   const ::caffe::BlobProto& blobs(int index) const;
   ::caffe::BlobProto* mutable_blobs(int index);
   ::caffe::BlobProto* add_blobs();
-  const ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >&
-      blobs() const;
   ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >*
       mutable_blobs();
+  const ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >&
+      blobs() const;
 
   // @@protoc_insertion_point(class_scope:caffe.BlobProtoVector)
  private:
@@ -1015,7 +1027,7 @@ class BlobProtoVector : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class Datum : public ::google::protobuf::Message {
+class Datum : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.Datum) */ {
  public:
   Datum();
   virtual ~Datum();
@@ -1057,7 +1069,11 @@ class Datum : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -1175,7 +1191,7 @@ class Datum : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class FillerParameter : public ::google::protobuf::Message {
+class FillerParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.FillerParameter) */ {
  public:
   FillerParameter();
   virtual ~FillerParameter();
@@ -1217,7 +1233,11 @@ class FillerParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -1238,9 +1258,12 @@ class FillerParameter : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   typedef FillerParameter_VarianceNorm VarianceNorm;
-  static const VarianceNorm FAN_IN = FillerParameter_VarianceNorm_FAN_IN;
-  static const VarianceNorm FAN_OUT = FillerParameter_VarianceNorm_FAN_OUT;
-  static const VarianceNorm AVERAGE = FillerParameter_VarianceNorm_AVERAGE;
+  static const VarianceNorm FAN_IN =
+    FillerParameter_VarianceNorm_FAN_IN;
+  static const VarianceNorm FAN_OUT =
+    FillerParameter_VarianceNorm_FAN_OUT;
+  static const VarianceNorm AVERAGE =
+    FillerParameter_VarianceNorm_AVERAGE;
   static inline bool VarianceNorm_IsValid(int value) {
     return FillerParameter_VarianceNorm_IsValid(value);
   }
@@ -1365,7 +1388,7 @@ class FillerParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class NetParameter : public ::google::protobuf::Message {
+class NetParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.NetParameter) */ {
  public:
   NetParameter();
   virtual ~NetParameter();
@@ -1407,7 +1430,11 @@ class NetParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -1464,10 +1491,10 @@ class NetParameter : public ::google::protobuf::Message {
   const ::caffe::BlobShape& input_shape(int index) const;
   ::caffe::BlobShape* mutable_input_shape(int index);
   ::caffe::BlobShape* add_input_shape();
-  const ::google::protobuf::RepeatedPtrField< ::caffe::BlobShape >&
-      input_shape() const;
   ::google::protobuf::RepeatedPtrField< ::caffe::BlobShape >*
       mutable_input_shape();
+  const ::google::protobuf::RepeatedPtrField< ::caffe::BlobShape >&
+      input_shape() const;
 
   // repeated int32 input_dim = 4;
   int input_dim_size() const;
@@ -1511,10 +1538,10 @@ class NetParameter : public ::google::protobuf::Message {
   const ::caffe::LayerParameter& layer(int index) const;
   ::caffe::LayerParameter* mutable_layer(int index);
   ::caffe::LayerParameter* add_layer();
-  const ::google::protobuf::RepeatedPtrField< ::caffe::LayerParameter >&
-      layer() const;
   ::google::protobuf::RepeatedPtrField< ::caffe::LayerParameter >*
       mutable_layer();
+  const ::google::protobuf::RepeatedPtrField< ::caffe::LayerParameter >&
+      layer() const;
 
   // repeated .caffe.V1LayerParameter layers = 2;
   int layers_size() const;
@@ -1523,10 +1550,10 @@ class NetParameter : public ::google::protobuf::Message {
   const ::caffe::V1LayerParameter& layers(int index) const;
   ::caffe::V1LayerParameter* mutable_layers(int index);
   ::caffe::V1LayerParameter* add_layers();
-  const ::google::protobuf::RepeatedPtrField< ::caffe::V1LayerParameter >&
-      layers() const;
   ::google::protobuf::RepeatedPtrField< ::caffe::V1LayerParameter >*
       mutable_layers();
+  const ::google::protobuf::RepeatedPtrField< ::caffe::V1LayerParameter >&
+      layers() const;
 
   // @@protoc_insertion_point(class_scope:caffe.NetParameter)
  private:
@@ -1560,7 +1587,7 @@ class NetParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class SolverParameter : public ::google::protobuf::Message {
+class SolverParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.SolverParameter) */ {
  public:
   SolverParameter();
   virtual ~SolverParameter();
@@ -1602,7 +1629,11 @@ class SolverParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -1623,8 +1654,10 @@ class SolverParameter : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   typedef SolverParameter_SnapshotFormat SnapshotFormat;
-  static const SnapshotFormat HDF5 = SolverParameter_SnapshotFormat_HDF5;
-  static const SnapshotFormat BINARYPROTO = SolverParameter_SnapshotFormat_BINARYPROTO;
+  static const SnapshotFormat HDF5 =
+    SolverParameter_SnapshotFormat_HDF5;
+  static const SnapshotFormat BINARYPROTO =
+    SolverParameter_SnapshotFormat_BINARYPROTO;
   static inline bool SnapshotFormat_IsValid(int value) {
     return SolverParameter_SnapshotFormat_IsValid(value);
   }
@@ -1647,8 +1680,10 @@ class SolverParameter : public ::google::protobuf::Message {
   }
 
   typedef SolverParameter_SolverMode SolverMode;
-  static const SolverMode CPU = SolverParameter_SolverMode_CPU;
-  static const SolverMode GPU = SolverParameter_SolverMode_GPU;
+  static const SolverMode CPU =
+    SolverParameter_SolverMode_CPU;
+  static const SolverMode GPU =
+    SolverParameter_SolverMode_GPU;
   static inline bool SolverMode_IsValid(int value) {
     return SolverParameter_SolverMode_IsValid(value);
   }
@@ -1671,12 +1706,18 @@ class SolverParameter : public ::google::protobuf::Message {
   }
 
   typedef SolverParameter_SolverType SolverType;
-  static const SolverType SGD = SolverParameter_SolverType_SGD;
-  static const SolverType NESTEROV = SolverParameter_SolverType_NESTEROV;
-  static const SolverType ADAGRAD = SolverParameter_SolverType_ADAGRAD;
-  static const SolverType RMSPROP = SolverParameter_SolverType_RMSPROP;
-  static const SolverType ADADELTA = SolverParameter_SolverType_ADADELTA;
-  static const SolverType ADAM = SolverParameter_SolverType_ADAM;
+  static const SolverType SGD =
+    SolverParameter_SolverType_SGD;
+  static const SolverType NESTEROV =
+    SolverParameter_SolverType_NESTEROV;
+  static const SolverType ADAGRAD =
+    SolverParameter_SolverType_ADAGRAD;
+  static const SolverType RMSPROP =
+    SolverParameter_SolverType_RMSPROP;
+  static const SolverType ADADELTA =
+    SolverParameter_SolverType_ADADELTA;
+  static const SolverType ADAM =
+    SolverParameter_SolverType_ADAM;
   static inline bool SolverType_IsValid(int value) {
     return SolverParameter_SolverType_IsValid(value);
   }
@@ -1765,10 +1806,10 @@ class SolverParameter : public ::google::protobuf::Message {
   const ::caffe::NetParameter& test_net_param(int index) const;
   ::caffe::NetParameter* mutable_test_net_param(int index);
   ::caffe::NetParameter* add_test_net_param();
-  const ::google::protobuf::RepeatedPtrField< ::caffe::NetParameter >&
-      test_net_param() const;
   ::google::protobuf::RepeatedPtrField< ::caffe::NetParameter >*
       mutable_test_net_param();
+  const ::google::protobuf::RepeatedPtrField< ::caffe::NetParameter >&
+      test_net_param() const;
 
   // optional .caffe.NetState train_state = 26;
   bool has_train_state() const;
@@ -1786,10 +1827,10 @@ class SolverParameter : public ::google::protobuf::Message {
   const ::caffe::NetState& test_state(int index) const;
   ::caffe::NetState* mutable_test_state(int index);
   ::caffe::NetState* add_test_state();
-  const ::google::protobuf::RepeatedPtrField< ::caffe::NetState >&
-      test_state() const;
   ::google::protobuf::RepeatedPtrField< ::caffe::NetState >*
       mutable_test_state();
+  const ::google::protobuf::RepeatedPtrField< ::caffe::NetState >&
+      test_state() const;
 
   // repeated int32 test_iter = 3;
   int test_iter_size() const;
@@ -2003,7 +2044,7 @@ class SolverParameter : public ::google::protobuf::Message {
   ::std::string* release_type();
   void set_allocated_type(::std::string* type);
 
-  // optional float delta = 31 [default = 1e-008];
+  // optional float delta = 31 [default = 1e-08];
   bool has_delta() const;
   void clear_delta();
   static const int kDeltaFieldNumber = 31;
@@ -2172,7 +2213,7 @@ class SolverParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class SolverState : public ::google::protobuf::Message {
+class SolverState : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.SolverState) */ {
  public:
   SolverState();
   virtual ~SolverState();
@@ -2214,7 +2255,11 @@ class SolverState : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -2262,10 +2307,10 @@ class SolverState : public ::google::protobuf::Message {
   const ::caffe::BlobProto& history(int index) const;
   ::caffe::BlobProto* mutable_history(int index);
   ::caffe::BlobProto* add_history();
-  const ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >&
-      history() const;
   ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >*
       mutable_history();
+  const ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >&
+      history() const;
 
   // optional int32 current_step = 4 [default = 0];
   bool has_current_step() const;
@@ -2299,7 +2344,7 @@ class SolverState : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class NetState : public ::google::protobuf::Message {
+class NetState : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.NetState) */ {
  public:
   NetState();
   virtual ~NetState();
@@ -2341,7 +2386,11 @@ class NetState : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -2415,7 +2464,7 @@ class NetState : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class NetStateRule : public ::google::protobuf::Message {
+class NetStateRule : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.NetStateRule) */ {
  public:
   NetStateRule();
   virtual ~NetStateRule();
@@ -2457,7 +2506,11 @@ class NetStateRule : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -2558,7 +2611,7 @@ class NetStateRule : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class ParamSpec : public ::google::protobuf::Message {
+class ParamSpec : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.ParamSpec) */ {
  public:
   ParamSpec();
   virtual ~ParamSpec();
@@ -2600,7 +2653,11 @@ class ParamSpec : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -2621,8 +2678,10 @@ class ParamSpec : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   typedef ParamSpec_DimCheckMode DimCheckMode;
-  static const DimCheckMode _STRICT = ParamSpec_DimCheckMode_STRICT;
-  static const DimCheckMode PERMISSIVE = ParamSpec_DimCheckMode_PERMISSIVE;
+  static const DimCheckMode STRICT =
+    ParamSpec_DimCheckMode_STRICT;
+  static const DimCheckMode PERMISSIVE =
+    ParamSpec_DimCheckMode_PERMISSIVE;
   static inline bool DimCheckMode_IsValid(int value) {
     return ParamSpec_DimCheckMode_IsValid(value);
   }
@@ -2706,7 +2765,7 @@ class ParamSpec : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class LayerParameter : public ::google::protobuf::Message {
+class LayerParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.LayerParameter) */ {
  public:
   LayerParameter();
   virtual ~LayerParameter();
@@ -2748,7 +2807,11 @@ class LayerParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -2852,10 +2915,10 @@ class LayerParameter : public ::google::protobuf::Message {
   const ::caffe::ParamSpec& param(int index) const;
   ::caffe::ParamSpec* mutable_param(int index);
   ::caffe::ParamSpec* add_param();
-  const ::google::protobuf::RepeatedPtrField< ::caffe::ParamSpec >&
-      param() const;
   ::google::protobuf::RepeatedPtrField< ::caffe::ParamSpec >*
       mutable_param();
+  const ::google::protobuf::RepeatedPtrField< ::caffe::ParamSpec >&
+      param() const;
 
   // repeated .caffe.BlobProto blobs = 7;
   int blobs_size() const;
@@ -2864,10 +2927,10 @@ class LayerParameter : public ::google::protobuf::Message {
   const ::caffe::BlobProto& blobs(int index) const;
   ::caffe::BlobProto* mutable_blobs(int index);
   ::caffe::BlobProto* add_blobs();
-  const ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >&
-      blobs() const;
   ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >*
       mutable_blobs();
+  const ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >&
+      blobs() const;
 
   // repeated bool propagate_down = 11;
   int propagate_down_size() const;
@@ -2888,10 +2951,10 @@ class LayerParameter : public ::google::protobuf::Message {
   const ::caffe::NetStateRule& include(int index) const;
   ::caffe::NetStateRule* mutable_include(int index);
   ::caffe::NetStateRule* add_include();
-  const ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >&
-      include() const;
   ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >*
       mutable_include();
+  const ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >&
+      include() const;
 
   // repeated .caffe.NetStateRule exclude = 9;
   int exclude_size() const;
@@ -2900,10 +2963,10 @@ class LayerParameter : public ::google::protobuf::Message {
   const ::caffe::NetStateRule& exclude(int index) const;
   ::caffe::NetStateRule* mutable_exclude(int index);
   ::caffe::NetStateRule* add_exclude();
-  const ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >&
-      exclude() const;
   ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >*
       mutable_exclude();
+  const ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >&
+      exclude() const;
 
   // optional .caffe.TransformationParameter transform_param = 100;
   bool has_transform_param() const;
@@ -3597,7 +3660,7 @@ class LayerParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class DenseBlockParameter : public ::google::protobuf::Message {
+class DenseBlockParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.DenseBlockParameter) */ {
  public:
   DenseBlockParameter();
   virtual ~DenseBlockParameter();
@@ -3639,7 +3702,11 @@ class DenseBlockParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -3872,7 +3939,7 @@ class DenseBlockParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class TransformationParameter : public ::google::protobuf::Message {
+class TransformationParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.TransformationParameter) */ {
  public:
   TransformationParameter();
   virtual ~TransformationParameter();
@@ -3914,7 +3981,11 @@ class TransformationParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -4082,7 +4153,7 @@ class TransformationParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class LossParameter : public ::google::protobuf::Message {
+class LossParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.LossParameter) */ {
  public:
   LossParameter();
   virtual ~LossParameter();
@@ -4124,7 +4195,11 @@ class LossParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -4145,10 +4220,14 @@ class LossParameter : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   typedef LossParameter_NormalizationMode NormalizationMode;
-  static const NormalizationMode FULL = LossParameter_NormalizationMode_FULL;
-  static const NormalizationMode VALID = LossParameter_NormalizationMode_VALID;
-  static const NormalizationMode BATCH_SIZE = LossParameter_NormalizationMode_BATCH_SIZE;
-  static const NormalizationMode NONE = LossParameter_NormalizationMode_NONE;
+  static const NormalizationMode FULL =
+    LossParameter_NormalizationMode_FULL;
+  static const NormalizationMode VALID =
+    LossParameter_NormalizationMode_VALID;
+  static const NormalizationMode BATCH_SIZE =
+    LossParameter_NormalizationMode_BATCH_SIZE;
+  static const NormalizationMode NONE =
+    LossParameter_NormalizationMode_NONE;
   static inline bool NormalizationMode_IsValid(int value) {
     return LossParameter_NormalizationMode_IsValid(value);
   }
@@ -4217,7 +4296,7 @@ class LossParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class AccuracyParameter : public ::google::protobuf::Message {
+class AccuracyParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.AccuracyParameter) */ {
  public:
   AccuracyParameter();
   virtual ~AccuracyParameter();
@@ -4259,7 +4338,11 @@ class AccuracyParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -4326,7 +4409,7 @@ class AccuracyParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class ArgMaxParameter : public ::google::protobuf::Message {
+class ArgMaxParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.ArgMaxParameter) */ {
  public:
   ArgMaxParameter();
   virtual ~ArgMaxParameter();
@@ -4368,7 +4451,11 @@ class ArgMaxParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -4435,7 +4522,7 @@ class ArgMaxParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class ConcatParameter : public ::google::protobuf::Message {
+class ConcatParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.ConcatParameter) */ {
  public:
   ConcatParameter();
   virtual ~ConcatParameter();
@@ -4477,7 +4564,11 @@ class ConcatParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -4534,7 +4625,7 @@ class ConcatParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class BatchNormParameter : public ::google::protobuf::Message {
+class BatchNormParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.BatchNormParameter) */ {
  public:
   BatchNormParameter();
   virtual ~BatchNormParameter();
@@ -4576,7 +4667,11 @@ class BatchNormParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -4612,7 +4707,7 @@ class BatchNormParameter : public ::google::protobuf::Message {
   float moving_average_fraction() const;
   void set_moving_average_fraction(float value);
 
-  // optional float eps = 3 [default = 1e-005];
+  // optional float eps = 3 [default = 1e-05];
   bool has_eps() const;
   void clear_eps();
   static const int kEpsFieldNumber = 3;
@@ -4653,7 +4748,7 @@ class BatchNormParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class BiasParameter : public ::google::protobuf::Message {
+class BiasParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.BiasParameter) */ {
  public:
   BiasParameter();
   virtual ~BiasParameter();
@@ -4695,7 +4790,11 @@ class BiasParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -4764,7 +4863,7 @@ class BiasParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class ContrastiveLossParameter : public ::google::protobuf::Message {
+class ContrastiveLossParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.ContrastiveLossParameter) */ {
  public:
   ContrastiveLossParameter();
   virtual ~ContrastiveLossParameter();
@@ -4806,7 +4905,11 @@ class ContrastiveLossParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -4863,7 +4966,7 @@ class ContrastiveLossParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class ConvolutionParameter : public ::google::protobuf::Message {
+class ConvolutionParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.ConvolutionParameter) */ {
  public:
   ConvolutionParameter();
   virtual ~ConvolutionParameter();
@@ -4905,7 +5008,11 @@ class ConvolutionParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -4926,9 +5033,12 @@ class ConvolutionParameter : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   typedef ConvolutionParameter_Engine Engine;
-  static const Engine DEFAULT = ConvolutionParameter_Engine_DEFAULT;
-  static const Engine CAFFE = ConvolutionParameter_Engine_CAFFE;
-  static const Engine CUDNN = ConvolutionParameter_Engine_CUDNN;
+  static const Engine DEFAULT =
+    ConvolutionParameter_Engine_DEFAULT;
+  static const Engine CAFFE =
+    ConvolutionParameter_Engine_CAFFE;
+  static const Engine CUDNN =
+    ConvolutionParameter_Engine_CUDNN;
   static inline bool Engine_IsValid(int value) {
     return ConvolutionParameter_Engine_IsValid(value);
   }
@@ -5163,7 +5273,7 @@ class ConvolutionParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class CropParameter : public ::google::protobuf::Message {
+class CropParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.CropParameter) */ {
  public:
   CropParameter();
   virtual ~CropParameter();
@@ -5205,7 +5315,11 @@ class CropParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -5265,7 +5379,7 @@ class CropParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class CTCDecoderParameter : public ::google::protobuf::Message {
+class CTCDecoderParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.CTCDecoderParameter) */ {
  public:
   CTCDecoderParameter();
   virtual ~CTCDecoderParameter();
@@ -5307,7 +5421,11 @@ class CTCDecoderParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -5364,7 +5482,7 @@ class CTCDecoderParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class CTCLossParameter : public ::google::protobuf::Message {
+class CTCLossParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.CTCLossParameter) */ {
  public:
   CTCLossParameter();
   virtual ~CTCLossParameter();
@@ -5406,7 +5524,11 @@ class CTCLossParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -5493,7 +5615,7 @@ class CTCLossParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class DataParameter : public ::google::protobuf::Message {
+class DataParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.DataParameter) */ {
  public:
   DataParameter();
   virtual ~DataParameter();
@@ -5535,7 +5657,11 @@ class DataParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -5556,8 +5682,10 @@ class DataParameter : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   typedef DataParameter_DB DB;
-  static const DB LEVELDB = DataParameter_DB_LEVELDB;
-  static const DB LMDB = DataParameter_DB_LMDB;
+  static const DB LEVELDB =
+    DataParameter_DB_LEVELDB;
+  static const DB LMDB =
+    DataParameter_DB_LMDB;
   static inline bool DB_IsValid(int value) {
     return DataParameter_DB_IsValid(value);
   }
@@ -5716,7 +5844,7 @@ class DataParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class DropoutParameter : public ::google::protobuf::Message {
+class DropoutParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.DropoutParameter) */ {
  public:
   DropoutParameter();
   virtual ~DropoutParameter();
@@ -5758,7 +5886,11 @@ class DropoutParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -5805,7 +5937,7 @@ class DropoutParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class DummyDataParameter : public ::google::protobuf::Message {
+class DummyDataParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.DummyDataParameter) */ {
  public:
   DummyDataParameter();
   virtual ~DummyDataParameter();
@@ -5847,7 +5979,11 @@ class DummyDataParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -5876,10 +6012,10 @@ class DummyDataParameter : public ::google::protobuf::Message {
   const ::caffe::FillerParameter& data_filler(int index) const;
   ::caffe::FillerParameter* mutable_data_filler(int index);
   ::caffe::FillerParameter* add_data_filler();
-  const ::google::protobuf::RepeatedPtrField< ::caffe::FillerParameter >&
-      data_filler() const;
   ::google::protobuf::RepeatedPtrField< ::caffe::FillerParameter >*
       mutable_data_filler();
+  const ::google::protobuf::RepeatedPtrField< ::caffe::FillerParameter >&
+      data_filler() const;
 
   // repeated .caffe.BlobShape shape = 6;
   int shape_size() const;
@@ -5888,10 +6024,10 @@ class DummyDataParameter : public ::google::protobuf::Message {
   const ::caffe::BlobShape& shape(int index) const;
   ::caffe::BlobShape* mutable_shape(int index);
   ::caffe::BlobShape* add_shape();
-  const ::google::protobuf::RepeatedPtrField< ::caffe::BlobShape >&
-      shape() const;
   ::google::protobuf::RepeatedPtrField< ::caffe::BlobShape >*
       mutable_shape();
+  const ::google::protobuf::RepeatedPtrField< ::caffe::BlobShape >&
+      shape() const;
 
   // repeated uint32 num = 2;
   int num_size() const;
@@ -5962,7 +6098,7 @@ class DummyDataParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class EltwiseParameter : public ::google::protobuf::Message {
+class EltwiseParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.EltwiseParameter) */ {
  public:
   EltwiseParameter();
   virtual ~EltwiseParameter();
@@ -6004,7 +6140,11 @@ class EltwiseParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -6025,9 +6165,12 @@ class EltwiseParameter : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   typedef EltwiseParameter_EltwiseOp EltwiseOp;
-  static const EltwiseOp PROD = EltwiseParameter_EltwiseOp_PROD;
-  static const EltwiseOp SUM = EltwiseParameter_EltwiseOp_SUM;
-  static const EltwiseOp MAX = EltwiseParameter_EltwiseOp_MAX;
+  static const EltwiseOp PROD =
+    EltwiseParameter_EltwiseOp_PROD;
+  static const EltwiseOp SUM =
+    EltwiseParameter_EltwiseOp_SUM;
+  static const EltwiseOp MAX =
+    EltwiseParameter_EltwiseOp_MAX;
   static inline bool EltwiseOp_IsValid(int value) {
     return EltwiseParameter_EltwiseOp_IsValid(value);
   }
@@ -6099,7 +6242,7 @@ class EltwiseParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class ELUParameter : public ::google::protobuf::Message {
+class ELUParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.ELUParameter) */ {
  public:
   ELUParameter();
   virtual ~ELUParameter();
@@ -6141,7 +6284,11 @@ class ELUParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -6188,7 +6335,7 @@ class ELUParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class EmbedParameter : public ::google::protobuf::Message {
+class EmbedParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.EmbedParameter) */ {
  public:
   EmbedParameter();
   virtual ~EmbedParameter();
@@ -6230,7 +6377,11 @@ class EmbedParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -6321,7 +6472,7 @@ class EmbedParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class ExpParameter : public ::google::protobuf::Message {
+class ExpParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.ExpParameter) */ {
  public:
   ExpParameter();
   virtual ~ExpParameter();
@@ -6363,7 +6514,11 @@ class ExpParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -6430,7 +6585,7 @@ class ExpParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class FlattenParameter : public ::google::protobuf::Message {
+class FlattenParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.FlattenParameter) */ {
  public:
   FlattenParameter();
   virtual ~FlattenParameter();
@@ -6472,7 +6627,11 @@ class FlattenParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -6529,7 +6688,7 @@ class FlattenParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class HDF5DataParameter : public ::google::protobuf::Message {
+class HDF5DataParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.HDF5DataParameter) */ {
  public:
   HDF5DataParameter();
   virtual ~HDF5DataParameter();
@@ -6571,7 +6730,11 @@ class HDF5DataParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -6643,7 +6806,7 @@ class HDF5DataParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class HDF5OutputParameter : public ::google::protobuf::Message {
+class HDF5OutputParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.HDF5OutputParameter) */ {
  public:
   HDF5OutputParameter();
   virtual ~HDF5OutputParameter();
@@ -6685,7 +6848,11 @@ class HDF5OutputParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -6737,7 +6904,7 @@ class HDF5OutputParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class HingeLossParameter : public ::google::protobuf::Message {
+class HingeLossParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.HingeLossParameter) */ {
  public:
   HingeLossParameter();
   virtual ~HingeLossParameter();
@@ -6779,7 +6946,11 @@ class HingeLossParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -6800,8 +6971,10 @@ class HingeLossParameter : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   typedef HingeLossParameter_Norm Norm;
-  static const Norm L1 = HingeLossParameter_Norm_L1;
-  static const Norm L2 = HingeLossParameter_Norm_L2;
+  static const Norm L1 =
+    HingeLossParameter_Norm_L1;
+  static const Norm L2 =
+    HingeLossParameter_Norm_L2;
   static inline bool Norm_IsValid(int value) {
     return HingeLossParameter_Norm_IsValid(value);
   }
@@ -6850,7 +7023,7 @@ class HingeLossParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class ImageDataParameter : public ::google::protobuf::Message {
+class ImageDataParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.ImageDataParameter) */ {
  public:
   ImageDataParameter();
   virtual ~ImageDataParameter();
@@ -6892,7 +7065,11 @@ class ImageDataParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -7084,7 +7261,7 @@ class ImageDataParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class InfogainLossParameter : public ::google::protobuf::Message {
+class InfogainLossParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.InfogainLossParameter) */ {
  public:
   InfogainLossParameter();
   virtual ~InfogainLossParameter();
@@ -7126,7 +7303,11 @@ class InfogainLossParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -7178,7 +7359,7 @@ class InfogainLossParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class InnerProductParameter : public ::google::protobuf::Message {
+class InnerProductParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.InnerProductParameter) */ {
  public:
   InnerProductParameter();
   virtual ~InnerProductParameter();
@@ -7220,7 +7401,11 @@ class InnerProductParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -7321,7 +7506,7 @@ class InnerProductParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class InputParameter : public ::google::protobuf::Message {
+class InputParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.InputParameter) */ {
  public:
   InputParameter();
   virtual ~InputParameter();
@@ -7363,7 +7548,11 @@ class InputParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -7392,10 +7581,10 @@ class InputParameter : public ::google::protobuf::Message {
   const ::caffe::BlobShape& shape(int index) const;
   ::caffe::BlobShape* mutable_shape(int index);
   ::caffe::BlobShape* add_shape();
-  const ::google::protobuf::RepeatedPtrField< ::caffe::BlobShape >&
-      shape() const;
   ::google::protobuf::RepeatedPtrField< ::caffe::BlobShape >*
       mutable_shape();
+  const ::google::protobuf::RepeatedPtrField< ::caffe::BlobShape >&
+      shape() const;
 
   // @@protoc_insertion_point(class_scope:caffe.InputParameter)
  private:
@@ -7413,7 +7602,7 @@ class InputParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class InterpParameter : public ::google::protobuf::Message {
+class InterpParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.InterpParameter) */ {
  public:
   InterpParameter();
   virtual ~InterpParameter();
@@ -7455,7 +7644,11 @@ class InterpParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -7552,7 +7745,7 @@ class InterpParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class LogParameter : public ::google::protobuf::Message {
+class LogParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.LogParameter) */ {
  public:
   LogParameter();
   virtual ~LogParameter();
@@ -7594,7 +7787,11 @@ class LogParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -7661,7 +7858,7 @@ class LogParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class LRNParameter : public ::google::protobuf::Message {
+class LRNParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.LRNParameter) */ {
  public:
   LRNParameter();
   virtual ~LRNParameter();
@@ -7703,7 +7900,11 @@ class LRNParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -7724,8 +7925,10 @@ class LRNParameter : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   typedef LRNParameter_NormRegion NormRegion;
-  static const NormRegion ACROSS_CHANNELS = LRNParameter_NormRegion_ACROSS_CHANNELS;
-  static const NormRegion WITHIN_CHANNEL = LRNParameter_NormRegion_WITHIN_CHANNEL;
+  static const NormRegion ACROSS_CHANNELS =
+    LRNParameter_NormRegion_ACROSS_CHANNELS;
+  static const NormRegion WITHIN_CHANNEL =
+    LRNParameter_NormRegion_WITHIN_CHANNEL;
   static inline bool NormRegion_IsValid(int value) {
     return LRNParameter_NormRegion_IsValid(value);
   }
@@ -7748,9 +7951,12 @@ class LRNParameter : public ::google::protobuf::Message {
   }
 
   typedef LRNParameter_Engine Engine;
-  static const Engine DEFAULT = LRNParameter_Engine_DEFAULT;
-  static const Engine CAFFE = LRNParameter_Engine_CAFFE;
-  static const Engine CUDNN = LRNParameter_Engine_CUDNN;
+  static const Engine DEFAULT =
+    LRNParameter_Engine_DEFAULT;
+  static const Engine CAFFE =
+    LRNParameter_Engine_CAFFE;
+  static const Engine CUDNN =
+    LRNParameter_Engine_CUDNN;
   static inline bool Engine_IsValid(int value) {
     return LRNParameter_Engine_IsValid(value);
   }
@@ -7849,7 +8055,7 @@ class LRNParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class MemoryDataParameter : public ::google::protobuf::Message {
+class MemoryDataParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.MemoryDataParameter) */ {
  public:
   MemoryDataParameter();
   virtual ~MemoryDataParameter();
@@ -7891,7 +8097,11 @@ class MemoryDataParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -7978,7 +8188,7 @@ class MemoryDataParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class MVNParameter : public ::google::protobuf::Message {
+class MVNParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.MVNParameter) */ {
  public:
   MVNParameter();
   virtual ~MVNParameter();
@@ -8020,7 +8230,11 @@ class MVNParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -8056,7 +8270,7 @@ class MVNParameter : public ::google::protobuf::Message {
   bool across_channels() const;
   void set_across_channels(bool value);
 
-  // optional float eps = 3 [default = 1e-009];
+  // optional float eps = 3 [default = 1e-09];
   bool has_eps() const;
   void clear_eps();
   static const int kEpsFieldNumber = 3;
@@ -8087,7 +8301,7 @@ class MVNParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class ParameterParameter : public ::google::protobuf::Message {
+class ParameterParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.ParameterParameter) */ {
  public:
   ParameterParameter();
   virtual ~ParameterParameter();
@@ -8129,7 +8343,11 @@ class ParameterParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -8178,7 +8396,7 @@ class ParameterParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class PoolingParameter : public ::google::protobuf::Message {
+class PoolingParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.PoolingParameter) */ {
  public:
   PoolingParameter();
   virtual ~PoolingParameter();
@@ -8220,7 +8438,11 @@ class PoolingParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -8241,9 +8463,12 @@ class PoolingParameter : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   typedef PoolingParameter_PoolMethod PoolMethod;
-  static const PoolMethod MAX = PoolingParameter_PoolMethod_MAX;
-  static const PoolMethod AVE = PoolingParameter_PoolMethod_AVE;
-  static const PoolMethod STOCHASTIC = PoolingParameter_PoolMethod_STOCHASTIC;
+  static const PoolMethod MAX =
+    PoolingParameter_PoolMethod_MAX;
+  static const PoolMethod AVE =
+    PoolingParameter_PoolMethod_AVE;
+  static const PoolMethod STOCHASTIC =
+    PoolingParameter_PoolMethod_STOCHASTIC;
   static inline bool PoolMethod_IsValid(int value) {
     return PoolingParameter_PoolMethod_IsValid(value);
   }
@@ -8266,9 +8491,12 @@ class PoolingParameter : public ::google::protobuf::Message {
   }
 
   typedef PoolingParameter_Engine Engine;
-  static const Engine DEFAULT = PoolingParameter_Engine_DEFAULT;
-  static const Engine CAFFE = PoolingParameter_Engine_CAFFE;
-  static const Engine CUDNN = PoolingParameter_Engine_CUDNN;
+  static const Engine DEFAULT =
+    PoolingParameter_Engine_DEFAULT;
+  static const Engine CAFFE =
+    PoolingParameter_Engine_CAFFE;
+  static const Engine CUDNN =
+    PoolingParameter_Engine_CUDNN;
   static inline bool Engine_IsValid(int value) {
     return PoolingParameter_Engine_IsValid(value);
   }
@@ -8427,7 +8655,7 @@ class PoolingParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class PowerParameter : public ::google::protobuf::Message {
+class PowerParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.PowerParameter) */ {
  public:
   PowerParameter();
   virtual ~PowerParameter();
@@ -8469,7 +8697,11 @@ class PowerParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -8536,7 +8768,7 @@ class PowerParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class PythonParameter : public ::google::protobuf::Message {
+class PythonParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.PythonParameter) */ {
  public:
   PythonParameter();
   virtual ~PythonParameter();
@@ -8578,7 +8810,11 @@ class PythonParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -8670,7 +8906,7 @@ class PythonParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class RecurrentParameter : public ::google::protobuf::Message {
+class RecurrentParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.RecurrentParameter) */ {
  public:
   RecurrentParameter();
   virtual ~RecurrentParameter();
@@ -8712,7 +8948,11 @@ class RecurrentParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -8803,7 +9043,7 @@ class RecurrentParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class LSTMParameter : public ::google::protobuf::Message {
+class LSTMParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.LSTMParameter) */ {
  public:
   LSTMParameter();
   virtual ~LSTMParameter();
@@ -8845,7 +9085,11 @@ class LSTMParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -8936,7 +9180,7 @@ class LSTMParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class ReductionParameter : public ::google::protobuf::Message {
+class ReductionParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.ReductionParameter) */ {
  public:
   ReductionParameter();
   virtual ~ReductionParameter();
@@ -8978,7 +9222,11 @@ class ReductionParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -8999,10 +9247,14 @@ class ReductionParameter : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   typedef ReductionParameter_ReductionOp ReductionOp;
-  static const ReductionOp SUM = ReductionParameter_ReductionOp_SUM;
-  static const ReductionOp ASUM = ReductionParameter_ReductionOp_ASUM;
-  static const ReductionOp SUMSQ = ReductionParameter_ReductionOp_SUMSQ;
-  static const ReductionOp MEAN = ReductionParameter_ReductionOp_MEAN;
+  static const ReductionOp SUM =
+    ReductionParameter_ReductionOp_SUM;
+  static const ReductionOp ASUM =
+    ReductionParameter_ReductionOp_ASUM;
+  static const ReductionOp SUMSQ =
+    ReductionParameter_ReductionOp_SUMSQ;
+  static const ReductionOp MEAN =
+    ReductionParameter_ReductionOp_MEAN;
   static inline bool ReductionOp_IsValid(int value) {
     return ReductionParameter_ReductionOp_IsValid(value);
   }
@@ -9071,7 +9323,7 @@ class ReductionParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class ReLUParameter : public ::google::protobuf::Message {
+class ReLUParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.ReLUParameter) */ {
  public:
   ReLUParameter();
   virtual ~ReLUParameter();
@@ -9113,7 +9365,11 @@ class ReLUParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -9134,9 +9390,12 @@ class ReLUParameter : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   typedef ReLUParameter_Engine Engine;
-  static const Engine DEFAULT = ReLUParameter_Engine_DEFAULT;
-  static const Engine CAFFE = ReLUParameter_Engine_CAFFE;
-  static const Engine CUDNN = ReLUParameter_Engine_CUDNN;
+  static const Engine DEFAULT =
+    ReLUParameter_Engine_DEFAULT;
+  static const Engine CAFFE =
+    ReLUParameter_Engine_CAFFE;
+  static const Engine CUDNN =
+    ReLUParameter_Engine_CUDNN;
   static inline bool Engine_IsValid(int value) {
     return ReLUParameter_Engine_IsValid(value);
   }
@@ -9195,7 +9454,7 @@ class ReLUParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class ReshapeParameter : public ::google::protobuf::Message {
+class ReshapeParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.ReshapeParameter) */ {
  public:
   ReshapeParameter();
   virtual ~ReshapeParameter();
@@ -9237,7 +9496,11 @@ class ReshapeParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -9306,7 +9569,7 @@ class ReshapeParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class ReverseParameter : public ::google::protobuf::Message {
+class ReverseParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.ReverseParameter) */ {
  public:
   ReverseParameter();
   virtual ~ReverseParameter();
@@ -9348,7 +9611,11 @@ class ReverseParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -9395,7 +9662,7 @@ class ReverseParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class ReverseTimeParameter : public ::google::protobuf::Message {
+class ReverseTimeParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.ReverseTimeParameter) */ {
  public:
   ReverseTimeParameter();
   virtual ~ReverseTimeParameter();
@@ -9437,7 +9704,11 @@ class ReverseTimeParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -9484,7 +9755,7 @@ class ReverseTimeParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class ScaleParameter : public ::google::protobuf::Message {
+class ScaleParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.ScaleParameter) */ {
  public:
   ScaleParameter();
   virtual ~ScaleParameter();
@@ -9526,7 +9797,11 @@ class ScaleParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -9617,7 +9892,7 @@ class ScaleParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class SigmoidParameter : public ::google::protobuf::Message {
+class SigmoidParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.SigmoidParameter) */ {
  public:
   SigmoidParameter();
   virtual ~SigmoidParameter();
@@ -9659,7 +9934,11 @@ class SigmoidParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -9680,9 +9959,12 @@ class SigmoidParameter : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   typedef SigmoidParameter_Engine Engine;
-  static const Engine DEFAULT = SigmoidParameter_Engine_DEFAULT;
-  static const Engine CAFFE = SigmoidParameter_Engine_CAFFE;
-  static const Engine CUDNN = SigmoidParameter_Engine_CUDNN;
+  static const Engine DEFAULT =
+    SigmoidParameter_Engine_DEFAULT;
+  static const Engine CAFFE =
+    SigmoidParameter_Engine_CAFFE;
+  static const Engine CUDNN =
+    SigmoidParameter_Engine_CUDNN;
   static inline bool Engine_IsValid(int value) {
     return SigmoidParameter_Engine_IsValid(value);
   }
@@ -9731,7 +10013,7 @@ class SigmoidParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class SliceParameter : public ::google::protobuf::Message {
+class SliceParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.SliceParameter) */ {
  public:
   SliceParameter();
   virtual ~SliceParameter();
@@ -9773,7 +10055,11 @@ class SliceParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -9843,7 +10129,7 @@ class SliceParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class SoftmaxParameter : public ::google::protobuf::Message {
+class SoftmaxParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.SoftmaxParameter) */ {
  public:
   SoftmaxParameter();
   virtual ~SoftmaxParameter();
@@ -9885,7 +10171,11 @@ class SoftmaxParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -9906,9 +10196,12 @@ class SoftmaxParameter : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   typedef SoftmaxParameter_Engine Engine;
-  static const Engine DEFAULT = SoftmaxParameter_Engine_DEFAULT;
-  static const Engine CAFFE = SoftmaxParameter_Engine_CAFFE;
-  static const Engine CUDNN = SoftmaxParameter_Engine_CUDNN;
+  static const Engine DEFAULT =
+    SoftmaxParameter_Engine_DEFAULT;
+  static const Engine CAFFE =
+    SoftmaxParameter_Engine_CAFFE;
+  static const Engine CUDNN =
+    SoftmaxParameter_Engine_CUDNN;
   static inline bool Engine_IsValid(int value) {
     return SoftmaxParameter_Engine_IsValid(value);
   }
@@ -9967,7 +10260,7 @@ class SoftmaxParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class TanHParameter : public ::google::protobuf::Message {
+class TanHParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.TanHParameter) */ {
  public:
   TanHParameter();
   virtual ~TanHParameter();
@@ -10009,7 +10302,11 @@ class TanHParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -10030,9 +10327,12 @@ class TanHParameter : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   typedef TanHParameter_Engine Engine;
-  static const Engine DEFAULT = TanHParameter_Engine_DEFAULT;
-  static const Engine CAFFE = TanHParameter_Engine_CAFFE;
-  static const Engine CUDNN = TanHParameter_Engine_CUDNN;
+  static const Engine DEFAULT =
+    TanHParameter_Engine_DEFAULT;
+  static const Engine CAFFE =
+    TanHParameter_Engine_CAFFE;
+  static const Engine CUDNN =
+    TanHParameter_Engine_CUDNN;
   static inline bool Engine_IsValid(int value) {
     return TanHParameter_Engine_IsValid(value);
   }
@@ -10081,7 +10381,7 @@ class TanHParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class TileParameter : public ::google::protobuf::Message {
+class TileParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.TileParameter) */ {
  public:
   TileParameter();
   virtual ~TileParameter();
@@ -10123,7 +10423,11 @@ class TileParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -10180,7 +10484,7 @@ class TileParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class ThresholdParameter : public ::google::protobuf::Message {
+class ThresholdParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.ThresholdParameter) */ {
  public:
   ThresholdParameter();
   virtual ~ThresholdParameter();
@@ -10222,7 +10526,11 @@ class ThresholdParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -10269,7 +10577,7 @@ class ThresholdParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class WindowDataParameter : public ::google::protobuf::Message {
+class WindowDataParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.WindowDataParameter) */ {
  public:
   WindowDataParameter();
   virtual ~WindowDataParameter();
@@ -10311,7 +10619,11 @@ class WindowDataParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -10499,7 +10811,7 @@ class WindowDataParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class SPPParameter : public ::google::protobuf::Message {
+class SPPParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.SPPParameter) */ {
  public:
   SPPParameter();
   virtual ~SPPParameter();
@@ -10541,7 +10853,11 @@ class SPPParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -10562,9 +10878,12 @@ class SPPParameter : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   typedef SPPParameter_PoolMethod PoolMethod;
-  static const PoolMethod MAX = SPPParameter_PoolMethod_MAX;
-  static const PoolMethod AVE = SPPParameter_PoolMethod_AVE;
-  static const PoolMethod STOCHASTIC = SPPParameter_PoolMethod_STOCHASTIC;
+  static const PoolMethod MAX =
+    SPPParameter_PoolMethod_MAX;
+  static const PoolMethod AVE =
+    SPPParameter_PoolMethod_AVE;
+  static const PoolMethod STOCHASTIC =
+    SPPParameter_PoolMethod_STOCHASTIC;
   static inline bool PoolMethod_IsValid(int value) {
     return SPPParameter_PoolMethod_IsValid(value);
   }
@@ -10587,9 +10906,12 @@ class SPPParameter : public ::google::protobuf::Message {
   }
 
   typedef SPPParameter_Engine Engine;
-  static const Engine DEFAULT = SPPParameter_Engine_DEFAULT;
-  static const Engine CAFFE = SPPParameter_Engine_CAFFE;
-  static const Engine CUDNN = SPPParameter_Engine_CUDNN;
+  static const Engine DEFAULT =
+    SPPParameter_Engine_DEFAULT;
+  static const Engine CAFFE =
+    SPPParameter_Engine_CAFFE;
+  static const Engine CUDNN =
+    SPPParameter_Engine_CUDNN;
   static inline bool Engine_IsValid(int value) {
     return SPPParameter_Engine_IsValid(value);
   }
@@ -10658,7 +10980,7 @@ class SPPParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class V1LayerParameter : public ::google::protobuf::Message {
+class V1LayerParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.V1LayerParameter) */ {
  public:
   V1LayerParameter();
   virtual ~V1LayerParameter();
@@ -10700,7 +11022,11 @@ class V1LayerParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -10721,46 +11047,86 @@ class V1LayerParameter : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   typedef V1LayerParameter_LayerType LayerType;
-  static const LayerType NONE = V1LayerParameter_LayerType_NONE;
-  static const LayerType ABSVAL = V1LayerParameter_LayerType_ABSVAL;
-  static const LayerType ACCURACY = V1LayerParameter_LayerType_ACCURACY;
-  static const LayerType ARGMAX = V1LayerParameter_LayerType_ARGMAX;
-  static const LayerType BNLL = V1LayerParameter_LayerType_BNLL;
-  static const LayerType CONCAT = V1LayerParameter_LayerType_CONCAT;
-  static const LayerType CONTRASTIVE_LOSS = V1LayerParameter_LayerType_CONTRASTIVE_LOSS;
-  static const LayerType CONVOLUTION = V1LayerParameter_LayerType_CONVOLUTION;
-  static const LayerType DATA = V1LayerParameter_LayerType_DATA;
-  static const LayerType DECONVOLUTION = V1LayerParameter_LayerType_DECONVOLUTION;
-  static const LayerType DROPOUT = V1LayerParameter_LayerType_DROPOUT;
-  static const LayerType DUMMY_DATA = V1LayerParameter_LayerType_DUMMY_DATA;
-  static const LayerType EUCLIDEAN_LOSS = V1LayerParameter_LayerType_EUCLIDEAN_LOSS;
-  static const LayerType ELTWISE = V1LayerParameter_LayerType_ELTWISE;
-  static const LayerType EXP = V1LayerParameter_LayerType_EXP;
-  static const LayerType FLATTEN = V1LayerParameter_LayerType_FLATTEN;
-  static const LayerType HDF5_DATA = V1LayerParameter_LayerType_HDF5_DATA;
-  static const LayerType HDF5_OUTPUT = V1LayerParameter_LayerType_HDF5_OUTPUT;
-  static const LayerType HINGE_LOSS = V1LayerParameter_LayerType_HINGE_LOSS;
-  static const LayerType IM2COL = V1LayerParameter_LayerType_IM2COL;
-  static const LayerType IMAGE_DATA = V1LayerParameter_LayerType_IMAGE_DATA;
-  static const LayerType INFOGAIN_LOSS = V1LayerParameter_LayerType_INFOGAIN_LOSS;
-  static const LayerType INNER_PRODUCT = V1LayerParameter_LayerType_INNER_PRODUCT;
-  static const LayerType LRN = V1LayerParameter_LayerType_LRN;
-  static const LayerType MEMORY_DATA = V1LayerParameter_LayerType_MEMORY_DATA;
-  static const LayerType MULTINOMIAL_LOGISTIC_LOSS = V1LayerParameter_LayerType_MULTINOMIAL_LOGISTIC_LOSS;
-  static const LayerType MVN = V1LayerParameter_LayerType_MVN;
-  static const LayerType POOLING = V1LayerParameter_LayerType_POOLING;
-  static const LayerType POWER = V1LayerParameter_LayerType_POWER;
-  static const LayerType RELU = V1LayerParameter_LayerType_RELU;
-  static const LayerType SIGMOID = V1LayerParameter_LayerType_SIGMOID;
-  static const LayerType SIGMOID_CROSS_ENTROPY_LOSS = V1LayerParameter_LayerType_SIGMOID_CROSS_ENTROPY_LOSS;
-  static const LayerType SILENCE = V1LayerParameter_LayerType_SILENCE;
-  static const LayerType SOFTMAX = V1LayerParameter_LayerType_SOFTMAX;
-  static const LayerType SOFTMAX_LOSS = V1LayerParameter_LayerType_SOFTMAX_LOSS;
-  static const LayerType SPLIT = V1LayerParameter_LayerType_SPLIT;
-  static const LayerType SLICE = V1LayerParameter_LayerType_SLICE;
-  static const LayerType TANH = V1LayerParameter_LayerType_TANH;
-  static const LayerType WINDOW_DATA = V1LayerParameter_LayerType_WINDOW_DATA;
-  static const LayerType THRESHOLD = V1LayerParameter_LayerType_THRESHOLD;
+  static const LayerType NONE =
+    V1LayerParameter_LayerType_NONE;
+  static const LayerType ABSVAL =
+    V1LayerParameter_LayerType_ABSVAL;
+  static const LayerType ACCURACY =
+    V1LayerParameter_LayerType_ACCURACY;
+  static const LayerType ARGMAX =
+    V1LayerParameter_LayerType_ARGMAX;
+  static const LayerType BNLL =
+    V1LayerParameter_LayerType_BNLL;
+  static const LayerType CONCAT =
+    V1LayerParameter_LayerType_CONCAT;
+  static const LayerType CONTRASTIVE_LOSS =
+    V1LayerParameter_LayerType_CONTRASTIVE_LOSS;
+  static const LayerType CONVOLUTION =
+    V1LayerParameter_LayerType_CONVOLUTION;
+  static const LayerType DATA =
+    V1LayerParameter_LayerType_DATA;
+  static const LayerType DECONVOLUTION =
+    V1LayerParameter_LayerType_DECONVOLUTION;
+  static const LayerType DROPOUT =
+    V1LayerParameter_LayerType_DROPOUT;
+  static const LayerType DUMMY_DATA =
+    V1LayerParameter_LayerType_DUMMY_DATA;
+  static const LayerType EUCLIDEAN_LOSS =
+    V1LayerParameter_LayerType_EUCLIDEAN_LOSS;
+  static const LayerType ELTWISE =
+    V1LayerParameter_LayerType_ELTWISE;
+  static const LayerType EXP =
+    V1LayerParameter_LayerType_EXP;
+  static const LayerType FLATTEN =
+    V1LayerParameter_LayerType_FLATTEN;
+  static const LayerType HDF5_DATA =
+    V1LayerParameter_LayerType_HDF5_DATA;
+  static const LayerType HDF5_OUTPUT =
+    V1LayerParameter_LayerType_HDF5_OUTPUT;
+  static const LayerType HINGE_LOSS =
+    V1LayerParameter_LayerType_HINGE_LOSS;
+  static const LayerType IM2COL =
+    V1LayerParameter_LayerType_IM2COL;
+  static const LayerType IMAGE_DATA =
+    V1LayerParameter_LayerType_IMAGE_DATA;
+  static const LayerType INFOGAIN_LOSS =
+    V1LayerParameter_LayerType_INFOGAIN_LOSS;
+  static const LayerType INNER_PRODUCT =
+    V1LayerParameter_LayerType_INNER_PRODUCT;
+  static const LayerType LRN =
+    V1LayerParameter_LayerType_LRN;
+  static const LayerType MEMORY_DATA =
+    V1LayerParameter_LayerType_MEMORY_DATA;
+  static const LayerType MULTINOMIAL_LOGISTIC_LOSS =
+    V1LayerParameter_LayerType_MULTINOMIAL_LOGISTIC_LOSS;
+  static const LayerType MVN =
+    V1LayerParameter_LayerType_MVN;
+  static const LayerType POOLING =
+    V1LayerParameter_LayerType_POOLING;
+  static const LayerType POWER =
+    V1LayerParameter_LayerType_POWER;
+  static const LayerType RELU =
+    V1LayerParameter_LayerType_RELU;
+  static const LayerType SIGMOID =
+    V1LayerParameter_LayerType_SIGMOID;
+  static const LayerType SIGMOID_CROSS_ENTROPY_LOSS =
+    V1LayerParameter_LayerType_SIGMOID_CROSS_ENTROPY_LOSS;
+  static const LayerType SILENCE =
+    V1LayerParameter_LayerType_SILENCE;
+  static const LayerType SOFTMAX =
+    V1LayerParameter_LayerType_SOFTMAX;
+  static const LayerType SOFTMAX_LOSS =
+    V1LayerParameter_LayerType_SOFTMAX_LOSS;
+  static const LayerType SPLIT =
+    V1LayerParameter_LayerType_SPLIT;
+  static const LayerType SLICE =
+    V1LayerParameter_LayerType_SLICE;
+  static const LayerType TANH =
+    V1LayerParameter_LayerType_TANH;
+  static const LayerType WINDOW_DATA =
+    V1LayerParameter_LayerType_WINDOW_DATA;
+  static const LayerType THRESHOLD =
+    V1LayerParameter_LayerType_THRESHOLD;
   static inline bool LayerType_IsValid(int value) {
     return V1LayerParameter_LayerType_IsValid(value);
   }
@@ -10783,8 +11149,10 @@ class V1LayerParameter : public ::google::protobuf::Message {
   }
 
   typedef V1LayerParameter_DimCheckMode DimCheckMode;
-  static const DimCheckMode _STRICT = V1LayerParameter_DimCheckMode_STRICT;
-  static const DimCheckMode PERMISSIVE = V1LayerParameter_DimCheckMode_PERMISSIVE;
+  static const DimCheckMode STRICT =
+    V1LayerParameter_DimCheckMode_STRICT;
+  static const DimCheckMode PERMISSIVE =
+    V1LayerParameter_DimCheckMode_PERMISSIVE;
   static inline bool DimCheckMode_IsValid(int value) {
     return V1LayerParameter_DimCheckMode_IsValid(value);
   }
@@ -10859,10 +11227,10 @@ class V1LayerParameter : public ::google::protobuf::Message {
   const ::caffe::NetStateRule& include(int index) const;
   ::caffe::NetStateRule* mutable_include(int index);
   ::caffe::NetStateRule* add_include();
-  const ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >&
-      include() const;
   ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >*
       mutable_include();
+  const ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >&
+      include() const;
 
   // repeated .caffe.NetStateRule exclude = 33;
   int exclude_size() const;
@@ -10871,10 +11239,10 @@ class V1LayerParameter : public ::google::protobuf::Message {
   const ::caffe::NetStateRule& exclude(int index) const;
   ::caffe::NetStateRule* mutable_exclude(int index);
   ::caffe::NetStateRule* add_exclude();
-  const ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >&
-      exclude() const;
   ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >*
       mutable_exclude();
+  const ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >&
+      exclude() const;
 
   // optional .caffe.V1LayerParameter.LayerType type = 5;
   bool has_type() const;
@@ -10890,10 +11258,10 @@ class V1LayerParameter : public ::google::protobuf::Message {
   const ::caffe::BlobProto& blobs(int index) const;
   ::caffe::BlobProto* mutable_blobs(int index);
   ::caffe::BlobProto* add_blobs();
-  const ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >&
-      blobs() const;
   ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >*
       mutable_blobs();
+  const ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >&
+      blobs() const;
 
   // repeated string param = 1001;
   int param_size() const;
@@ -11360,7 +11728,7 @@ class V1LayerParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class V0LayerParameter : public ::google::protobuf::Message {
+class V0LayerParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.V0LayerParameter) */ {
  public:
   V0LayerParameter();
   virtual ~V0LayerParameter();
@@ -11402,7 +11770,11 @@ class V0LayerParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -11423,9 +11795,12 @@ class V0LayerParameter : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   typedef V0LayerParameter_PoolMethod PoolMethod;
-  static const PoolMethod MAX = V0LayerParameter_PoolMethod_MAX;
-  static const PoolMethod AVE = V0LayerParameter_PoolMethod_AVE;
-  static const PoolMethod STOCHASTIC = V0LayerParameter_PoolMethod_STOCHASTIC;
+  static const PoolMethod MAX =
+    V0LayerParameter_PoolMethod_MAX;
+  static const PoolMethod AVE =
+    V0LayerParameter_PoolMethod_AVE;
+  static const PoolMethod STOCHASTIC =
+    V0LayerParameter_PoolMethod_STOCHASTIC;
   static inline bool PoolMethod_IsValid(int value) {
     return V0LayerParameter_PoolMethod_IsValid(value);
   }
@@ -11634,10 +12009,10 @@ class V0LayerParameter : public ::google::protobuf::Message {
   const ::caffe::BlobProto& blobs(int index) const;
   ::caffe::BlobProto* mutable_blobs(int index);
   ::caffe::BlobProto* add_blobs();
-  const ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >&
-      blobs() const;
   ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >*
       mutable_blobs();
+  const ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >&
+      blobs() const;
 
   // repeated float blobs_lr = 51;
   int blobs_lr_size() const;
@@ -11885,7 +12260,7 @@ class V0LayerParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class PReLUParameter : public ::google::protobuf::Message {
+class PReLUParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.PReLUParameter) */ {
  public:
   PReLUParameter();
   virtual ~PReLUParameter();
@@ -11927,7 +12302,11 @@ class PReLUParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -11986,7 +12365,7 @@ class PReLUParameter : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class TransposeParameter : public ::google::protobuf::Message {
+class TransposeParameter : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:caffe.TransposeParameter) */ {
  public:
   TransposeParameter();
   virtual ~TransposeParameter();
@@ -12028,7 +12407,11 @@ class TransposeParameter : public ::google::protobuf::Message {
       ::google::protobuf::io::CodedInputStream* input);
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const {
+    return InternalSerializeWithCachedSizesToArray(false, output);
+  }
   int GetCachedSize() const { return _cached_size_; }
   private:
   void SharedCtor();
@@ -12145,6 +12528,7 @@ inline ::caffe::BlobShape* BlobProto::mutable_shape() {
   return shape_;
 }
 inline ::caffe::BlobShape* BlobProto::release_shape() {
+  // @@protoc_insertion_point(field_release:caffe.BlobProto.shape)
   clear_has_shape();
   ::caffe::BlobShape* temp = shape_;
   shape_ = NULL;
@@ -12400,15 +12784,15 @@ inline ::caffe::BlobProto* BlobProtoVector::add_blobs() {
   // @@protoc_insertion_point(field_add:caffe.BlobProtoVector.blobs)
   return blobs_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >&
-BlobProtoVector::blobs() const {
-  // @@protoc_insertion_point(field_list:caffe.BlobProtoVector.blobs)
-  return blobs_;
-}
 inline ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >*
 BlobProtoVector::mutable_blobs() {
   // @@protoc_insertion_point(field_mutable_list:caffe.BlobProtoVector.blobs)
   return &blobs_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >&
+BlobProtoVector::blobs() const {
+  // @@protoc_insertion_point(field_list:caffe.BlobProtoVector.blobs)
+  return blobs_;
 }
 
 // -------------------------------------------------------------------
@@ -12527,6 +12911,7 @@ inline ::std::string* Datum::mutable_data() {
   return data_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* Datum::release_data() {
+  // @@protoc_insertion_point(field_release:caffe.Datum.data)
   clear_has_data();
   return data_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -12668,6 +13053,7 @@ inline ::std::string* FillerParameter::mutable_type() {
   return type_.MutableNoArena(_default_type_);
 }
 inline ::std::string* FillerParameter::release_type() {
+  // @@protoc_insertion_point(field_release:caffe.FillerParameter.type)
   clear_has_type();
   return type_.ReleaseNoArena(_default_type_);
 }
@@ -12894,6 +13280,7 @@ inline ::std::string* NetParameter::mutable_name() {
   return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* NetParameter::release_name() {
+  // @@protoc_insertion_point(field_release:caffe.NetParameter.name)
   clear_has_name();
   return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -12936,6 +13323,7 @@ inline void NetParameter::set_input(int index, const char* value, size_t size) {
   // @@protoc_insertion_point(field_set_pointer:caffe.NetParameter.input)
 }
 inline ::std::string* NetParameter::add_input() {
+  // @@protoc_insertion_point(field_add_mutable:caffe.NetParameter.input)
   return input_.Add();
 }
 inline void NetParameter::add_input(const ::std::string& value) {
@@ -12980,15 +13368,15 @@ inline ::caffe::BlobShape* NetParameter::add_input_shape() {
   // @@protoc_insertion_point(field_add:caffe.NetParameter.input_shape)
   return input_shape_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::caffe::BlobShape >&
-NetParameter::input_shape() const {
-  // @@protoc_insertion_point(field_list:caffe.NetParameter.input_shape)
-  return input_shape_;
-}
 inline ::google::protobuf::RepeatedPtrField< ::caffe::BlobShape >*
 NetParameter::mutable_input_shape() {
   // @@protoc_insertion_point(field_mutable_list:caffe.NetParameter.input_shape)
   return &input_shape_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::caffe::BlobShape >&
+NetParameter::input_shape() const {
+  // @@protoc_insertion_point(field_list:caffe.NetParameter.input_shape)
+  return input_shape_;
 }
 
 // repeated int32 input_dim = 4;
@@ -13072,6 +13460,7 @@ inline ::caffe::NetState* NetParameter::mutable_state() {
   return state_;
 }
 inline ::caffe::NetState* NetParameter::release_state() {
+  // @@protoc_insertion_point(field_release:caffe.NetParameter.state)
   clear_has_state();
   ::caffe::NetState* temp = state_;
   state_ = NULL;
@@ -13131,15 +13520,15 @@ inline ::caffe::LayerParameter* NetParameter::add_layer() {
   // @@protoc_insertion_point(field_add:caffe.NetParameter.layer)
   return layer_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::caffe::LayerParameter >&
-NetParameter::layer() const {
-  // @@protoc_insertion_point(field_list:caffe.NetParameter.layer)
-  return layer_;
-}
 inline ::google::protobuf::RepeatedPtrField< ::caffe::LayerParameter >*
 NetParameter::mutable_layer() {
   // @@protoc_insertion_point(field_mutable_list:caffe.NetParameter.layer)
   return &layer_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::caffe::LayerParameter >&
+NetParameter::layer() const {
+  // @@protoc_insertion_point(field_list:caffe.NetParameter.layer)
+  return layer_;
 }
 
 // repeated .caffe.V1LayerParameter layers = 2;
@@ -13161,15 +13550,15 @@ inline ::caffe::V1LayerParameter* NetParameter::add_layers() {
   // @@protoc_insertion_point(field_add:caffe.NetParameter.layers)
   return layers_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::caffe::V1LayerParameter >&
-NetParameter::layers() const {
-  // @@protoc_insertion_point(field_list:caffe.NetParameter.layers)
-  return layers_;
-}
 inline ::google::protobuf::RepeatedPtrField< ::caffe::V1LayerParameter >*
 NetParameter::mutable_layers() {
   // @@protoc_insertion_point(field_mutable_list:caffe.NetParameter.layers)
   return &layers_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::caffe::V1LayerParameter >&
+NetParameter::layers() const {
+  // @@protoc_insertion_point(field_list:caffe.NetParameter.layers)
+  return layers_;
 }
 
 // -------------------------------------------------------------------
@@ -13216,6 +13605,7 @@ inline ::std::string* SolverParameter::mutable_net() {
   return net_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* SolverParameter::release_net() {
+  // @@protoc_insertion_point(field_release:caffe.SolverParameter.net)
   clear_has_net();
   return net_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -13256,6 +13646,7 @@ inline ::caffe::NetParameter* SolverParameter::mutable_net_param() {
   return net_param_;
 }
 inline ::caffe::NetParameter* SolverParameter::release_net_param() {
+  // @@protoc_insertion_point(field_release:caffe.SolverParameter.net_param)
   clear_has_net_param();
   ::caffe::NetParameter* temp = net_param_;
   net_param_ = NULL;
@@ -13312,6 +13703,7 @@ inline ::std::string* SolverParameter::mutable_train_net() {
   return train_net_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* SolverParameter::release_train_net() {
+  // @@protoc_insertion_point(field_release:caffe.SolverParameter.train_net)
   clear_has_train_net();
   return train_net_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -13354,6 +13746,7 @@ inline void SolverParameter::set_test_net(int index, const char* value, size_t s
   // @@protoc_insertion_point(field_set_pointer:caffe.SolverParameter.test_net)
 }
 inline ::std::string* SolverParameter::add_test_net() {
+  // @@protoc_insertion_point(field_add_mutable:caffe.SolverParameter.test_net)
   return test_net_.Add();
 }
 inline void SolverParameter::add_test_net(const ::std::string& value) {
@@ -13406,6 +13799,7 @@ inline ::caffe::NetParameter* SolverParameter::mutable_train_net_param() {
   return train_net_param_;
 }
 inline ::caffe::NetParameter* SolverParameter::release_train_net_param() {
+  // @@protoc_insertion_point(field_release:caffe.SolverParameter.train_net_param)
   clear_has_train_net_param();
   ::caffe::NetParameter* temp = train_net_param_;
   train_net_param_ = NULL;
@@ -13441,15 +13835,15 @@ inline ::caffe::NetParameter* SolverParameter::add_test_net_param() {
   // @@protoc_insertion_point(field_add:caffe.SolverParameter.test_net_param)
   return test_net_param_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::caffe::NetParameter >&
-SolverParameter::test_net_param() const {
-  // @@protoc_insertion_point(field_list:caffe.SolverParameter.test_net_param)
-  return test_net_param_;
-}
 inline ::google::protobuf::RepeatedPtrField< ::caffe::NetParameter >*
 SolverParameter::mutable_test_net_param() {
   // @@protoc_insertion_point(field_mutable_list:caffe.SolverParameter.test_net_param)
   return &test_net_param_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::caffe::NetParameter >&
+SolverParameter::test_net_param() const {
+  // @@protoc_insertion_point(field_list:caffe.SolverParameter.test_net_param)
+  return test_net_param_;
 }
 
 // optional .caffe.NetState train_state = 26;
@@ -13479,6 +13873,7 @@ inline ::caffe::NetState* SolverParameter::mutable_train_state() {
   return train_state_;
 }
 inline ::caffe::NetState* SolverParameter::release_train_state() {
+  // @@protoc_insertion_point(field_release:caffe.SolverParameter.train_state)
   clear_has_train_state();
   ::caffe::NetState* temp = train_state_;
   train_state_ = NULL;
@@ -13514,15 +13909,15 @@ inline ::caffe::NetState* SolverParameter::add_test_state() {
   // @@protoc_insertion_point(field_add:caffe.SolverParameter.test_state)
   return test_state_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::caffe::NetState >&
-SolverParameter::test_state() const {
-  // @@protoc_insertion_point(field_list:caffe.SolverParameter.test_state)
-  return test_state_;
-}
 inline ::google::protobuf::RepeatedPtrField< ::caffe::NetState >*
 SolverParameter::mutable_test_state() {
   // @@protoc_insertion_point(field_mutable_list:caffe.SolverParameter.test_state)
   return &test_state_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::caffe::NetState >&
+SolverParameter::test_state() const {
+  // @@protoc_insertion_point(field_list:caffe.SolverParameter.test_state)
+  return test_state_;
 }
 
 // repeated int32 test_iter = 3;
@@ -13787,6 +14182,7 @@ inline ::std::string* SolverParameter::mutable_lr_policy() {
   return lr_policy_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* SolverParameter::release_lr_policy() {
+  // @@protoc_insertion_point(field_release:caffe.SolverParameter.lr_policy)
   clear_has_lr_policy();
   return lr_policy_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -13936,6 +14332,7 @@ inline ::std::string* SolverParameter::mutable_regularization_type() {
   return regularization_type_.MutableNoArena(_default_regularization_type_);
 }
 inline ::std::string* SolverParameter::release_regularization_type() {
+  // @@protoc_insertion_point(field_release:caffe.SolverParameter.regularization_type)
   clear_has_regularization_type();
   return regularization_type_.ReleaseNoArena(_default_regularization_type_);
 }
@@ -14091,6 +14488,7 @@ inline ::std::string* SolverParameter::mutable_snapshot_prefix() {
   return snapshot_prefix_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* SolverParameter::release_snapshot_prefix() {
+  // @@protoc_insertion_point(field_release:caffe.SolverParameter.snapshot_prefix)
   clear_has_snapshot_prefix();
   return snapshot_prefix_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -14266,6 +14664,7 @@ inline ::std::string* SolverParameter::mutable_type() {
   return type_.MutableNoArena(_default_type_);
 }
 inline ::std::string* SolverParameter::release_type() {
+  // @@protoc_insertion_point(field_release:caffe.SolverParameter.type)
   clear_has_type();
   return type_.ReleaseNoArena(_default_type_);
 }
@@ -14279,7 +14678,7 @@ inline void SolverParameter::set_allocated_type(::std::string* type) {
   // @@protoc_insertion_point(field_set_allocated:caffe.SolverParameter.type)
 }
 
-// optional float delta = 31 [default = 1e-008];
+// optional float delta = 31 [default = 1e-08];
 inline bool SolverParameter::has_delta() const {
   return (_has_bits_[1] & 0x00000004u) != 0;
 }
@@ -14290,7 +14689,7 @@ inline void SolverParameter::clear_has_delta() {
   _has_bits_[1] &= ~0x00000004u;
 }
 inline void SolverParameter::clear_delta() {
-  delta_ = 1e-008f;
+  delta_ = 1e-08f;
   clear_has_delta();
 }
 inline float SolverParameter::delta() const {
@@ -14492,6 +14891,7 @@ inline ::std::string* SolverState::mutable_learned_net() {
   return learned_net_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* SolverState::release_learned_net() {
+  // @@protoc_insertion_point(field_release:caffe.SolverState.learned_net)
   clear_has_learned_net();
   return learned_net_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -14524,15 +14924,15 @@ inline ::caffe::BlobProto* SolverState::add_history() {
   // @@protoc_insertion_point(field_add:caffe.SolverState.history)
   return history_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >&
-SolverState::history() const {
-  // @@protoc_insertion_point(field_list:caffe.SolverState.history)
-  return history_;
-}
 inline ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >*
 SolverState::mutable_history() {
   // @@protoc_insertion_point(field_mutable_list:caffe.SolverState.history)
   return &history_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >&
+SolverState::history() const {
+  // @@protoc_insertion_point(field_list:caffe.SolverState.history)
+  return history_;
 }
 
 // optional int32 current_step = 4 [default = 0];
@@ -14641,6 +15041,7 @@ inline void NetState::set_stage(int index, const char* value, size_t size) {
   // @@protoc_insertion_point(field_set_pointer:caffe.NetState.stage)
 }
 inline ::std::string* NetState::add_stage() {
+  // @@protoc_insertion_point(field_add_mutable:caffe.NetState.stage)
   return stage_.Add();
 }
 inline void NetState::add_stage(const ::std::string& value) {
@@ -14772,6 +15173,7 @@ inline void NetStateRule::set_stage(int index, const char* value, size_t size) {
   // @@protoc_insertion_point(field_set_pointer:caffe.NetStateRule.stage)
 }
 inline ::std::string* NetStateRule::add_stage() {
+  // @@protoc_insertion_point(field_add_mutable:caffe.NetStateRule.stage)
   return stage_.Add();
 }
 inline void NetStateRule::add_stage(const ::std::string& value) {
@@ -14826,6 +15228,7 @@ inline void NetStateRule::set_not_stage(int index, const char* value, size_t siz
   // @@protoc_insertion_point(field_set_pointer:caffe.NetStateRule.not_stage)
 }
 inline ::std::string* NetStateRule::add_not_stage() {
+  // @@protoc_insertion_point(field_add_mutable:caffe.NetStateRule.not_stage)
   return not_stage_.Add();
 }
 inline void NetStateRule::add_not_stage(const ::std::string& value) {
@@ -14895,6 +15298,7 @@ inline ::std::string* ParamSpec::mutable_name() {
   return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* ParamSpec::release_name() {
+  // @@protoc_insertion_point(field_release:caffe.ParamSpec.name)
   clear_has_name();
   return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -15025,6 +15429,7 @@ inline ::std::string* LayerParameter::mutable_name() {
   return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* LayerParameter::release_name() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.name)
   clear_has_name();
   return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -15078,6 +15483,7 @@ inline ::std::string* LayerParameter::mutable_type() {
   return type_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* LayerParameter::release_type() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.type)
   clear_has_type();
   return type_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -15120,6 +15526,7 @@ inline void LayerParameter::set_bottom(int index, const char* value, size_t size
   // @@protoc_insertion_point(field_set_pointer:caffe.LayerParameter.bottom)
 }
 inline ::std::string* LayerParameter::add_bottom() {
+  // @@protoc_insertion_point(field_add_mutable:caffe.LayerParameter.bottom)
   return bottom_.Add();
 }
 inline void LayerParameter::add_bottom(const ::std::string& value) {
@@ -15174,6 +15581,7 @@ inline void LayerParameter::set_top(int index, const char* value, size_t size) {
   // @@protoc_insertion_point(field_set_pointer:caffe.LayerParameter.top)
 }
 inline ::std::string* LayerParameter::add_top() {
+  // @@protoc_insertion_point(field_add_mutable:caffe.LayerParameter.top)
   return top_.Add();
 }
 inline void LayerParameter::add_top(const ::std::string& value) {
@@ -15273,15 +15681,15 @@ inline ::caffe::ParamSpec* LayerParameter::add_param() {
   // @@protoc_insertion_point(field_add:caffe.LayerParameter.param)
   return param_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::caffe::ParamSpec >&
-LayerParameter::param() const {
-  // @@protoc_insertion_point(field_list:caffe.LayerParameter.param)
-  return param_;
-}
 inline ::google::protobuf::RepeatedPtrField< ::caffe::ParamSpec >*
 LayerParameter::mutable_param() {
   // @@protoc_insertion_point(field_mutable_list:caffe.LayerParameter.param)
   return &param_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::caffe::ParamSpec >&
+LayerParameter::param() const {
+  // @@protoc_insertion_point(field_list:caffe.LayerParameter.param)
+  return param_;
 }
 
 // repeated .caffe.BlobProto blobs = 7;
@@ -15303,15 +15711,15 @@ inline ::caffe::BlobProto* LayerParameter::add_blobs() {
   // @@protoc_insertion_point(field_add:caffe.LayerParameter.blobs)
   return blobs_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >&
-LayerParameter::blobs() const {
-  // @@protoc_insertion_point(field_list:caffe.LayerParameter.blobs)
-  return blobs_;
-}
 inline ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >*
 LayerParameter::mutable_blobs() {
   // @@protoc_insertion_point(field_mutable_list:caffe.LayerParameter.blobs)
   return &blobs_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >&
+LayerParameter::blobs() const {
+  // @@protoc_insertion_point(field_list:caffe.LayerParameter.blobs)
+  return blobs_;
 }
 
 // repeated bool propagate_down = 11;
@@ -15363,15 +15771,15 @@ inline ::caffe::NetStateRule* LayerParameter::add_include() {
   // @@protoc_insertion_point(field_add:caffe.LayerParameter.include)
   return include_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >&
-LayerParameter::include() const {
-  // @@protoc_insertion_point(field_list:caffe.LayerParameter.include)
-  return include_;
-}
 inline ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >*
 LayerParameter::mutable_include() {
   // @@protoc_insertion_point(field_mutable_list:caffe.LayerParameter.include)
   return &include_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >&
+LayerParameter::include() const {
+  // @@protoc_insertion_point(field_list:caffe.LayerParameter.include)
+  return include_;
 }
 
 // repeated .caffe.NetStateRule exclude = 9;
@@ -15393,15 +15801,15 @@ inline ::caffe::NetStateRule* LayerParameter::add_exclude() {
   // @@protoc_insertion_point(field_add:caffe.LayerParameter.exclude)
   return exclude_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >&
-LayerParameter::exclude() const {
-  // @@protoc_insertion_point(field_list:caffe.LayerParameter.exclude)
-  return exclude_;
-}
 inline ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >*
 LayerParameter::mutable_exclude() {
   // @@protoc_insertion_point(field_mutable_list:caffe.LayerParameter.exclude)
   return &exclude_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >&
+LayerParameter::exclude() const {
+  // @@protoc_insertion_point(field_list:caffe.LayerParameter.exclude)
+  return exclude_;
 }
 
 // optional .caffe.TransformationParameter transform_param = 100;
@@ -15431,6 +15839,7 @@ inline ::caffe::TransformationParameter* LayerParameter::mutable_transform_param
   return transform_param_;
 }
 inline ::caffe::TransformationParameter* LayerParameter::release_transform_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.transform_param)
   clear_has_transform_param();
   ::caffe::TransformationParameter* temp = transform_param_;
   transform_param_ = NULL;
@@ -15474,6 +15883,7 @@ inline ::caffe::LossParameter* LayerParameter::mutable_loss_param() {
   return loss_param_;
 }
 inline ::caffe::LossParameter* LayerParameter::release_loss_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.loss_param)
   clear_has_loss_param();
   ::caffe::LossParameter* temp = loss_param_;
   loss_param_ = NULL;
@@ -15517,6 +15927,7 @@ inline ::caffe::AccuracyParameter* LayerParameter::mutable_accuracy_param() {
   return accuracy_param_;
 }
 inline ::caffe::AccuracyParameter* LayerParameter::release_accuracy_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.accuracy_param)
   clear_has_accuracy_param();
   ::caffe::AccuracyParameter* temp = accuracy_param_;
   accuracy_param_ = NULL;
@@ -15560,6 +15971,7 @@ inline ::caffe::ArgMaxParameter* LayerParameter::mutable_argmax_param() {
   return argmax_param_;
 }
 inline ::caffe::ArgMaxParameter* LayerParameter::release_argmax_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.argmax_param)
   clear_has_argmax_param();
   ::caffe::ArgMaxParameter* temp = argmax_param_;
   argmax_param_ = NULL;
@@ -15603,6 +16015,7 @@ inline ::caffe::BatchNormParameter* LayerParameter::mutable_batch_norm_param() {
   return batch_norm_param_;
 }
 inline ::caffe::BatchNormParameter* LayerParameter::release_batch_norm_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.batch_norm_param)
   clear_has_batch_norm_param();
   ::caffe::BatchNormParameter* temp = batch_norm_param_;
   batch_norm_param_ = NULL;
@@ -15646,6 +16059,7 @@ inline ::caffe::BiasParameter* LayerParameter::mutable_bias_param() {
   return bias_param_;
 }
 inline ::caffe::BiasParameter* LayerParameter::release_bias_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.bias_param)
   clear_has_bias_param();
   ::caffe::BiasParameter* temp = bias_param_;
   bias_param_ = NULL;
@@ -15689,6 +16103,7 @@ inline ::caffe::ConcatParameter* LayerParameter::mutable_concat_param() {
   return concat_param_;
 }
 inline ::caffe::ConcatParameter* LayerParameter::release_concat_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.concat_param)
   clear_has_concat_param();
   ::caffe::ConcatParameter* temp = concat_param_;
   concat_param_ = NULL;
@@ -15732,6 +16147,7 @@ inline ::caffe::ContrastiveLossParameter* LayerParameter::mutable_contrastive_lo
   return contrastive_loss_param_;
 }
 inline ::caffe::ContrastiveLossParameter* LayerParameter::release_contrastive_loss_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.contrastive_loss_param)
   clear_has_contrastive_loss_param();
   ::caffe::ContrastiveLossParameter* temp = contrastive_loss_param_;
   contrastive_loss_param_ = NULL;
@@ -15775,6 +16191,7 @@ inline ::caffe::ConvolutionParameter* LayerParameter::mutable_convolution_param(
   return convolution_param_;
 }
 inline ::caffe::ConvolutionParameter* LayerParameter::release_convolution_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.convolution_param)
   clear_has_convolution_param();
   ::caffe::ConvolutionParameter* temp = convolution_param_;
   convolution_param_ = NULL;
@@ -15818,6 +16235,7 @@ inline ::caffe::CropParameter* LayerParameter::mutable_crop_param() {
   return crop_param_;
 }
 inline ::caffe::CropParameter* LayerParameter::release_crop_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.crop_param)
   clear_has_crop_param();
   ::caffe::CropParameter* temp = crop_param_;
   crop_param_ = NULL;
@@ -15861,6 +16279,7 @@ inline ::caffe::DataParameter* LayerParameter::mutable_data_param() {
   return data_param_;
 }
 inline ::caffe::DataParameter* LayerParameter::release_data_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.data_param)
   clear_has_data_param();
   ::caffe::DataParameter* temp = data_param_;
   data_param_ = NULL;
@@ -15904,6 +16323,7 @@ inline ::caffe::DenseBlockParameter* LayerParameter::mutable_denseblock_param() 
   return denseblock_param_;
 }
 inline ::caffe::DenseBlockParameter* LayerParameter::release_denseblock_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.denseblock_param)
   clear_has_denseblock_param();
   ::caffe::DenseBlockParameter* temp = denseblock_param_;
   denseblock_param_ = NULL;
@@ -15947,6 +16367,7 @@ inline ::caffe::DropoutParameter* LayerParameter::mutable_dropout_param() {
   return dropout_param_;
 }
 inline ::caffe::DropoutParameter* LayerParameter::release_dropout_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.dropout_param)
   clear_has_dropout_param();
   ::caffe::DropoutParameter* temp = dropout_param_;
   dropout_param_ = NULL;
@@ -15990,6 +16411,7 @@ inline ::caffe::DummyDataParameter* LayerParameter::mutable_dummy_data_param() {
   return dummy_data_param_;
 }
 inline ::caffe::DummyDataParameter* LayerParameter::release_dummy_data_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.dummy_data_param)
   clear_has_dummy_data_param();
   ::caffe::DummyDataParameter* temp = dummy_data_param_;
   dummy_data_param_ = NULL;
@@ -16033,6 +16455,7 @@ inline ::caffe::EltwiseParameter* LayerParameter::mutable_eltwise_param() {
   return eltwise_param_;
 }
 inline ::caffe::EltwiseParameter* LayerParameter::release_eltwise_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.eltwise_param)
   clear_has_eltwise_param();
   ::caffe::EltwiseParameter* temp = eltwise_param_;
   eltwise_param_ = NULL;
@@ -16076,6 +16499,7 @@ inline ::caffe::ELUParameter* LayerParameter::mutable_elu_param() {
   return elu_param_;
 }
 inline ::caffe::ELUParameter* LayerParameter::release_elu_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.elu_param)
   clear_has_elu_param();
   ::caffe::ELUParameter* temp = elu_param_;
   elu_param_ = NULL;
@@ -16119,6 +16543,7 @@ inline ::caffe::EmbedParameter* LayerParameter::mutable_embed_param() {
   return embed_param_;
 }
 inline ::caffe::EmbedParameter* LayerParameter::release_embed_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.embed_param)
   clear_has_embed_param();
   ::caffe::EmbedParameter* temp = embed_param_;
   embed_param_ = NULL;
@@ -16162,6 +16587,7 @@ inline ::caffe::ExpParameter* LayerParameter::mutable_exp_param() {
   return exp_param_;
 }
 inline ::caffe::ExpParameter* LayerParameter::release_exp_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.exp_param)
   clear_has_exp_param();
   ::caffe::ExpParameter* temp = exp_param_;
   exp_param_ = NULL;
@@ -16205,6 +16631,7 @@ inline ::caffe::FlattenParameter* LayerParameter::mutable_flatten_param() {
   return flatten_param_;
 }
 inline ::caffe::FlattenParameter* LayerParameter::release_flatten_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.flatten_param)
   clear_has_flatten_param();
   ::caffe::FlattenParameter* temp = flatten_param_;
   flatten_param_ = NULL;
@@ -16248,6 +16675,7 @@ inline ::caffe::HDF5DataParameter* LayerParameter::mutable_hdf5_data_param() {
   return hdf5_data_param_;
 }
 inline ::caffe::HDF5DataParameter* LayerParameter::release_hdf5_data_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.hdf5_data_param)
   clear_has_hdf5_data_param();
   ::caffe::HDF5DataParameter* temp = hdf5_data_param_;
   hdf5_data_param_ = NULL;
@@ -16291,6 +16719,7 @@ inline ::caffe::HDF5OutputParameter* LayerParameter::mutable_hdf5_output_param()
   return hdf5_output_param_;
 }
 inline ::caffe::HDF5OutputParameter* LayerParameter::release_hdf5_output_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.hdf5_output_param)
   clear_has_hdf5_output_param();
   ::caffe::HDF5OutputParameter* temp = hdf5_output_param_;
   hdf5_output_param_ = NULL;
@@ -16334,6 +16763,7 @@ inline ::caffe::HingeLossParameter* LayerParameter::mutable_hinge_loss_param() {
   return hinge_loss_param_;
 }
 inline ::caffe::HingeLossParameter* LayerParameter::release_hinge_loss_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.hinge_loss_param)
   clear_has_hinge_loss_param();
   ::caffe::HingeLossParameter* temp = hinge_loss_param_;
   hinge_loss_param_ = NULL;
@@ -16377,6 +16807,7 @@ inline ::caffe::ImageDataParameter* LayerParameter::mutable_image_data_param() {
   return image_data_param_;
 }
 inline ::caffe::ImageDataParameter* LayerParameter::release_image_data_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.image_data_param)
   clear_has_image_data_param();
   ::caffe::ImageDataParameter* temp = image_data_param_;
   image_data_param_ = NULL;
@@ -16420,6 +16851,7 @@ inline ::caffe::InfogainLossParameter* LayerParameter::mutable_infogain_loss_par
   return infogain_loss_param_;
 }
 inline ::caffe::InfogainLossParameter* LayerParameter::release_infogain_loss_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.infogain_loss_param)
   clear_has_infogain_loss_param();
   ::caffe::InfogainLossParameter* temp = infogain_loss_param_;
   infogain_loss_param_ = NULL;
@@ -16463,6 +16895,7 @@ inline ::caffe::InnerProductParameter* LayerParameter::mutable_inner_product_par
   return inner_product_param_;
 }
 inline ::caffe::InnerProductParameter* LayerParameter::release_inner_product_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.inner_product_param)
   clear_has_inner_product_param();
   ::caffe::InnerProductParameter* temp = inner_product_param_;
   inner_product_param_ = NULL;
@@ -16506,6 +16939,7 @@ inline ::caffe::InputParameter* LayerParameter::mutable_input_param() {
   return input_param_;
 }
 inline ::caffe::InputParameter* LayerParameter::release_input_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.input_param)
   clear_has_input_param();
   ::caffe::InputParameter* temp = input_param_;
   input_param_ = NULL;
@@ -16549,6 +16983,7 @@ inline ::caffe::LogParameter* LayerParameter::mutable_log_param() {
   return log_param_;
 }
 inline ::caffe::LogParameter* LayerParameter::release_log_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.log_param)
   clear_has_log_param();
   ::caffe::LogParameter* temp = log_param_;
   log_param_ = NULL;
@@ -16592,6 +17027,7 @@ inline ::caffe::LRNParameter* LayerParameter::mutable_lrn_param() {
   return lrn_param_;
 }
 inline ::caffe::LRNParameter* LayerParameter::release_lrn_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.lrn_param)
   clear_has_lrn_param();
   ::caffe::LRNParameter* temp = lrn_param_;
   lrn_param_ = NULL;
@@ -16635,6 +17071,7 @@ inline ::caffe::MemoryDataParameter* LayerParameter::mutable_memory_data_param()
   return memory_data_param_;
 }
 inline ::caffe::MemoryDataParameter* LayerParameter::release_memory_data_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.memory_data_param)
   clear_has_memory_data_param();
   ::caffe::MemoryDataParameter* temp = memory_data_param_;
   memory_data_param_ = NULL;
@@ -16678,6 +17115,7 @@ inline ::caffe::MVNParameter* LayerParameter::mutable_mvn_param() {
   return mvn_param_;
 }
 inline ::caffe::MVNParameter* LayerParameter::release_mvn_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.mvn_param)
   clear_has_mvn_param();
   ::caffe::MVNParameter* temp = mvn_param_;
   mvn_param_ = NULL;
@@ -16721,6 +17159,7 @@ inline ::caffe::ParameterParameter* LayerParameter::mutable_parameter_param() {
   return parameter_param_;
 }
 inline ::caffe::ParameterParameter* LayerParameter::release_parameter_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.parameter_param)
   clear_has_parameter_param();
   ::caffe::ParameterParameter* temp = parameter_param_;
   parameter_param_ = NULL;
@@ -16764,6 +17203,7 @@ inline ::caffe::PoolingParameter* LayerParameter::mutable_pooling_param() {
   return pooling_param_;
 }
 inline ::caffe::PoolingParameter* LayerParameter::release_pooling_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.pooling_param)
   clear_has_pooling_param();
   ::caffe::PoolingParameter* temp = pooling_param_;
   pooling_param_ = NULL;
@@ -16807,6 +17247,7 @@ inline ::caffe::PowerParameter* LayerParameter::mutable_power_param() {
   return power_param_;
 }
 inline ::caffe::PowerParameter* LayerParameter::release_power_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.power_param)
   clear_has_power_param();
   ::caffe::PowerParameter* temp = power_param_;
   power_param_ = NULL;
@@ -16850,6 +17291,7 @@ inline ::caffe::PReLUParameter* LayerParameter::mutable_prelu_param() {
   return prelu_param_;
 }
 inline ::caffe::PReLUParameter* LayerParameter::release_prelu_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.prelu_param)
   clear_has_prelu_param();
   ::caffe::PReLUParameter* temp = prelu_param_;
   prelu_param_ = NULL;
@@ -16893,6 +17335,7 @@ inline ::caffe::PythonParameter* LayerParameter::mutable_python_param() {
   return python_param_;
 }
 inline ::caffe::PythonParameter* LayerParameter::release_python_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.python_param)
   clear_has_python_param();
   ::caffe::PythonParameter* temp = python_param_;
   python_param_ = NULL;
@@ -16936,6 +17379,7 @@ inline ::caffe::RecurrentParameter* LayerParameter::mutable_recurrent_param() {
   return recurrent_param_;
 }
 inline ::caffe::RecurrentParameter* LayerParameter::release_recurrent_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.recurrent_param)
   clear_has_recurrent_param();
   ::caffe::RecurrentParameter* temp = recurrent_param_;
   recurrent_param_ = NULL;
@@ -16979,6 +17423,7 @@ inline ::caffe::ReductionParameter* LayerParameter::mutable_reduction_param() {
   return reduction_param_;
 }
 inline ::caffe::ReductionParameter* LayerParameter::release_reduction_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.reduction_param)
   clear_has_reduction_param();
   ::caffe::ReductionParameter* temp = reduction_param_;
   reduction_param_ = NULL;
@@ -17022,6 +17467,7 @@ inline ::caffe::ReLUParameter* LayerParameter::mutable_relu_param() {
   return relu_param_;
 }
 inline ::caffe::ReLUParameter* LayerParameter::release_relu_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.relu_param)
   clear_has_relu_param();
   ::caffe::ReLUParameter* temp = relu_param_;
   relu_param_ = NULL;
@@ -17065,6 +17511,7 @@ inline ::caffe::ReshapeParameter* LayerParameter::mutable_reshape_param() {
   return reshape_param_;
 }
 inline ::caffe::ReshapeParameter* LayerParameter::release_reshape_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.reshape_param)
   clear_has_reshape_param();
   ::caffe::ReshapeParameter* temp = reshape_param_;
   reshape_param_ = NULL;
@@ -17108,6 +17555,7 @@ inline ::caffe::ScaleParameter* LayerParameter::mutable_scale_param() {
   return scale_param_;
 }
 inline ::caffe::ScaleParameter* LayerParameter::release_scale_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.scale_param)
   clear_has_scale_param();
   ::caffe::ScaleParameter* temp = scale_param_;
   scale_param_ = NULL;
@@ -17151,6 +17599,7 @@ inline ::caffe::SigmoidParameter* LayerParameter::mutable_sigmoid_param() {
   return sigmoid_param_;
 }
 inline ::caffe::SigmoidParameter* LayerParameter::release_sigmoid_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.sigmoid_param)
   clear_has_sigmoid_param();
   ::caffe::SigmoidParameter* temp = sigmoid_param_;
   sigmoid_param_ = NULL;
@@ -17194,6 +17643,7 @@ inline ::caffe::SoftmaxParameter* LayerParameter::mutable_softmax_param() {
   return softmax_param_;
 }
 inline ::caffe::SoftmaxParameter* LayerParameter::release_softmax_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.softmax_param)
   clear_has_softmax_param();
   ::caffe::SoftmaxParameter* temp = softmax_param_;
   softmax_param_ = NULL;
@@ -17237,6 +17687,7 @@ inline ::caffe::SPPParameter* LayerParameter::mutable_spp_param() {
   return spp_param_;
 }
 inline ::caffe::SPPParameter* LayerParameter::release_spp_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.spp_param)
   clear_has_spp_param();
   ::caffe::SPPParameter* temp = spp_param_;
   spp_param_ = NULL;
@@ -17280,6 +17731,7 @@ inline ::caffe::SliceParameter* LayerParameter::mutable_slice_param() {
   return slice_param_;
 }
 inline ::caffe::SliceParameter* LayerParameter::release_slice_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.slice_param)
   clear_has_slice_param();
   ::caffe::SliceParameter* temp = slice_param_;
   slice_param_ = NULL;
@@ -17323,6 +17775,7 @@ inline ::caffe::TanHParameter* LayerParameter::mutable_tanh_param() {
   return tanh_param_;
 }
 inline ::caffe::TanHParameter* LayerParameter::release_tanh_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.tanh_param)
   clear_has_tanh_param();
   ::caffe::TanHParameter* temp = tanh_param_;
   tanh_param_ = NULL;
@@ -17366,6 +17819,7 @@ inline ::caffe::ThresholdParameter* LayerParameter::mutable_threshold_param() {
   return threshold_param_;
 }
 inline ::caffe::ThresholdParameter* LayerParameter::release_threshold_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.threshold_param)
   clear_has_threshold_param();
   ::caffe::ThresholdParameter* temp = threshold_param_;
   threshold_param_ = NULL;
@@ -17409,6 +17863,7 @@ inline ::caffe::TileParameter* LayerParameter::mutable_tile_param() {
   return tile_param_;
 }
 inline ::caffe::TileParameter* LayerParameter::release_tile_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.tile_param)
   clear_has_tile_param();
   ::caffe::TileParameter* temp = tile_param_;
   tile_param_ = NULL;
@@ -17452,6 +17907,7 @@ inline ::caffe::WindowDataParameter* LayerParameter::mutable_window_data_param()
   return window_data_param_;
 }
 inline ::caffe::WindowDataParameter* LayerParameter::release_window_data_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.window_data_param)
   clear_has_window_data_param();
   ::caffe::WindowDataParameter* temp = window_data_param_;
   window_data_param_ = NULL;
@@ -17495,6 +17951,7 @@ inline ::caffe::CTCDecoderParameter* LayerParameter::mutable_ctc_decoder_param()
   return ctc_decoder_param_;
 }
 inline ::caffe::CTCDecoderParameter* LayerParameter::release_ctc_decoder_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.ctc_decoder_param)
   clear_has_ctc_decoder_param();
   ::caffe::CTCDecoderParameter* temp = ctc_decoder_param_;
   ctc_decoder_param_ = NULL;
@@ -17538,6 +17995,7 @@ inline ::caffe::CTCLossParameter* LayerParameter::mutable_ctc_loss_param() {
   return ctc_loss_param_;
 }
 inline ::caffe::CTCLossParameter* LayerParameter::release_ctc_loss_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.ctc_loss_param)
   clear_has_ctc_loss_param();
   ::caffe::CTCLossParameter* temp = ctc_loss_param_;
   ctc_loss_param_ = NULL;
@@ -17581,6 +18039,7 @@ inline ::caffe::ReverseParameter* LayerParameter::mutable_reverse_param() {
   return reverse_param_;
 }
 inline ::caffe::ReverseParameter* LayerParameter::release_reverse_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.reverse_param)
   clear_has_reverse_param();
   ::caffe::ReverseParameter* temp = reverse_param_;
   reverse_param_ = NULL;
@@ -17624,6 +18083,7 @@ inline ::caffe::ReverseTimeParameter* LayerParameter::mutable_reverse_time_param
   return reverse_time_param_;
 }
 inline ::caffe::ReverseTimeParameter* LayerParameter::release_reverse_time_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.reverse_time_param)
   clear_has_reverse_time_param();
   ::caffe::ReverseTimeParameter* temp = reverse_time_param_;
   reverse_time_param_ = NULL;
@@ -17667,6 +18127,7 @@ inline ::caffe::InterpParameter* LayerParameter::mutable_interp_param() {
   return interp_param_;
 }
 inline ::caffe::InterpParameter* LayerParameter::release_interp_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.interp_param)
   clear_has_interp_param();
   ::caffe::InterpParameter* temp = interp_param_;
   interp_param_ = NULL;
@@ -17710,6 +18171,7 @@ inline ::caffe::TransposeParameter* LayerParameter::mutable_transpose_param() {
   return transpose_param_;
 }
 inline ::caffe::TransposeParameter* LayerParameter::release_transpose_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.transpose_param)
   clear_has_transpose_param();
   ::caffe::TransposeParameter* temp = transpose_param_;
   transpose_param_ = NULL;
@@ -17753,6 +18215,7 @@ inline ::caffe::LSTMParameter* LayerParameter::mutable_lstm_param() {
   return lstm_param_;
 }
 inline ::caffe::LSTMParameter* LayerParameter::release_lstm_param() {
+  // @@protoc_insertion_point(field_release:caffe.LayerParameter.lstm_param)
   clear_has_lstm_param();
   ::caffe::LSTMParameter* temp = lstm_param_;
   lstm_param_ = NULL;
@@ -18016,6 +18479,7 @@ inline ::caffe::FillerParameter* DenseBlockParameter::mutable_filter_filler() {
   return filter_filler_;
 }
 inline ::caffe::FillerParameter* DenseBlockParameter::release_filter_filler() {
+  // @@protoc_insertion_point(field_release:caffe.DenseBlockParameter.Filter_Filler)
   clear_has_filter_filler();
   ::caffe::FillerParameter* temp = filter_filler_;
   filter_filler_ = NULL;
@@ -18059,6 +18523,7 @@ inline ::caffe::FillerParameter* DenseBlockParameter::mutable_bn_scaler_filler()
   return bn_scaler_filler_;
 }
 inline ::caffe::FillerParameter* DenseBlockParameter::release_bn_scaler_filler() {
+  // @@protoc_insertion_point(field_release:caffe.DenseBlockParameter.BN_Scaler_Filler)
   clear_has_bn_scaler_filler();
   ::caffe::FillerParameter* temp = bn_scaler_filler_;
   bn_scaler_filler_ = NULL;
@@ -18102,6 +18567,7 @@ inline ::caffe::FillerParameter* DenseBlockParameter::mutable_bn_bias_filler() {
   return bn_bias_filler_;
 }
 inline ::caffe::FillerParameter* DenseBlockParameter::release_bn_bias_filler() {
+  // @@protoc_insertion_point(field_release:caffe.DenseBlockParameter.BN_Bias_Filler)
   clear_has_bn_bias_filler();
   ::caffe::FillerParameter* temp = bn_bias_filler_;
   bn_bias_filler_ = NULL;
@@ -18402,6 +18868,7 @@ inline ::std::string* TransformationParameter::mutable_mean_file() {
   return mean_file_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* TransformationParameter::release_mean_file() {
+  // @@protoc_insertion_point(field_release:caffe.TransformationParameter.mean_file)
   clear_has_mean_file();
   return mean_file_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -18952,7 +19419,7 @@ inline void BatchNormParameter::set_moving_average_fraction(float value) {
   // @@protoc_insertion_point(field_set:caffe.BatchNormParameter.moving_average_fraction)
 }
 
-// optional float eps = 3 [default = 1e-005];
+// optional float eps = 3 [default = 1e-05];
 inline bool BatchNormParameter::has_eps() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -18963,7 +19430,7 @@ inline void BatchNormParameter::clear_has_eps() {
   _has_bits_[0] &= ~0x00000004u;
 }
 inline void BatchNormParameter::clear_eps() {
-  eps_ = 1e-005f;
+  eps_ = 1e-05f;
   clear_has_eps();
 }
 inline float BatchNormParameter::eps() const {
@@ -19079,6 +19546,7 @@ inline ::caffe::FillerParameter* BiasParameter::mutable_filler() {
   return filler_;
 }
 inline ::caffe::FillerParameter* BiasParameter::release_filler() {
+  // @@protoc_insertion_point(field_release:caffe.BiasParameter.filler)
   clear_has_filler();
   ::caffe::FillerParameter* temp = filler_;
   filler_ = NULL;
@@ -19514,6 +19982,7 @@ inline ::caffe::FillerParameter* ConvolutionParameter::mutable_weight_filler() {
   return weight_filler_;
 }
 inline ::caffe::FillerParameter* ConvolutionParameter::release_weight_filler() {
+  // @@protoc_insertion_point(field_release:caffe.ConvolutionParameter.weight_filler)
   clear_has_weight_filler();
   ::caffe::FillerParameter* temp = weight_filler_;
   weight_filler_ = NULL;
@@ -19557,6 +20026,7 @@ inline ::caffe::FillerParameter* ConvolutionParameter::mutable_bias_filler() {
   return bias_filler_;
 }
 inline ::caffe::FillerParameter* ConvolutionParameter::release_bias_filler() {
+  // @@protoc_insertion_point(field_release:caffe.ConvolutionParameter.bias_filler)
   clear_has_bias_filler();
   ::caffe::FillerParameter* temp = bias_filler_;
   bias_filler_ = NULL;
@@ -19924,6 +20394,7 @@ inline ::std::string* DataParameter::mutable_source() {
   return source_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* DataParameter::release_source() {
+  // @@protoc_insertion_point(field_release:caffe.DataParameter.source)
   clear_has_source();
   return source_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -20074,6 +20545,7 @@ inline ::std::string* DataParameter::mutable_mean_file() {
   return mean_file_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* DataParameter::release_mean_file() {
+  // @@protoc_insertion_point(field_release:caffe.DataParameter.mean_file)
   clear_has_mean_file();
   return mean_file_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -20258,15 +20730,15 @@ inline ::caffe::FillerParameter* DummyDataParameter::add_data_filler() {
   // @@protoc_insertion_point(field_add:caffe.DummyDataParameter.data_filler)
   return data_filler_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::caffe::FillerParameter >&
-DummyDataParameter::data_filler() const {
-  // @@protoc_insertion_point(field_list:caffe.DummyDataParameter.data_filler)
-  return data_filler_;
-}
 inline ::google::protobuf::RepeatedPtrField< ::caffe::FillerParameter >*
 DummyDataParameter::mutable_data_filler() {
   // @@protoc_insertion_point(field_mutable_list:caffe.DummyDataParameter.data_filler)
   return &data_filler_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::caffe::FillerParameter >&
+DummyDataParameter::data_filler() const {
+  // @@protoc_insertion_point(field_list:caffe.DummyDataParameter.data_filler)
+  return data_filler_;
 }
 
 // repeated .caffe.BlobShape shape = 6;
@@ -20288,15 +20760,15 @@ inline ::caffe::BlobShape* DummyDataParameter::add_shape() {
   // @@protoc_insertion_point(field_add:caffe.DummyDataParameter.shape)
   return shape_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::caffe::BlobShape >&
-DummyDataParameter::shape() const {
-  // @@protoc_insertion_point(field_list:caffe.DummyDataParameter.shape)
-  return shape_;
-}
 inline ::google::protobuf::RepeatedPtrField< ::caffe::BlobShape >*
 DummyDataParameter::mutable_shape() {
   // @@protoc_insertion_point(field_mutable_list:caffe.DummyDataParameter.shape)
   return &shape_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::caffe::BlobShape >&
+DummyDataParameter::shape() const {
+  // @@protoc_insertion_point(field_list:caffe.DummyDataParameter.shape)
+  return shape_;
 }
 
 // repeated uint32 num = 2;
@@ -20633,6 +21105,7 @@ inline ::caffe::FillerParameter* EmbedParameter::mutable_weight_filler() {
   return weight_filler_;
 }
 inline ::caffe::FillerParameter* EmbedParameter::release_weight_filler() {
+  // @@protoc_insertion_point(field_release:caffe.EmbedParameter.weight_filler)
   clear_has_weight_filler();
   ::caffe::FillerParameter* temp = weight_filler_;
   weight_filler_ = NULL;
@@ -20676,6 +21149,7 @@ inline ::caffe::FillerParameter* EmbedParameter::mutable_bias_filler() {
   return bias_filler_;
 }
 inline ::caffe::FillerParameter* EmbedParameter::release_bias_filler() {
+  // @@protoc_insertion_point(field_release:caffe.EmbedParameter.bias_filler)
   clear_has_bias_filler();
   ::caffe::FillerParameter* temp = bias_filler_;
   bias_filler_ = NULL;
@@ -20864,6 +21338,7 @@ inline ::std::string* HDF5DataParameter::mutable_source() {
   return source_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* HDF5DataParameter::release_source() {
+  // @@protoc_insertion_point(field_release:caffe.HDF5DataParameter.source)
   clear_has_source();
   return source_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -20969,6 +21444,7 @@ inline ::std::string* HDF5OutputParameter::mutable_file_name() {
   return file_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* HDF5OutputParameter::release_file_name() {
+  // @@protoc_insertion_point(field_release:caffe.HDF5OutputParameter.file_name)
   clear_has_file_name();
   return file_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -21055,6 +21531,7 @@ inline ::std::string* ImageDataParameter::mutable_source() {
   return source_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* ImageDataParameter::release_source() {
+  // @@protoc_insertion_point(field_release:caffe.ImageDataParameter.source)
   clear_has_source();
   return source_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -21276,6 +21753,7 @@ inline ::std::string* ImageDataParameter::mutable_mean_file() {
   return mean_file_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* ImageDataParameter::release_mean_file() {
+  // @@protoc_insertion_point(field_release:caffe.ImageDataParameter.mean_file)
   clear_has_mean_file();
   return mean_file_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -21377,6 +21855,7 @@ inline ::std::string* ImageDataParameter::mutable_root_folder() {
   return root_folder_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* ImageDataParameter::release_root_folder() {
+  // @@protoc_insertion_point(field_release:caffe.ImageDataParameter.root_folder)
   clear_has_root_folder();
   return root_folder_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -21482,6 +21961,7 @@ inline ::std::string* InfogainLossParameter::mutable_source() {
   return source_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* InfogainLossParameter::release_source() {
+  // @@protoc_insertion_point(field_release:caffe.InfogainLossParameter.source)
   clear_has_source();
   return source_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -21574,6 +22054,7 @@ inline ::caffe::FillerParameter* InnerProductParameter::mutable_weight_filler() 
   return weight_filler_;
 }
 inline ::caffe::FillerParameter* InnerProductParameter::release_weight_filler() {
+  // @@protoc_insertion_point(field_release:caffe.InnerProductParameter.weight_filler)
   clear_has_weight_filler();
   ::caffe::FillerParameter* temp = weight_filler_;
   weight_filler_ = NULL;
@@ -21617,6 +22098,7 @@ inline ::caffe::FillerParameter* InnerProductParameter::mutable_bias_filler() {
   return bias_filler_;
 }
 inline ::caffe::FillerParameter* InnerProductParameter::release_bias_filler() {
+  // @@protoc_insertion_point(field_release:caffe.InnerProductParameter.bias_filler)
   clear_has_bias_filler();
   ::caffe::FillerParameter* temp = bias_filler_;
   bias_filler_ = NULL;
@@ -21704,15 +22186,15 @@ inline ::caffe::BlobShape* InputParameter::add_shape() {
   // @@protoc_insertion_point(field_add:caffe.InputParameter.shape)
   return shape_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::caffe::BlobShape >&
-InputParameter::shape() const {
-  // @@protoc_insertion_point(field_list:caffe.InputParameter.shape)
-  return shape_;
-}
 inline ::google::protobuf::RepeatedPtrField< ::caffe::BlobShape >*
 InputParameter::mutable_shape() {
   // @@protoc_insertion_point(field_mutable_list:caffe.InputParameter.shape)
   return &shape_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::caffe::BlobShape >&
+InputParameter::shape() const {
+  // @@protoc_insertion_point(field_list:caffe.InputParameter.shape)
+  return shape_;
 }
 
 // -------------------------------------------------------------------
@@ -22265,7 +22747,7 @@ inline void MVNParameter::set_across_channels(bool value) {
   // @@protoc_insertion_point(field_set:caffe.MVNParameter.across_channels)
 }
 
-// optional float eps = 3 [default = 1e-009];
+// optional float eps = 3 [default = 1e-09];
 inline bool MVNParameter::has_eps() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -22276,7 +22758,7 @@ inline void MVNParameter::clear_has_eps() {
   _has_bits_[0] &= ~0x00000004u;
 }
 inline void MVNParameter::clear_eps() {
-  eps_ = 1e-009f;
+  eps_ = 1e-09f;
   clear_has_eps();
 }
 inline float MVNParameter::eps() const {
@@ -22320,6 +22802,7 @@ inline ::caffe::BlobShape* ParameterParameter::mutable_shape() {
   return shape_;
 }
 inline ::caffe::BlobShape* ParameterParameter::release_shape() {
+  // @@protoc_insertion_point(field_release:caffe.ParameterParameter.shape)
   clear_has_shape();
   ::caffe::BlobShape* temp = shape_;
   shape_ = NULL;
@@ -22750,6 +23233,7 @@ inline ::std::string* PythonParameter::mutable_module() {
   return module_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* PythonParameter::release_module() {
+  // @@protoc_insertion_point(field_release:caffe.PythonParameter.module)
   clear_has_module();
   return module_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -22803,6 +23287,7 @@ inline ::std::string* PythonParameter::mutable_layer() {
   return layer_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* PythonParameter::release_layer() {
+  // @@protoc_insertion_point(field_release:caffe.PythonParameter.layer)
   clear_has_layer();
   return layer_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -22856,6 +23341,7 @@ inline ::std::string* PythonParameter::mutable_param_str() {
   return param_str_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* PythonParameter::release_param_str() {
+  // @@protoc_insertion_point(field_release:caffe.PythonParameter.param_str)
   clear_has_param_str();
   return param_str_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -22948,6 +23434,7 @@ inline ::caffe::FillerParameter* RecurrentParameter::mutable_weight_filler() {
   return weight_filler_;
 }
 inline ::caffe::FillerParameter* RecurrentParameter::release_weight_filler() {
+  // @@protoc_insertion_point(field_release:caffe.RecurrentParameter.weight_filler)
   clear_has_weight_filler();
   ::caffe::FillerParameter* temp = weight_filler_;
   weight_filler_ = NULL;
@@ -22991,6 +23478,7 @@ inline ::caffe::FillerParameter* RecurrentParameter::mutable_bias_filler() {
   return bias_filler_;
 }
 inline ::caffe::FillerParameter* RecurrentParameter::release_bias_filler() {
+  // @@protoc_insertion_point(field_release:caffe.RecurrentParameter.bias_filler)
   clear_has_bias_filler();
   ::caffe::FillerParameter* temp = bias_filler_;
   bias_filler_ = NULL;
@@ -23134,6 +23622,7 @@ inline ::caffe::FillerParameter* LSTMParameter::mutable_weight_filler() {
   return weight_filler_;
 }
 inline ::caffe::FillerParameter* LSTMParameter::release_weight_filler() {
+  // @@protoc_insertion_point(field_release:caffe.LSTMParameter.weight_filler)
   clear_has_weight_filler();
   ::caffe::FillerParameter* temp = weight_filler_;
   weight_filler_ = NULL;
@@ -23177,6 +23666,7 @@ inline ::caffe::FillerParameter* LSTMParameter::mutable_bias_filler() {
   return bias_filler_;
 }
 inline ::caffe::FillerParameter* LSTMParameter::release_bias_filler() {
+  // @@protoc_insertion_point(field_release:caffe.LSTMParameter.bias_filler)
   clear_has_bias_filler();
   ::caffe::FillerParameter* temp = bias_filler_;
   bias_filler_ = NULL;
@@ -23378,6 +23868,7 @@ inline ::caffe::BlobShape* ReshapeParameter::mutable_shape() {
   return shape_;
 }
 inline ::caffe::BlobShape* ReshapeParameter::release_shape() {
+  // @@protoc_insertion_point(field_release:caffe.ReshapeParameter.shape)
   clear_has_shape();
   ::caffe::BlobShape* temp = shape_;
   shape_ = NULL;
@@ -23577,6 +24068,7 @@ inline ::caffe::FillerParameter* ScaleParameter::mutable_filler() {
   return filler_;
 }
 inline ::caffe::FillerParameter* ScaleParameter::release_filler() {
+  // @@protoc_insertion_point(field_release:caffe.ScaleParameter.filler)
   clear_has_filler();
   ::caffe::FillerParameter* temp = filler_;
   filler_ = NULL;
@@ -23644,6 +24136,7 @@ inline ::caffe::FillerParameter* ScaleParameter::mutable_bias_filler() {
   return bias_filler_;
 }
 inline ::caffe::FillerParameter* ScaleParameter::release_bias_filler() {
+  // @@protoc_insertion_point(field_release:caffe.ScaleParameter.bias_filler)
   clear_has_bias_filler();
   ::caffe::FillerParameter* temp = bias_filler_;
   bias_filler_ = NULL;
@@ -23977,6 +24470,7 @@ inline ::std::string* WindowDataParameter::mutable_source() {
   return source_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* WindowDataParameter::release_source() {
+  // @@protoc_insertion_point(field_release:caffe.WindowDataParameter.source)
   clear_has_source();
   return source_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -24054,6 +24548,7 @@ inline ::std::string* WindowDataParameter::mutable_mean_file() {
   return mean_file_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* WindowDataParameter::release_mean_file() {
+  // @@protoc_insertion_point(field_release:caffe.WindowDataParameter.mean_file)
   clear_has_mean_file();
   return mean_file_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -24275,6 +24770,7 @@ inline ::std::string* WindowDataParameter::mutable_crop_mode() {
   return crop_mode_.MutableNoArena(_default_crop_mode_);
 }
 inline ::std::string* WindowDataParameter::release_crop_mode() {
+  // @@protoc_insertion_point(field_release:caffe.WindowDataParameter.crop_mode)
   clear_has_crop_mode();
   return crop_mode_.ReleaseNoArena(_default_crop_mode_);
 }
@@ -24352,6 +24848,7 @@ inline ::std::string* WindowDataParameter::mutable_root_folder() {
   return root_folder_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* WindowDataParameter::release_root_folder() {
+  // @@protoc_insertion_point(field_release:caffe.WindowDataParameter.root_folder)
   clear_has_root_folder();
   return root_folder_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -24476,6 +24973,7 @@ inline void V1LayerParameter::set_bottom(int index, const char* value, size_t si
   // @@protoc_insertion_point(field_set_pointer:caffe.V1LayerParameter.bottom)
 }
 inline ::std::string* V1LayerParameter::add_bottom() {
+  // @@protoc_insertion_point(field_add_mutable:caffe.V1LayerParameter.bottom)
   return bottom_.Add();
 }
 inline void V1LayerParameter::add_bottom(const ::std::string& value) {
@@ -24530,6 +25028,7 @@ inline void V1LayerParameter::set_top(int index, const char* value, size_t size)
   // @@protoc_insertion_point(field_set_pointer:caffe.V1LayerParameter.top)
 }
 inline ::std::string* V1LayerParameter::add_top() {
+  // @@protoc_insertion_point(field_add_mutable:caffe.V1LayerParameter.top)
   return top_.Add();
 }
 inline void V1LayerParameter::add_top(const ::std::string& value) {
@@ -24595,6 +25094,7 @@ inline ::std::string* V1LayerParameter::mutable_name() {
   return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* V1LayerParameter::release_name() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.name)
   clear_has_name();
   return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -24627,15 +25127,15 @@ inline ::caffe::NetStateRule* V1LayerParameter::add_include() {
   // @@protoc_insertion_point(field_add:caffe.V1LayerParameter.include)
   return include_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >&
-V1LayerParameter::include() const {
-  // @@protoc_insertion_point(field_list:caffe.V1LayerParameter.include)
-  return include_;
-}
 inline ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >*
 V1LayerParameter::mutable_include() {
   // @@protoc_insertion_point(field_mutable_list:caffe.V1LayerParameter.include)
   return &include_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >&
+V1LayerParameter::include() const {
+  // @@protoc_insertion_point(field_list:caffe.V1LayerParameter.include)
+  return include_;
 }
 
 // repeated .caffe.NetStateRule exclude = 33;
@@ -24657,15 +25157,15 @@ inline ::caffe::NetStateRule* V1LayerParameter::add_exclude() {
   // @@protoc_insertion_point(field_add:caffe.V1LayerParameter.exclude)
   return exclude_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >&
-V1LayerParameter::exclude() const {
-  // @@protoc_insertion_point(field_list:caffe.V1LayerParameter.exclude)
-  return exclude_;
-}
 inline ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >*
 V1LayerParameter::mutable_exclude() {
   // @@protoc_insertion_point(field_mutable_list:caffe.V1LayerParameter.exclude)
   return &exclude_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::caffe::NetStateRule >&
+V1LayerParameter::exclude() const {
+  // @@protoc_insertion_point(field_list:caffe.V1LayerParameter.exclude)
+  return exclude_;
 }
 
 // optional .caffe.V1LayerParameter.LayerType type = 5;
@@ -24712,15 +25212,15 @@ inline ::caffe::BlobProto* V1LayerParameter::add_blobs() {
   // @@protoc_insertion_point(field_add:caffe.V1LayerParameter.blobs)
   return blobs_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >&
-V1LayerParameter::blobs() const {
-  // @@protoc_insertion_point(field_list:caffe.V1LayerParameter.blobs)
-  return blobs_;
-}
 inline ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >*
 V1LayerParameter::mutable_blobs() {
   // @@protoc_insertion_point(field_mutable_list:caffe.V1LayerParameter.blobs)
   return &blobs_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >&
+V1LayerParameter::blobs() const {
+  // @@protoc_insertion_point(field_list:caffe.V1LayerParameter.blobs)
+  return blobs_;
 }
 
 // repeated string param = 1001;
@@ -24752,6 +25252,7 @@ inline void V1LayerParameter::set_param(int index, const char* value, size_t siz
   // @@protoc_insertion_point(field_set_pointer:caffe.V1LayerParameter.param)
 }
 inline ::std::string* V1LayerParameter::add_param() {
+  // @@protoc_insertion_point(field_add_mutable:caffe.V1LayerParameter.param)
   return param_.Add();
 }
 inline void V1LayerParameter::add_param(const ::std::string& value) {
@@ -24926,6 +25427,7 @@ inline ::caffe::AccuracyParameter* V1LayerParameter::mutable_accuracy_param() {
   return accuracy_param_;
 }
 inline ::caffe::AccuracyParameter* V1LayerParameter::release_accuracy_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.accuracy_param)
   clear_has_accuracy_param();
   ::caffe::AccuracyParameter* temp = accuracy_param_;
   accuracy_param_ = NULL;
@@ -24969,6 +25471,7 @@ inline ::caffe::ArgMaxParameter* V1LayerParameter::mutable_argmax_param() {
   return argmax_param_;
 }
 inline ::caffe::ArgMaxParameter* V1LayerParameter::release_argmax_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.argmax_param)
   clear_has_argmax_param();
   ::caffe::ArgMaxParameter* temp = argmax_param_;
   argmax_param_ = NULL;
@@ -25012,6 +25515,7 @@ inline ::caffe::ConcatParameter* V1LayerParameter::mutable_concat_param() {
   return concat_param_;
 }
 inline ::caffe::ConcatParameter* V1LayerParameter::release_concat_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.concat_param)
   clear_has_concat_param();
   ::caffe::ConcatParameter* temp = concat_param_;
   concat_param_ = NULL;
@@ -25055,6 +25559,7 @@ inline ::caffe::ContrastiveLossParameter* V1LayerParameter::mutable_contrastive_
   return contrastive_loss_param_;
 }
 inline ::caffe::ContrastiveLossParameter* V1LayerParameter::release_contrastive_loss_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.contrastive_loss_param)
   clear_has_contrastive_loss_param();
   ::caffe::ContrastiveLossParameter* temp = contrastive_loss_param_;
   contrastive_loss_param_ = NULL;
@@ -25098,6 +25603,7 @@ inline ::caffe::ConvolutionParameter* V1LayerParameter::mutable_convolution_para
   return convolution_param_;
 }
 inline ::caffe::ConvolutionParameter* V1LayerParameter::release_convolution_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.convolution_param)
   clear_has_convolution_param();
   ::caffe::ConvolutionParameter* temp = convolution_param_;
   convolution_param_ = NULL;
@@ -25141,6 +25647,7 @@ inline ::caffe::DataParameter* V1LayerParameter::mutable_data_param() {
   return data_param_;
 }
 inline ::caffe::DataParameter* V1LayerParameter::release_data_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.data_param)
   clear_has_data_param();
   ::caffe::DataParameter* temp = data_param_;
   data_param_ = NULL;
@@ -25184,6 +25691,7 @@ inline ::caffe::DropoutParameter* V1LayerParameter::mutable_dropout_param() {
   return dropout_param_;
 }
 inline ::caffe::DropoutParameter* V1LayerParameter::release_dropout_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.dropout_param)
   clear_has_dropout_param();
   ::caffe::DropoutParameter* temp = dropout_param_;
   dropout_param_ = NULL;
@@ -25227,6 +25735,7 @@ inline ::caffe::DummyDataParameter* V1LayerParameter::mutable_dummy_data_param()
   return dummy_data_param_;
 }
 inline ::caffe::DummyDataParameter* V1LayerParameter::release_dummy_data_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.dummy_data_param)
   clear_has_dummy_data_param();
   ::caffe::DummyDataParameter* temp = dummy_data_param_;
   dummy_data_param_ = NULL;
@@ -25270,6 +25779,7 @@ inline ::caffe::EltwiseParameter* V1LayerParameter::mutable_eltwise_param() {
   return eltwise_param_;
 }
 inline ::caffe::EltwiseParameter* V1LayerParameter::release_eltwise_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.eltwise_param)
   clear_has_eltwise_param();
   ::caffe::EltwiseParameter* temp = eltwise_param_;
   eltwise_param_ = NULL;
@@ -25313,6 +25823,7 @@ inline ::caffe::ExpParameter* V1LayerParameter::mutable_exp_param() {
   return exp_param_;
 }
 inline ::caffe::ExpParameter* V1LayerParameter::release_exp_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.exp_param)
   clear_has_exp_param();
   ::caffe::ExpParameter* temp = exp_param_;
   exp_param_ = NULL;
@@ -25356,6 +25867,7 @@ inline ::caffe::HDF5DataParameter* V1LayerParameter::mutable_hdf5_data_param() {
   return hdf5_data_param_;
 }
 inline ::caffe::HDF5DataParameter* V1LayerParameter::release_hdf5_data_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.hdf5_data_param)
   clear_has_hdf5_data_param();
   ::caffe::HDF5DataParameter* temp = hdf5_data_param_;
   hdf5_data_param_ = NULL;
@@ -25399,6 +25911,7 @@ inline ::caffe::HDF5OutputParameter* V1LayerParameter::mutable_hdf5_output_param
   return hdf5_output_param_;
 }
 inline ::caffe::HDF5OutputParameter* V1LayerParameter::release_hdf5_output_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.hdf5_output_param)
   clear_has_hdf5_output_param();
   ::caffe::HDF5OutputParameter* temp = hdf5_output_param_;
   hdf5_output_param_ = NULL;
@@ -25442,6 +25955,7 @@ inline ::caffe::HingeLossParameter* V1LayerParameter::mutable_hinge_loss_param()
   return hinge_loss_param_;
 }
 inline ::caffe::HingeLossParameter* V1LayerParameter::release_hinge_loss_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.hinge_loss_param)
   clear_has_hinge_loss_param();
   ::caffe::HingeLossParameter* temp = hinge_loss_param_;
   hinge_loss_param_ = NULL;
@@ -25485,6 +25999,7 @@ inline ::caffe::ImageDataParameter* V1LayerParameter::mutable_image_data_param()
   return image_data_param_;
 }
 inline ::caffe::ImageDataParameter* V1LayerParameter::release_image_data_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.image_data_param)
   clear_has_image_data_param();
   ::caffe::ImageDataParameter* temp = image_data_param_;
   image_data_param_ = NULL;
@@ -25528,6 +26043,7 @@ inline ::caffe::InfogainLossParameter* V1LayerParameter::mutable_infogain_loss_p
   return infogain_loss_param_;
 }
 inline ::caffe::InfogainLossParameter* V1LayerParameter::release_infogain_loss_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.infogain_loss_param)
   clear_has_infogain_loss_param();
   ::caffe::InfogainLossParameter* temp = infogain_loss_param_;
   infogain_loss_param_ = NULL;
@@ -25571,6 +26087,7 @@ inline ::caffe::InnerProductParameter* V1LayerParameter::mutable_inner_product_p
   return inner_product_param_;
 }
 inline ::caffe::InnerProductParameter* V1LayerParameter::release_inner_product_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.inner_product_param)
   clear_has_inner_product_param();
   ::caffe::InnerProductParameter* temp = inner_product_param_;
   inner_product_param_ = NULL;
@@ -25614,6 +26131,7 @@ inline ::caffe::LRNParameter* V1LayerParameter::mutable_lrn_param() {
   return lrn_param_;
 }
 inline ::caffe::LRNParameter* V1LayerParameter::release_lrn_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.lrn_param)
   clear_has_lrn_param();
   ::caffe::LRNParameter* temp = lrn_param_;
   lrn_param_ = NULL;
@@ -25657,6 +26175,7 @@ inline ::caffe::MemoryDataParameter* V1LayerParameter::mutable_memory_data_param
   return memory_data_param_;
 }
 inline ::caffe::MemoryDataParameter* V1LayerParameter::release_memory_data_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.memory_data_param)
   clear_has_memory_data_param();
   ::caffe::MemoryDataParameter* temp = memory_data_param_;
   memory_data_param_ = NULL;
@@ -25700,6 +26219,7 @@ inline ::caffe::MVNParameter* V1LayerParameter::mutable_mvn_param() {
   return mvn_param_;
 }
 inline ::caffe::MVNParameter* V1LayerParameter::release_mvn_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.mvn_param)
   clear_has_mvn_param();
   ::caffe::MVNParameter* temp = mvn_param_;
   mvn_param_ = NULL;
@@ -25743,6 +26263,7 @@ inline ::caffe::PoolingParameter* V1LayerParameter::mutable_pooling_param() {
   return pooling_param_;
 }
 inline ::caffe::PoolingParameter* V1LayerParameter::release_pooling_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.pooling_param)
   clear_has_pooling_param();
   ::caffe::PoolingParameter* temp = pooling_param_;
   pooling_param_ = NULL;
@@ -25786,6 +26307,7 @@ inline ::caffe::PowerParameter* V1LayerParameter::mutable_power_param() {
   return power_param_;
 }
 inline ::caffe::PowerParameter* V1LayerParameter::release_power_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.power_param)
   clear_has_power_param();
   ::caffe::PowerParameter* temp = power_param_;
   power_param_ = NULL;
@@ -25829,6 +26351,7 @@ inline ::caffe::ReLUParameter* V1LayerParameter::mutable_relu_param() {
   return relu_param_;
 }
 inline ::caffe::ReLUParameter* V1LayerParameter::release_relu_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.relu_param)
   clear_has_relu_param();
   ::caffe::ReLUParameter* temp = relu_param_;
   relu_param_ = NULL;
@@ -25872,6 +26395,7 @@ inline ::caffe::SigmoidParameter* V1LayerParameter::mutable_sigmoid_param() {
   return sigmoid_param_;
 }
 inline ::caffe::SigmoidParameter* V1LayerParameter::release_sigmoid_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.sigmoid_param)
   clear_has_sigmoid_param();
   ::caffe::SigmoidParameter* temp = sigmoid_param_;
   sigmoid_param_ = NULL;
@@ -25915,6 +26439,7 @@ inline ::caffe::SoftmaxParameter* V1LayerParameter::mutable_softmax_param() {
   return softmax_param_;
 }
 inline ::caffe::SoftmaxParameter* V1LayerParameter::release_softmax_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.softmax_param)
   clear_has_softmax_param();
   ::caffe::SoftmaxParameter* temp = softmax_param_;
   softmax_param_ = NULL;
@@ -25958,6 +26483,7 @@ inline ::caffe::SliceParameter* V1LayerParameter::mutable_slice_param() {
   return slice_param_;
 }
 inline ::caffe::SliceParameter* V1LayerParameter::release_slice_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.slice_param)
   clear_has_slice_param();
   ::caffe::SliceParameter* temp = slice_param_;
   slice_param_ = NULL;
@@ -26001,6 +26527,7 @@ inline ::caffe::TanHParameter* V1LayerParameter::mutable_tanh_param() {
   return tanh_param_;
 }
 inline ::caffe::TanHParameter* V1LayerParameter::release_tanh_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.tanh_param)
   clear_has_tanh_param();
   ::caffe::TanHParameter* temp = tanh_param_;
   tanh_param_ = NULL;
@@ -26044,6 +26571,7 @@ inline ::caffe::ThresholdParameter* V1LayerParameter::mutable_threshold_param() 
   return threshold_param_;
 }
 inline ::caffe::ThresholdParameter* V1LayerParameter::release_threshold_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.threshold_param)
   clear_has_threshold_param();
   ::caffe::ThresholdParameter* temp = threshold_param_;
   threshold_param_ = NULL;
@@ -26087,6 +26615,7 @@ inline ::caffe::WindowDataParameter* V1LayerParameter::mutable_window_data_param
   return window_data_param_;
 }
 inline ::caffe::WindowDataParameter* V1LayerParameter::release_window_data_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.window_data_param)
   clear_has_window_data_param();
   ::caffe::WindowDataParameter* temp = window_data_param_;
   window_data_param_ = NULL;
@@ -26130,6 +26659,7 @@ inline ::caffe::TransformationParameter* V1LayerParameter::mutable_transform_par
   return transform_param_;
 }
 inline ::caffe::TransformationParameter* V1LayerParameter::release_transform_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.transform_param)
   clear_has_transform_param();
   ::caffe::TransformationParameter* temp = transform_param_;
   transform_param_ = NULL;
@@ -26173,6 +26703,7 @@ inline ::caffe::LossParameter* V1LayerParameter::mutable_loss_param() {
   return loss_param_;
 }
 inline ::caffe::LossParameter* V1LayerParameter::release_loss_param() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.loss_param)
   clear_has_loss_param();
   ::caffe::LossParameter* temp = loss_param_;
   loss_param_ = NULL;
@@ -26216,6 +26747,7 @@ inline ::caffe::V0LayerParameter* V1LayerParameter::mutable_layer() {
   return layer_;
 }
 inline ::caffe::V0LayerParameter* V1LayerParameter::release_layer() {
+  // @@protoc_insertion_point(field_release:caffe.V1LayerParameter.layer)
   clear_has_layer();
   ::caffe::V0LayerParameter* temp = layer_;
   layer_ = NULL;
@@ -26276,6 +26808,7 @@ inline ::std::string* V0LayerParameter::mutable_name() {
   return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* V0LayerParameter::release_name() {
+  // @@protoc_insertion_point(field_release:caffe.V0LayerParameter.name)
   clear_has_name();
   return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -26329,6 +26862,7 @@ inline ::std::string* V0LayerParameter::mutable_type() {
   return type_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* V0LayerParameter::release_type() {
+  // @@protoc_insertion_point(field_release:caffe.V0LayerParameter.type)
   clear_has_type();
   return type_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -26417,6 +26951,7 @@ inline ::caffe::FillerParameter* V0LayerParameter::mutable_weight_filler() {
   return weight_filler_;
 }
 inline ::caffe::FillerParameter* V0LayerParameter::release_weight_filler() {
+  // @@protoc_insertion_point(field_release:caffe.V0LayerParameter.weight_filler)
   clear_has_weight_filler();
   ::caffe::FillerParameter* temp = weight_filler_;
   weight_filler_ = NULL;
@@ -26460,6 +26995,7 @@ inline ::caffe::FillerParameter* V0LayerParameter::mutable_bias_filler() {
   return bias_filler_;
 }
 inline ::caffe::FillerParameter* V0LayerParameter::release_bias_filler() {
+  // @@protoc_insertion_point(field_release:caffe.V0LayerParameter.bias_filler)
   clear_has_bias_filler();
   ::caffe::FillerParameter* temp = bias_filler_;
   bias_filler_ = NULL;
@@ -26757,6 +27293,7 @@ inline ::std::string* V0LayerParameter::mutable_source() {
   return source_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* V0LayerParameter::release_source() {
+  // @@protoc_insertion_point(field_release:caffe.V0LayerParameter.source)
   clear_has_source();
   return source_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -26834,6 +27371,7 @@ inline ::std::string* V0LayerParameter::mutable_meanfile() {
   return meanfile_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* V0LayerParameter::release_meanfile() {
+  // @@protoc_insertion_point(field_release:caffe.V0LayerParameter.meanfile)
   clear_has_meanfile();
   return meanfile_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -26938,15 +27476,15 @@ inline ::caffe::BlobProto* V0LayerParameter::add_blobs() {
   // @@protoc_insertion_point(field_add:caffe.V0LayerParameter.blobs)
   return blobs_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >&
-V0LayerParameter::blobs() const {
-  // @@protoc_insertion_point(field_list:caffe.V0LayerParameter.blobs)
-  return blobs_;
-}
 inline ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >*
 V0LayerParameter::mutable_blobs() {
   // @@protoc_insertion_point(field_mutable_list:caffe.V0LayerParameter.blobs)
   return &blobs_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::caffe::BlobProto >&
+V0LayerParameter::blobs() const {
+  // @@protoc_insertion_point(field_list:caffe.V0LayerParameter.blobs)
+  return blobs_;
 }
 
 // repeated float blobs_lr = 51;
@@ -27169,6 +27707,7 @@ inline ::std::string* V0LayerParameter::mutable_det_crop_mode() {
   return det_crop_mode_.MutableNoArena(_default_det_crop_mode_);
 }
 inline ::std::string* V0LayerParameter::release_det_crop_mode() {
+  // @@protoc_insertion_point(field_release:caffe.V0LayerParameter.det_crop_mode)
   clear_has_det_crop_mode();
   return det_crop_mode_.ReleaseNoArena(_default_det_crop_mode_);
 }
@@ -27353,6 +27892,7 @@ inline ::caffe::HDF5OutputParameter* V0LayerParameter::mutable_hdf5_output_param
   return hdf5_output_param_;
 }
 inline ::caffe::HDF5OutputParameter* V0LayerParameter::release_hdf5_output_param() {
+  // @@protoc_insertion_point(field_release:caffe.V0LayerParameter.hdf5_output_param)
   clear_has_hdf5_output_param();
   ::caffe::HDF5OutputParameter* temp = hdf5_output_param_;
   hdf5_output_param_ = NULL;
@@ -27400,6 +27940,7 @@ inline ::caffe::FillerParameter* PReLUParameter::mutable_filler() {
   return filler_;
 }
 inline ::caffe::FillerParameter* PReLUParameter::release_filler() {
+  // @@protoc_insertion_point(field_release:caffe.PReLUParameter.filler)
   clear_has_filler();
   ::caffe::FillerParameter* temp = filler_;
   filler_ = NULL;
@@ -27475,6 +28016,142 @@ TransposeParameter::mutable_dim() {
 }
 
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 

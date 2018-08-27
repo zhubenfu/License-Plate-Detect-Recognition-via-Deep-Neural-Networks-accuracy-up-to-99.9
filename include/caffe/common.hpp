@@ -16,7 +16,7 @@
 #include <utility>  // pair
 #include <vector>
 
-#include "caffe/util/device_alternate.hpp"
+#include <caffe/util/device_alternate.hpp>
 
 // Convert macro to string
 #define STRINGIFY(m) #m

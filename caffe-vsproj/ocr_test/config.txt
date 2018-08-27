@@ -1,6 +1,0 @@
-path = D:\ocr\plate_card_BLSTM\testData\plate_test_pic\chepai
-startNum = 0
-
-path = C:\plate_card_BLSTM\testData\test
-startNum = 0
-

@@ -8,8 +8,12 @@
 #include "caffe/util/rng.hpp"
 
 #include <boost/date_time.hpp>
+#ifdef __linux__
+#include <sys/stat.h>
+#elif _WIN32
 #include <process.h>
 #include <direct.h>
+#endif
 #include "caffe/solver.hpp"
 
 namespace caffe {
@@ -50,7 +54,11 @@ int64_t cluster_seedgen(void) {
 
 void initGlog() {
   FLAGS_log_dir = ".\\log\\";
+#ifdef __linux__
+  mkdir(FLAGS_log_dir.c_str(), 0755);
+#elif _WIN32
   _mkdir(FLAGS_log_dir.c_str());
+#endif
   std::string LOG_INFO_FILE;
   std::string LOG_WARNING_FILE;
   std::string LOG_ERROR_FILE;
