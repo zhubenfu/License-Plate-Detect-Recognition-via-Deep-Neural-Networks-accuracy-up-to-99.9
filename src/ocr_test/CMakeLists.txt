@@ -6,7 +6,8 @@
 add_executable(ocr_test ocr_test.cpp bktree.cpp ctcpp_entrypoint.cpp levenshtein.cpp)
 ##caffe_default_properties(ocr_test)
 ##add_dependencies(ocr_test libClassification caffe)
-target_link_libraries(ocr_test ${Caffe_LINK} libClassification /usr/lib/x86_64-linux-gnu/libomp.so ${OpenCV_LIBS})
+##target_link_libraries(ocr_test ${Caffe_LINK} libClassification /usr/lib/x86_64-linux-gnu/libomp.so ${OpenCV_LIBS})
+target_link_libraries(ocr_test ${Caffe_LINK} libClassification -fopenmp ${OpenCV_LIBS})
 
 ##target_compile_definitions(gtest PUBLIC -DGTEST_USE_OWN_TR1_TUPLE)
 
