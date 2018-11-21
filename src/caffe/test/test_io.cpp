@@ -38,7 +38,7 @@ bool ReadImageToDatumReference(const string& filename, const int label,
   datum->set_channels(num_channels);
   datum->set_height(cv_img.rows);
   datum->set_width(cv_img.cols);
-  datum->set_label(label);
+  datum->set_label(0, label);
   datum->clear_data();
   datum->clear_float_data();
   string* datum_string = datum->mutable_data();
@@ -65,7 +65,7 @@ bool ReadImageToDatumReference(const string& filename, const int label,
 TEST_F(IOTest, TestReadImageToDatum) {
   string filename = EXAMPLES_SOURCE_DIR "images/cat.jpg";
   Datum datum;
-  ReadImageToDatum(filename, 0, &datum);
+  ReadImageToDatum(filename, vector<int>({0}), &datum);
   EXPECT_EQ(datum.channels(), 3);
   EXPECT_EQ(datum.height(), 360);
   EXPECT_EQ(datum.width(), 480);
@@ -74,7 +74,7 @@ TEST_F(IOTest, TestReadImageToDatum) {
 TEST_F(IOTest, TestReadImageToDatumReference) {
   string filename = EXAMPLES_SOURCE_DIR "images/cat.jpg";
   Datum datum, datum_ref;
-  ReadImageToDatum(filename, 0, 0, 0, true, &datum);
+  ReadImageToDatum(filename, vector<int>({0}), 0, 0, true, &datum);
   ReadImageToDatumReference(filename, 0, 0, 0, true, &datum_ref);
   EXPECT_EQ(datum.channels(), datum_ref.channels());
   EXPECT_EQ(datum.height(), datum_ref.height());
@@ -93,7 +93,7 @@ TEST_F(IOTest, TestReadImageToDatumReference) {
 TEST_F(IOTest, TestReadImageToDatumReferenceResized) {
   string filename = EXAMPLES_SOURCE_DIR "images/cat.jpg";
   Datum datum, datum_ref;
-  ReadImageToDatum(filename, 0, 100, 200, true, &datum);
+  ReadImageToDatum(filename, vector<int>({0}), 100, 200, true, &datum);
   ReadImageToDatumReference(filename, 0, 100, 200, true, &datum_ref);
   EXPECT_EQ(datum.channels(), datum_ref.channels());
   EXPECT_EQ(datum.height(), datum_ref.height());
@@ -111,7 +111,7 @@ TEST_F(IOTest, TestReadImageToDatumReferenceResized) {
 TEST_F(IOTest, TestReadImageToDatumContent) {
   string filename = EXAMPLES_SOURCE_DIR "images/cat.jpg";
   Datum datum;
-  ReadImageToDatum(filename, 0, &datum);
+  ReadImageToDatum(filename, vector<int>({0}), &datum);
   cv::Mat cv_img = ReadImageToCVMat(filename);
   EXPECT_EQ(datum.channels(), cv_img.channels());
   EXPECT_EQ(datum.height(), cv_img.rows);
@@ -133,7 +133,7 @@ TEST_F(IOTest, TestReadImageToDatumContentGray) {
   string filename = EXAMPLES_SOURCE_DIR "images/cat.jpg";
   Datum datum;
   const bool is_color = false;
-  ReadImageToDatum(filename, 0, is_color, &datum);
+  ReadImageToDatum(filename, vector<int>({0}), is_color, &datum);
   cv::Mat cv_img = ReadImageToCVMat(filename, is_color);
   EXPECT_EQ(datum.channels(), cv_img.channels());
   EXPECT_EQ(datum.height(), cv_img.rows);
@@ -151,7 +151,7 @@ TEST_F(IOTest, TestReadImageToDatumContentGray) {
 TEST_F(IOTest, TestReadImageToDatumResized) {
   string filename = EXAMPLES_SOURCE_DIR "images/cat.jpg";
   Datum datum;
-  ReadImageToDatum(filename, 0, 100, 200, &datum);
+  ReadImageToDatum(filename, vector<int>({0}), 100, 200, &datum);
   EXPECT_EQ(datum.channels(), 3);
   EXPECT_EQ(datum.height(), 100);
   EXPECT_EQ(datum.width(), 200);
@@ -161,7 +161,7 @@ TEST_F(IOTest, TestReadImageToDatumResized) {
 TEST_F(IOTest, TestReadImageToDatumResizedSquare) {
   string filename = EXAMPLES_SOURCE_DIR "images/cat.jpg";
   Datum datum;
-  ReadImageToDatum(filename, 0, 256, 256, &datum);
+  ReadImageToDatum(filename, vector<int>({0}), 256, 256, &datum);
   EXPECT_EQ(datum.channels(), 3);
   EXPECT_EQ(datum.height(), 256);
   EXPECT_EQ(datum.width(), 256);
@@ -171,7 +171,7 @@ TEST_F(IOTest, TestReadImageToDatumGray) {
   string filename = EXAMPLES_SOURCE_DIR "images/cat.jpg";
   Datum datum;
   const bool is_color = false;
-  ReadImageToDatum(filename, 0, is_color, &datum);
+  ReadImageToDatum(filename, vector<int>({0}), is_color, &datum);
   EXPECT_EQ(datum.channels(), 1);
   EXPECT_EQ(datum.height(), 360);
   EXPECT_EQ(datum.width(), 480);
@@ -181,7 +181,8 @@ TEST_F(IOTest, TestReadImageToDatumResizedGray) {
   string filename = EXAMPLES_SOURCE_DIR "images/cat.jpg";
   Datum datum;
   const bool is_color = false;
-  ReadImageToDatum(filename, 0, 256, 256, is_color, &datum);
+  vector<int> labels({0});
+  ReadImageToDatum(filename, labels, 256, 256, is_color, &datum);
   EXPECT_EQ(datum.channels(), 1);
   EXPECT_EQ(datum.height(), 256);
   EXPECT_EQ(datum.width(), 256);
@@ -245,7 +246,8 @@ TEST_F(IOTest, TestCVMatToDatumContent) {
   Datum datum;
   CVMatToDatum(cv_img, &datum);
   Datum datum_ref;
-  ReadImageToDatum(filename, 0, &datum_ref);
+  vector<int> labels({0});
+  ReadImageToDatum(filename, labels, &datum_ref);
   EXPECT_EQ(datum.channels(), datum_ref.channels());
   EXPECT_EQ(datum.height(), datum_ref.height());
   EXPECT_EQ(datum.width(), datum_ref.width());
@@ -282,7 +284,7 @@ TEST_F(IOTest, TestReadFileToDatum) {
   Datum datum;
   EXPECT_TRUE(ReadFileToDatum(filename, &datum));
   EXPECT_TRUE(datum.encoded());
-  EXPECT_EQ(datum.label(), -1);
+  EXPECT_EQ(datum.label().size(), 0);
   EXPECT_EQ(datum.data().size(), 140391);
 }
 
@@ -323,7 +325,8 @@ TEST_F(IOTest, TestDecodeDatumToCVMat) {
 TEST_F(IOTest, TestDecodeDatumToCVMatContent) {
   string filename = EXAMPLES_SOURCE_DIR "images/cat.jpg";
   Datum datum;
-  EXPECT_TRUE(ReadImageToDatum(filename, 0, std::string("jpg"), &datum));
+  vector<int> labels({0});
+  EXPECT_TRUE(ReadImageToDatum(filename, labels, std::string("jpg"), &datum));
   cv::Mat cv_img = DecodeDatumToCVMat(datum, true);
   cv::Mat cv_img_ref = ReadImageToCVMat(filename);
   EXPECT_EQ(cv_img_ref.channels(), cv_img.channels());
@@ -403,7 +406,9 @@ TEST_F(IOTest, TestDecodeDatumToCVMatNativeGray) {
 TEST_F(IOTest, TestDecodeDatumToCVMatContentNative) {
   string filename = EXAMPLES_SOURCE_DIR "images/cat.jpg";
   Datum datum;
-  EXPECT_TRUE(ReadImageToDatum(filename, 0, std::string("jpg"), &datum));
+  vector<int> labels({0});
+  //labeles.push_back(0);
+  EXPECT_TRUE(ReadImageToDatum(filename, labels, std::string("jpg"), &datum));
   cv::Mat cv_img = DecodeDatumToCVMatNative(datum);
   cv::Mat cv_img_ref = ReadImageToCVMat(filename);
   EXPECT_EQ(cv_img_ref.channels(), cv_img.channels());

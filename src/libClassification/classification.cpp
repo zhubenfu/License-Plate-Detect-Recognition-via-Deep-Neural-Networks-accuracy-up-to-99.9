@@ -49,8 +49,8 @@ Classifier::Classifier(){  }
 bool Classifier::Init(const string& model_path, bool gpu_mode) {
 
 
-	const string trained_file = model_path + "/model.caffemodel";
-	const string model_file = model_path + "/deploy.prototxt";
+	const string trained_file = model_path + "/model.weights";
+	const string model_file = model_path + "/deploy.cfg";
 	string mean_file = model_path + "/mean.binaryproto";
 	const string mean_value_file = model_path + "/mean_values.txt";
 	const string label_file = model_path + "/label.txt";

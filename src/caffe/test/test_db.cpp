@@ -32,7 +32,7 @@ class DBTest : public ::testing::Test {
     scoped_ptr<db::Transaction> txn(db->NewTransaction());
     for (int i = 0; i < 2; ++i) {
       Datum datum;
-      ReadImageToDatum(root_images_ + keys[i], i, &datum);
+      ReadImageToDatum(root_images_ + keys[i], vector<int>({i}), &datum);
       string out;
       CHECK(datum.SerializeToString(&out));
       txn->Put(keys[i], out);
@@ -122,11 +122,11 @@ TYPED_TEST(DBTest, TestWrite) {
   db->Open(this->source_, db::WRITE);
   scoped_ptr<db::Transaction> txn(db->NewTransaction());
   Datum datum;
-  ReadFileToDatum(this->root_images_ + "cat.jpg", 0, &datum);
+  ReadFileToDatum(this->root_images_ + "cat.jpg", vector<int>({0}), &datum);
   string out;
   CHECK(datum.SerializeToString(&out));
   txn->Put("cat.jpg", out);
-  ReadFileToDatum(this->root_images_ + "fish-bike.jpg", 1, &datum);
+  ReadFileToDatum(this->root_images_ + "fish-bike.jpg", vector<int>({1}), &datum);
   CHECK(datum.SerializeToString(&out));
   txn->Put("fish-bike.jpg", out);
   txn->Commit();

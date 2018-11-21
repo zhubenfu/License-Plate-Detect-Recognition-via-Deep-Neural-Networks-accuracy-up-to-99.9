@@ -1,7 +1,7 @@
 # Finds Google Protocol Buffers library and compilers and extends
 # the standard cmake script with version and python generation support
 
-find_package( Protobuf 3.0.0 REQUIRED )
+find_package( Protobuf REQUIRED )
 list(APPEND Caffe_INCLUDE_DIRS PUBLIC ${PROTOBUF_INCLUDE_DIR})
 list(APPEND Caffe_LINKER_LIBS PUBLIC ${PROTOBUF_LIBRARIES})
 
@@ -12,6 +12,10 @@ if(EXISTS ${PROTOBUF_PROTOC_EXECUTABLE})
 else()
   message(FATAL_ERROR "Could not find PROTOBUF Compiler")
 endif()
+
+
+message("protobuf" ${PROTOBUF_INCLUDE_DIR})
+message("protobuf" ${PROTOBUF_LIBRARIES})
 
 if(PROTOBUF_FOUND)
   # fetches protobuf version

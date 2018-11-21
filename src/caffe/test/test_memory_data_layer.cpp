@@ -137,7 +137,7 @@ TYPED_TEST(MemoryDataLayerTest, AddDatumVectorDefaultTransform) {
     datum_vector[i].set_channels(this->channels_);
     datum_vector[i].set_height(this->height_);
     datum_vector[i].set_width(this->width_);
-    datum_vector[i].set_label(i);
+    datum_vector[i].set_label(0, i);
     vector<char> pixels(count);
     for (int j = 0; j < count; ++j) {
       pixels[j] = pixel_index++ % 256;

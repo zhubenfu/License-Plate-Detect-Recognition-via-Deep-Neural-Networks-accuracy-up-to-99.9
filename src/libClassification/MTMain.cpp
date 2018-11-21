@@ -38,8 +38,8 @@ extern char* trainSetPosPath;
 extern char* templateName;
 extern int frame_width;
 extern int frame_height;
-extern char *model_file;		//model_file = "LightenedCNN_C_deploy.prototxt";
-extern char *trained_file;	//trained_file = "LightenedCNN_C.caffemodel";
+extern char *model_file;		//model_file = "LightenedCNN_C_deploy.cfg";
+extern char *trained_file;	//trained_file = "LightenedCNN_C.weights";
 extern int label_file;
 
 //extern char * configFile;
@@ -76,7 +76,7 @@ char* trainSetPosPath = (char *)malloc(200 * sizeof(char));
 char* templateName = (char *)malloc(200 * sizeof(char));
 int frame_width = 640;
 int frame_height = 480;
-char *model_file = (char *)malloc(200 * sizeof(char));		//model_file = "LightenedCNN_C_deploy.prototxt";
+char *model_file = (char *)malloc(200 * sizeof(char));		//model_file = "LightenedCNN_C_deploy.cfg";
 char *trained_file = (char *)malloc(200 * sizeof(char));	//trained_file = "LightenedCNN_C.caffemodel";
 int label_file = 256;
 
@@ -324,30 +324,30 @@ MTCNN::MTCNN(const std::string &proto_model_dir){
   Caffe::set_mode(Caffe::GPU);
 #endif
   /* Load the network. */
-  PNet_.reset(new Net<float>((proto_model_dir+"/det1.prototxt"), TEST));
-  PNet_->CopyTrainedLayersFrom(proto_model_dir+"/det1.caffemodel");
+  PNet_.reset(new Net<float>((proto_model_dir+"/det1.cfg"), TEST));
+  PNet_->CopyTrainedLayersFrom(proto_model_dir+"/det1.weights");
 
   CHECK_EQ(PNet_->num_inputs(), 1) << "Network should have exactly one input.";
   CHECK_EQ(PNet_->num_outputs(),2) << "Network should have exactly two output, one"
                                      " is bbox and another is confidence.";
 
   #ifdef CPU_ONLY
-  RNet_.reset(new Net<float>((proto_model_dir+"/det2.prototxt"), TEST));
+  RNet_.reset(new Net<float>((proto_model_dir+"/det2.cfg"), TEST));
   #else
-  RNet_.reset(new Net<float>((proto_model_dir+"/det2_input.prototxt"), TEST));
+  RNet_.reset(new Net<float>((proto_model_dir+"/det2_input.cfg"), TEST));
   #endif
-  RNet_->CopyTrainedLayersFrom(proto_model_dir+"/det2.caffemodel");
+  RNet_->CopyTrainedLayersFrom(proto_model_dir+"/det2.weights");
 
 //  CHECK_EQ(RNet_->num_inputs(), 0) << "Network should have exactly one input.";
 //  CHECK_EQ(RNet_->num_outputs(),3) << "Network should have exactly two output, one"
 //                                     " is bbox and another is confidence.";
 
   #ifdef CPU_ONLY
-  ONet_.reset(new Net<float>((proto_model_dir+"/det3.prototxt"), TEST));
+  ONet_.reset(new Net<float>((proto_model_dir+"/det3.cfg"), TEST));
   #else
-  ONet_.reset(new Net<float>((proto_model_dir+"/det3_input.prototxt"), TEST));
+  ONet_.reset(new Net<float>((proto_model_dir+"/det3_input.cfg"), TEST));
   #endif
-  ONet_->CopyTrainedLayersFrom(proto_model_dir+"/det3.caffemodel");
+  ONet_->CopyTrainedLayersFrom(proto_model_dir+"/det3.weights");
 
 //  CHECK_EQ(ONet_->num_inputs(), 1) << "Network should have exactly one input.";
 //  CHECK_EQ(ONet_->num_outputs(),3) << "Network should have exactly three output, one"
