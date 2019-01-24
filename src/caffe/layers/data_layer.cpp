@@ -15,10 +15,10 @@ template <typename Dtype>
 DataLayer<Dtype>::DataLayer(const LayerParameter& param)
   : BasePrefetchingDataLayer<Dtype>(param),
     offset_() {
-  db_.reset(db::GetDB(param.data_param().backend()));
-  db_->Open(param.data_param().source(), db::READ);
-  cursor_.reset(db_->NewCursor());
-  rand_skip_num_ = param.data_param().rand_skip();
+  //db_.reset(db::GetDB(param.data_param().backend()));
+  //db_->Open(param.data_param().source(), db::READ);
+  //cursor_.reset(db_->NewCursor());
+  //rand_skip_num_ = param.data_param().rand_skip();
 }
 
 template <typename Dtype>

@@ -323,6 +323,7 @@ MTCNN::MTCNN(const std::string &proto_model_dir){
 #else
   Caffe::set_mode(Caffe::GPU);
 #endif
+  FLAGS_minloglevel = google::GLOG_ERROR;
   /* Load the network. */
   PNet_.reset(new Net<float>((proto_model_dir+"/det1.cfg"), TEST));
   PNet_->CopyTrainedLayersFrom(proto_model_dir+"/det1.weights");

@@ -41,7 +41,8 @@ struct CTAReduce {
 
         T shuff;
         for (int offset = warp_size / 2; offset > 0; offset /= 2) {
-            shuff = __shfl_down(x, offset,32);
+            //shuff = __shfl_down(x, offset,32);
+            shuff = __shfl_down_sync(0xFFFFFFFF, x, offset,32);
             if (tid + offset < count && tid < offset)
                 x = g(x, shuff);
         }

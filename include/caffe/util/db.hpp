@@ -45,8 +45,8 @@ class DB {
   DISABLE_COPY_AND_ASSIGN(DB);
 };
 
-DB* GetDB(DataParameter::DB backend);
-DB* GetDB(const string& backend);
+//DB* GetDB(DataParameter::DB backend){ return nullptr;}
+//DB* GetDB(const string& backend) { return nullptr;}
 
 }  // namespace db
 }  // namespace caffe

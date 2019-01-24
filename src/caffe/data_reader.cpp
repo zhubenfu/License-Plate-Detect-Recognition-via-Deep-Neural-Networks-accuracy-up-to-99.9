@@ -71,7 +71,8 @@ DataReader::Body::~Body() {
 }
 
 void DataReader::Body::InternalThreadEntry() {
-  shared_ptr<db::DB> db(db::GetDB(param_.data_param().backend()));
+  //shared_ptr<db::DB> db(db::GetDB(param_.data_param().backend()));
+  shared_ptr<db::DB> db(nullptr);
   db->Open(param_.data_param().source(), db::READ);
   shared_ptr<db::Cursor> cursor(db->NewCursor());
   vector<shared_ptr<QueuePair> > qps;

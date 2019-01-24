@@ -2,7 +2,7 @@
 #include <vector>
 
 #include "caffe/sgd_solvers.hpp"
-#include "caffe/util/hdf5.hpp"
+// #include "caffe/util/hdf5.hpp"
 #include "caffe/util/io.hpp"
 #include "caffe/util/upgrade_proto.hpp"
 
@@ -249,7 +249,7 @@ void SGDSolver<Dtype>::SnapshotSolverState(const string& model_filename) {
       SnapshotSolverStateToBinaryProto(model_filename);
       break;
     case caffe::SolverParameter_SnapshotFormat_HDF5:
-      SnapshotSolverStateToHDF5(model_filename);
+      //SnapshotSolverStateToHDF5(model_filename);
       break;
     default:
       LOG(FATAL) << "Unsupported snapshot format.";
@@ -278,27 +278,27 @@ void SGDSolver<Dtype>::SnapshotSolverStateToBinaryProto(
 template <typename Dtype>
 void SGDSolver<Dtype>::SnapshotSolverStateToHDF5(
     const string& model_filename) {
-  string snapshot_filename =
-      Solver<Dtype>::SnapshotFilename(".solverstate.h5");
-  LOG(INFO) << "Snapshotting solver state to HDF5 file " << snapshot_filename;
-  hid_t file_hid = H5Fcreate(snapshot_filename.c_str(), H5F_ACC_TRUNC,
-      H5P_DEFAULT, H5P_DEFAULT);
-  CHECK_GE(file_hid, 0)
-      << "Couldn't open " << snapshot_filename << " to save solver state.";
-  hdf5_save_int(file_hid, "iter", this->iter_);
-  hdf5_save_string(file_hid, "learned_net", model_filename);
-  hdf5_save_int(file_hid, "current_step", this->current_step_);
-  hid_t history_hid = H5Gcreate2(file_hid, "history", H5P_DEFAULT, H5P_DEFAULT,
-      H5P_DEFAULT);
-  CHECK_GE(history_hid, 0)
-      << "Error saving solver state to " << snapshot_filename << ".";
-  for (int i = 0; i < history_.size(); ++i) {
-    ostringstream oss;
-    oss << i;
-    hdf5_save_nd_dataset<Dtype>(history_hid, oss.str(), *history_[i]);
-  }
-  H5Gclose(history_hid);
-  H5Fclose(file_hid);
+//  string snapshot_filename =
+//      Solver<Dtype>::SnapshotFilename(".solverstate.h5");
+//  LOG(INFO) << "Snapshotting solver state to HDF5 file " << snapshot_filename;
+//  hid_t file_hid = H5Fcreate(snapshot_filename.c_str(), H5F_ACC_TRUNC,
+//      H5P_DEFAULT, H5P_DEFAULT);
+//  CHECK_GE(file_hid, 0)
+//      << "Couldn't open " << snapshot_filename << " to save solver state.";
+//  hdf5_save_int(file_hid, "iter", this->iter_);
+//  hdf5_save_string(file_hid, "learned_net", model_filename);
+//  hdf5_save_int(file_hid, "current_step", this->current_step_);
+//  hid_t history_hid = H5Gcreate2(file_hid, "history", H5P_DEFAULT, H5P_DEFAULT,
+//      H5P_DEFAULT);
+//  CHECK_GE(history_hid, 0)
+//      << "Error saving solver state to " << snapshot_filename << ".";
+//  for (int i = 0; i < history_.size(); ++i) {
+//    ostringstream oss;
+//    oss << i;
+//    hdf5_save_nd_dataset<Dtype>(history_hid, oss.str(), *history_[i]);
+//  }
+//  H5Gclose(history_hid);
+//  H5Fclose(file_hid);
 }
 
 template <typename Dtype>
@@ -323,27 +323,27 @@ void SGDSolver<Dtype>::RestoreSolverStateFromBinaryProto(
 
 template <typename Dtype>
 void SGDSolver<Dtype>::RestoreSolverStateFromHDF5(const string& state_file) {
-  hid_t file_hid = H5Fopen(state_file.c_str(), H5F_ACC_RDONLY, H5P_DEFAULT);
-  CHECK_GE(file_hid, 0) << "Couldn't open solver state file " << state_file;
-  this->iter_ = hdf5_load_int(file_hid, "iter");
-  if (H5LTfind_dataset(file_hid, "learned_net")) {
-    string learned_net = hdf5_load_string(file_hid, "learned_net");
-    this->net_->CopyTrainedLayersFrom(learned_net);
-  }
-  this->current_step_ = hdf5_load_int(file_hid, "current_step");
-  hid_t history_hid = H5Gopen2(file_hid, "history", H5P_DEFAULT);
-  CHECK_GE(history_hid, 0) << "Error reading history from " << state_file;
-  int state_history_size = hdf5_get_num_links(history_hid);
-  CHECK_EQ(state_history_size, history_.size())
-      << "Incorrect length of history blobs.";
-  for (int i = 0; i < history_.size(); ++i) {
-    ostringstream oss;
-    oss << i;
-    hdf5_load_nd_dataset<Dtype>(history_hid, oss.str().c_str(), 0,
-                                kMaxBlobAxes, history_[i].get());
-  }
-  H5Gclose(history_hid);
-  H5Fclose(file_hid);
+//  hid_t file_hid = H5Fopen(state_file.c_str(), H5F_ACC_RDONLY, H5P_DEFAULT);
+//  CHECK_GE(file_hid, 0) << "Couldn't open solver state file " << state_file;
+//  this->iter_ = hdf5_load_int(file_hid, "iter");
+//  if (H5LTfind_dataset(file_hid, "learned_net")) {
+//    string learned_net = hdf5_load_string(file_hid, "learned_net");
+//    this->net_->CopyTrainedLayersFrom(learned_net);
+//  }
+//  this->current_step_ = hdf5_load_int(file_hid, "current_step");
+//  hid_t history_hid = H5Gopen2(file_hid, "history", H5P_DEFAULT);
+//  CHECK_GE(history_hid, 0) << "Error reading history from " << state_file;
+//  int state_history_size = hdf5_get_num_links(history_hid);
+//  CHECK_EQ(state_history_size, history_.size())
+//      << "Incorrect length of history blobs.";
+//  for (int i = 0; i < history_.size(); ++i) {
+//    ostringstream oss;
+  //  oss << i;
+//    hdf5_load_nd_dataset<Dtype>(history_hid, oss.str().c_str(), 0,
+//                                kMaxBlobAxes, history_[i].get());
+//  }
+//  H5Gclose(history_hid);
+//  H5Fclose(file_hid);
 }
 
 INSTANTIATE_CLASS(SGDSolver);

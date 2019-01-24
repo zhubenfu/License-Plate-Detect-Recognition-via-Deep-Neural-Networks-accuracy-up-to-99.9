@@ -74,6 +74,9 @@ void initGlog() {
   google::SetLogDestination(google::GLOG_ERROR, LOG_ERROR_FILE.c_str());
   LOG_FATAL_FILE = FLAGS_log_dir + "FATAL" + now_time + ".txt";
   google::SetLogDestination(google::GLOG_FATAL, LOG_FATAL_FILE.c_str());
+
+  ::google::InitGoogleLogging("");
+  FLAGS_minloglevel = google::GLOG_ERROR;
 }
 
 void GlobalInit(int* pargc, char*** pargv) {
@@ -84,6 +87,7 @@ void GlobalInit(int* pargc, char*** pargv) {
   // Google logging.
   initGlog();
   ::google::InitGoogleLogging(*(pargv)[0]);
+  FLAGS_minloglevel = google::GLOG_ERROR;
 }
 
 #ifdef CPU_ONLY  // CPU-only Caffe.

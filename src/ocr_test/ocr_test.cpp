@@ -875,7 +875,7 @@ void scanImages(){
 	for (directory_entry & x : directory_iterator(imageHome)) {
 		if (is_regular_file(x.path()) && x.path().has_extension()) {			
 			string extName = x.path().extension().string();
-			if (extName.find("JPG") != -1 || extName.find("jpg") != -1) {
+			if (extName.find("JPG") != -1 || extName.find("jpg") != -1 || extName.find("jpeg") != -1) {
 				imgNames.push_back(x.path().filename().string());
 			}
 		}
