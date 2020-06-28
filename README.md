@@ -1,9 +1,13 @@
 # License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9
 works in real-time with detection and recognition accuracy up to 99.8% for Chinese license plates: 100 ms/plate！
+
+
   【重要通知】：将从理论到实践，建立一个微信公众号，把近期的总结以专题形式公布出来，初步目录为：
   欢迎大家关注公众号：ai_portumo。 
  ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E6%A0%87%E5%87%86%E8%89%B2%E7%89%88.png)  
   ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E7%99%BD%E8%89%B2%E7%89%88.png)  
+
+
 ##目录：
 ##【第一章 线性代数】
 矩阵、迹、转置
@@ -74,8 +78,12 @@ GRU
 深度学习中的一些高级技术
 神经网络量化
 对抗网络
+
+
   【重要通知】：将从理论到实践，建立一个微信公众号，把近期的总结以专题形式公布出来，以上为初步目录：
   欢迎大家关注公众号：ai_portumo。
+
+
  ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E6%A0%87%E5%87%86%E8%89%B2%E7%89%88.png)  
   ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E7%99%BD%E8%89%B2%E7%89%88.png)  
   
