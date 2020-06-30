@@ -6,81 +6,150 @@ works in real-time with detection and recognition accuracy up to 99.8% for Chine
   欢迎大家关注公众号：ai_portumo。 
   
   【重要通知2】：扫描关注公众号ai_portumo，回复“车牌数据”获取37G的实际车牌数据下载链接。请大家不要随意将下载链接共享，我共享数据的目的是为了给我的公众号引流，大家可以推荐朋友关注公众号ai_portumo，并在公众号输入框回复“车牌数据”，获取下载链接。
+----
   共19个文件，每个文件2G左右，覆盖各种数字和英文字体，以及早中晚各种场景，可以用来车牌识别训练和OCR学习。
-
- ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E6%A0%87%E5%87%86%E8%89%B2%E7%89%88.png)  
+----
   ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E7%99%BD%E8%89%B2%E7%89%88.png)  
 
 
-##目录：
-##【第一章 线性代数】
+**目录：**
+
+**【第一章 线性代数】**
+
 矩阵、迹、转置
+
 行列式、三角矩阵、行列式的性质、余子式
+
 克拉姆法则、齐次线性方程组
+
 逆矩阵、矩阵的初等变换
+
 矩阵的秩、线性方程组的解
+
 向量
+
 方阵的特征值和特征向量
+
 相似矩阵、矩阵对角化、对阵矩阵对角化
+
 二次型与矩阵正定性
+
 SVD分解的证明、SVD分解、SVD分解的应用
+
 多元线性回归、最小二乘法
-##【第二章 微积分】
+
+**【第二章 微积分】**
+
 中值定理、柯西中值定理、洛必达法则
+
 泰勒公式
+
 函数的凹凸性、函数的极值
+
 不定积分、凑微分、分部积分法、定积分
+
 牛顿莱布尼茨公式
+
 全部积分、偏导数
+
 方向导数与梯度
+
 多元函数的泰勒公式、海森矩阵
+
 多元函数的极值
+
 矩阵的求导
-##【第三章 概率论】
+
+**【第三章 概率论】**
+
 条件概率、全概率公式、贝叶斯公式
+
 独立性
+
 离散随机变量、连续随机变量
+
 分布函数：均匀分布、指数分布、正态分布
+
 随机变量函数的分布
+
 多维随机变量
+
 边缘分布、条件分布
+
 期望（连续型、离散型）
+
 方差
+
 方差的常用性质、协方差
+
 协方差矩阵
+
 参数估计、矩估计
+
 极大似然估计、高斯分布、无偏性
-##【第四章 机器学习】
+
+**【第四章 机器学习】**
+
 无约束优化、梯度下降法
+
 牛顿法、两种解释
+
 牛顿法的收敛速度
+
 有约束的优化、拉格朗日乘子的意义、KKT条件
+
 不等式约束
+
 约束问题总结：等式约束、不等式约束
+
 优化的对偶理论、原始问题、对偶问题
-##【第五章 深度学习】
+
+**【第五章 深度学习】**
+
 容量、过拟合、欠拟合
+
 逻辑回归、线性回归、二项逻辑回归模型
+
 贝叶斯估计、频率派、贝叶斯派
+
 QA J=‖xa−y‖^2 求导
+
 PCA原理与推导
+
 LDA、PCA与LDA区别
+
 SVM支持向量机
+
 决策树
+
 传递函数、激活函数、损失函数、KL距离、相对熵
+
 前向传播、反向算法
+
 深度学习中的正则化
+
 Bagging、Dropout
+
 深度模型中的优化
+
 动量Momentum、AdaGrad、Adam、BatchNorm
+
 卷积网络
+
 CNN前向算法、反向算法、Pooling
+
 Inception网络：V1、V2、V3、V4
+
 循环神经网络、前向、后向
+
 LSTM
+
 GRU
+
 深度学习中的一些高级技术
+
 神经网络量化
+
 对抗网络
 
 
@@ -89,7 +158,7 @@ GRU
 
 
  ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E6%A0%87%E5%87%86%E8%89%B2%E7%89%88.png)  
-  ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E7%99%BD%E8%89%B2%E7%89%88.png)  
+
   
   进来看一定要加star！右上角！
   -----
