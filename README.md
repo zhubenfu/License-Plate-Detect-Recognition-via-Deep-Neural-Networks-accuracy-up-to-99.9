@@ -2,8 +2,12 @@
 works in real-time with detection and recognition accuracy up to 99.8% for Chinese license plates: 100 ms/plate！
 
 
-  【重要通知】：将从理论到实践，建立一个微信公众号，把近期的总结以专题形式公布出来，初步目录为：
+  【重要通知1】：将从理论到实践，建立一个微信公众号，把近期的总结以专题形式公布出来，初步目录为：
   欢迎大家关注公众号：ai_portumo。 
+  
+  【重要通知2】：扫描关注公众号ai_portumo，回复“车牌数据”获取37G的实际车牌数据下载链接。请大家不要随意将下载链接共享，我共享数据的目的是为了给我的公众号引流，大家可以推荐朋友关注公众号ai_portumo，并在公众号输入框回复“车牌数据”，获取下载链接。
+  共19个文件，每个文件2G左右，覆盖各种数字和英文字体，以及早中晚各种场景，可以用来车牌识别训练和OCR学习。
+
  ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E6%A0%87%E5%87%86%E8%89%B2%E7%89%88.png)  
   ![image](https://github.com/zhubenfu/License-Plate-Detect-Recognition-via-Deep-Neural-Networks-accuracy-up-to-99.9/blob/master/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E7%99%BD%E8%89%B2%E7%89%88.png)  
 
